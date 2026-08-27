@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Aug 19 2026 05:08:09 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Aug 27 2026 06:51:44 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6a7c1de175b4b41bcf26cc16" data-wf-site="6a78a050329a705e8a1b7425">
 <head>
   <meta charset="utf-8">
@@ -34,7 +34,7 @@
               <a href="speedshotx.html" class="div-block-14 w-inline-block"><img src="images/speedshot-x.png" loading="lazy" width="29" sizes="100vw" alt="" srcset="images/speedshot-x-p-500.png 500w, images/speedshot-x-p-800.png 800w, images/speedshot-x.png 944w">
                 <div>SpeedShotX</div>
               </a>
-              <a href="intellex.html" class="div-block-14 w-inline-block"><img src="images/Intelle-logo.png" loading="lazy" width="29" height="Auto" alt="" srcset="images/Intelle-logo-p-500.png 500w, images/Intelle-logo-p-800.png 800w, images/Intelle-logo.png 898w" sizes="100vw" class="image-18">
+              <a href="intellix.html" class="div-block-14 w-inline-block"><img src="images/Intelli-logo.png" loading="lazy" width="29" height="Auto" alt="" srcset="images/Intelli-logo-p-500.png 500w, images/Intelli-logo-p-800.png 800w, images/Intelli-logo.png 898w" sizes="100vw" class="image-18">
                 <div>IntelliX</div>
               </a>
               <a href="knowledge-x.html" class="div-block-9 w-inline-block"><img width="29" sizes="100vw" alt="" src="images/knowledge-x.png" loading="lazy" srcset="images/knowledge-x-p-500.png 500w, images/knowledge-x-p-800.png 800w, images/knowledge-x.png 882w">
@@ -968,9 +968,9 @@
           </div>
           <div class="gs1f-tag">
             <span class="gs1f-logo" aria-hidden="true">
-              <img src="https://api.iconify.design/material-symbols:barcode-rounded.svg?color=%231c2d57" alt="">
+              <img src="images/GS1-Data-Matrix.png" alt="GS1 Data Matrix">
             </span>
-            DATA MATRIX
+            GS1 DATA MATRIX
           </div>
         </div>
         <div class="gs1f-trust">
@@ -1587,690 +1587,657 @@
 </script>
   </div>
   <div class="w-embed">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Driving Value Across The Ecosystem</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-      <style>
-    .ecosystem-section,
-    .ecosystem-section * {
-      box-sizing: border-box;
-    }
-    .ecosystem-section {
-      max-width: 1140px;
-      width: 100%;
-      margin: 0 auto;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #0b132a;
-      -webkit-font-smoothing: antialiased;
-    }
-    /* Section Header */
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .section-header h2 {
-      font-size: 2.85rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #0b132a;
-      line-height: 1.15;
-    }
-    .section-header h2 span {
-      color: #2563eb;
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .section-header p {
-      margin-top: 16px;
-      font-size: 1.05rem;
-      color: #64748b;
-      max-width: 610px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.55;
-    }
-    /* Cards Grid */
+    <style>
+  /* Ecosystem Section - Scoped Styles */
+  .ecosystem-section {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-header h2 {
+    font-size: 2.85rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0b132a;
+    line-height: 1.15;
+  }
+  .section-header h2 span {
+    color: #2563eb;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .section-header p {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    color: #64748b;
+    max-width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.55;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 992px) {
     .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 36px;
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 992px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  }
+  @media (max-width: 640px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
     }
-    @media (max-width: 640px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* Card Item */
-    .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 28px 24px 32px 24px;
-      border: 1px solid rgba(226, 232, 240, 0.8);
-      box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.08);
-    }
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      height: 90px;
-    }
-    /* Soft Gradient Halo Container */
-    .icon-halo-container {
-      width: 90px;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .icon-halo-bg {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      filter: blur(8px);
-      opacity: 0;
-      transform: scale(1);
-      transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-    }
-    .card:hover .icon-halo-bg {
-      transform: scale(1.1);
-      opacity: 0;
-      filter: blur(10px);
-    }
-    .icon-svg-wrapper {
-      position: relative;
-      z-index: 2;
-      width: 76px;
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /* Metric Badge */
-    .metric-badge {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 10px 14px;
-      text-align: right;
-      min-width: 108px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-    }
-    .metric-value {
-      font-size: 1.1rem;
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .metric-label {
-      font-size: 0.68rem;
-      color: #64748b;
-      font-weight: 600;
-      margin-top: 3px;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-    .metric-chart {
-      height: 16px;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    /* Typography & Lists */
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #0b132a;
-      margin-bottom: 18px;
-      letter-spacing: -0.01em;
-    }
-    .card-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .card-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.875rem;
-      color: #475569;
-      font-weight: 500;
-      line-height: 1.35;
-    }
-    .check-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .check-icon svg {
-      width: 10px;
-      height: 10px;
-      stroke-width: 3;
-      stroke: white;
-      fill: none;
-    }
-    /* Theme Accents */
-    .theme-blue .halo-blue { background: radial-gradient(circle, #2563eb 0%, #60a5fa 70%, #93c5fd 100%); }
-    .theme-blue .metric-value { color: #2563eb; }
-    .theme-blue .check-icon { background: #2563eb; }
-    .theme-purple .halo-purple { background: radial-gradient(circle, #7c3aed 0%, #a855f7 70%, #d8b4fe 100%); }
-    .theme-purple .metric-value { color: #7c3aed; }
-    .theme-purple .check-icon { background: #7c3aed; }
-    .theme-green .halo-green { background: radial-gradient(circle, #059669 0%, #34d399 70%, #a7f3d0 100%); }
-    .theme-green .metric-value { color: #10b981; }
-    .theme-green .check-icon { background: #10b981; }
-    .theme-cyan .halo-cyan { background: radial-gradient(circle, #0369a1 0%, #38bdf8 70%, #cffafe 100%); }
-    .theme-cyan .metric-value { color: #0284c7; }
-    .theme-cyan .check-icon { background: #0284c7; }
-    .theme-orange .halo-orange { background: radial-gradient(circle, #c2410c 0%, #fb923c 70%, #fed7aa 100%); }
-    .theme-orange .metric-value { color: #f97316; }
-    .theme-orange .check-icon { background: #f97316; }
-    /* Bottom Banner */
-    .bottom-banner-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: -22px;
-      margin-bottom: 16px;
-      padding-bottom: 24px;
-      position: relative;
-      z-index: 5;
-    }
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 28px 24px 32px 24px;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: background 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
+  }
+  .card:hover {
+    transform: translateY(-8px) scale(1.012);
+  }
+  .card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+  /* Theme Hover Styles */
+  .theme-blue:hover {
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 24px 48px -12px rgba(37, 99, 235, 0.18), 0 8px 20px -4px rgba(37, 99, 235, 0.1);
+  }
+  .theme-blue:hover::before { background: linear-gradient(90deg, #3b82f6, #1d4ed8); opacity: 1; }
+  .theme-purple:hover {
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow: 0 24px 48px -12px rgba(124, 58, 237, 0.18), 0 8px 20px -4px rgba(124, 58, 237, 0.1);
+  }
+  .theme-purple:hover::before { background: linear-gradient(90deg, #a855f7, #7c3aed); opacity: 1; }
+  .theme-green:hover {
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 24px 48px -12px rgba(16, 185, 129, 0.18), 0 8px 20px -4px rgba(16, 185, 129, 0.1);
+  }
+  .theme-green:hover::before { background: linear-gradient(90deg, #34d399, #10b981); opacity: 1; }
+  .theme-cyan:hover {
+    border-color: rgba(2, 132, 199, 0.35);
+    box-shadow: 0 24px 48px -12px rgba(2, 132, 199, 0.18), 0 8px 20px -4px rgba(2, 132, 199, 0.1);
+  }
+  .theme-cyan:hover::before { background: linear-gradient(90deg, #38bdf8, #0284c7); opacity: 1; }
+  .theme-orange:hover {
+    border-color: rgba(249, 115, 22, 0.35);
+    box-shadow: 0 24px 48px -12px rgba(249, 115, 22, 0.18), 0 8px 20px -4px rgba(249, 115, 22, 0.1);
+  }
+  .theme-orange:hover::before { background: linear-gradient(90deg, #fb923c, #f97316); opacity: 1; }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    height: 90px;
+  }
+  .icon-halo-container {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .icon-halo-bg {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    filter: blur(12px);
+    opacity: 0.15;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+  }
+  .card:hover .icon-halo-bg {
+    opacity: 0.5;
+    transform: scale(1.25);
+  }
+  .icon-svg-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .card:hover .icon-svg-wrapper {
+    transform: translateY(-3px) scale(1.06);
+  }
+  .metric-badge {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 10px 14px;
+    text-align: right;
+    min-width: 108px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover .metric-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  }
+  .theme-blue:hover .metric-badge { border-color: rgba(37, 99, 235, 0.3); }
+  .theme-purple:hover .metric-badge { border-color: rgba(124, 58, 237, 0.3); }
+  .theme-green:hover .metric-badge { border-color: rgba(16, 185, 129, 0.3); }
+  .theme-cyan:hover .metric-badge { border-color: rgba(2, 132, 199, 0.3); }
+  .theme-orange:hover .metric-badge { border-color: rgba(249, 115, 22, 0.3); }
+  .metric-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .metric-value {
+    transform: scale(1.05);
+  }
+  .metric-label {
+    font-size: 0.68rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 3px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .metric-chart {
+    height: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .metric-chart svg path {
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  .card-title {
+    font-size: 1.18rem;
+    font-weight: 750;
+    color: #0b132a;
+    margin-bottom: 18px;
+    letter-spacing: -0.015em;
+    transition: color 0.3s ease;
+  }
+  .card-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.875rem;
+    color: #475569;
+    font-weight: 500;
+    line-height: 1.35;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .card:hover .card-list li {
+    transform: translateX(4px);
+    color: #1e293b;
+  }
+  .card:hover .card-list li:nth-child(1) { transition-delay: 0.04s; }
+  .card:hover .card-list li:nth-child(2) { transition-delay: 0.08s; }
+  .card:hover .card-list li:nth-child(3) { transition-delay: 0.12s; }
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover .check-icon {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+  }
+  .check-icon svg {
+    width: 10px;
+    height: 10px;
+    stroke-width: 3;
+    stroke: white;
+    fill: none;
+  }
+  /* Theme Colors */
+  .theme-blue .metric-value { color: #2563eb; }
+  .theme-blue .check-icon { background: #2563eb; }
+  .theme-purple .metric-value { color: #7c3aed; }
+  .theme-purple .check-icon { background: #7c3aed; }
+  .theme-green .metric-value { color: #10b981; }
+  .theme-green .check-icon { background: #10b981; }
+  .theme-cyan .metric-value { color: #0284c7; }
+  .theme-cyan .check-icon { background: #0284c7; }
+  .theme-orange .metric-value { color: #f97316; }
+  .theme-orange .check-icon { background: #f97316; }
+  .bottom-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -22px;
+    margin-bottom: 16px;
+    padding-bottom: 24px;
+    position: relative;
+    z-index: 5;
+  }
+  .bottom-banner {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    padding: 12px 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    font-size: 0.92rem;
+    color: #475569;
+  }
+  .banner-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    flex-shrink: 0;
+  }
+  .banner-text strong {
+    color: #2563eb;
+    font-weight: 700;
+  }
+  .banner-divider {
+    color: #cbd5e1;
+    margin: 0 4px;
+  }
+  @media (max-width: 768px) {
     .bottom-banner {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 999px;
-      padding: 12px 28px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
-      font-size: 0.92rem;
-      color: #475569;
-    }
-    .banner-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #eff6ff;
-      border: 1px solid #dbeafe;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #2563eb;
-      flex-shrink: 0;
-    }
-    .banner-text strong {
-      color: #2563eb;
-      font-weight: 700;
+      border-radius: 16px;
+      flex-direction: column;
+      text-align: center;
+      padding: 16px 20px;
     }
     .banner-divider {
-      color: #cbd5e1;
-      margin: 0 4px;
+      display: none;
     }
-    @media (max-width: 768px) {
-      .bottom-banner {
-        border-radius: 16px;
-        flex-direction: column;
-        text-align: center;
-        padding: 16px 20px;
-      }
-      .banner-divider {
-        display: none;
-      }
-    }
-  </style>
-    </head>
-    <body>
-      <section class="ecosystem-section">
-        <!--  Header  -->
-        <div class="section-header">
-          <h2>Driving value across<br>the <span>ecosystem.</span></h2>
-          <p>From stronger brands to smarter operations, AI Lens unlocks measurable value for every stakeholder across the product journey.</p>
+  }
+</style>
+    <section class="ecosystem-section">
+      <div class="section-header">
+        <h2>Driving value across<br>the <span>ecosystem.</span></h2>
+        <p>From stronger brands to smarter operations, AI Lens unlocks measurable value for every stakeholder across the product journey.</p>
+      </div>
+      <div class="cards-grid">
+        <!--  Card 1  -->
+        <div class="card theme-blue">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #2563eb 0%, #60a5fa 70%, #93c5fd 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="blueBarGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#93c5fd"></stop>
+                      <stop offset="40%" stop-color="#60a5fa"></stop>
+                      <stop offset="70%" stop-color="#3b82f6"></stop>
+                      <stop offset="100%" stop-color="#1e3a8a"></stop>
+                    </lineargradient>
+                    <filter id="blueShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#1e40af" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#bfdbfe" opacity="0.4"></circle>
+                  <rect x="20" y="38" width="8" height="14" rx="4" fill="#0f172a" opacity="0.15"></rect>
+                  <rect x="20" y="38" width="8" height="14" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
+                  <rect x="31" y="28" width="8" height="24" rx="4" fill="#0f172a" opacity="0.15"></rect>
+                  <rect x="31" y="28" width="8" height="24" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
+                  <rect x="42" y="20" width="8" height="32" rx="4" fill="#0f172a" opacity="0.15"></rect>
+                  <rect x="42" y="20" width="8" height="32" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
+                  <rect x="20" y="38" width="3" height="14" rx="4" fill="#ffffff" opacity="0.25"></rect>
+                  <rect x="31" y="28" width="3" height="24" rx="4" fill="#ffffff" opacity="0.25"></rect>
+                  <rect x="42" y="20" width="3" height="32" rx="4" fill="#ffffff" opacity="0.25"></rect>
+                  <path d="M50 16 L58 22 L54 22 L54 26" fill="url(#blueBarGrad)" stroke="#ffffff" stroke-width="0.5" opacity="0.95" filter="url(#blueShadow)"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-badge">
+              <div class="metric-value">+25%</div>
+              <div class="metric-label">Revenue Lift</div>
+              <div class="metric-chart">
+                <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
+                  <path d="M1 11L13 8L23 10L41 2" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <h3 class="card-title">Drive Revenue Increase</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Higher conversion through targeted offers</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Upsell and cross-sell opportunities</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Stronger customer loyalty and retention</li>
+          </ul>
         </div>
-        <!--  6 Grid Cards  -->
-        <div class="cards-grid">
-          <!--  Card 1: Drive Revenue Increase  -->
-          <div class="card theme-blue">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-blue"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="blueBarGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#93c5fd"></stop>
-                        <stop offset="40%" stop-color="#60a5fa"></stop>
-                        <stop offset="70%" stop-color="#3b82f6"></stop>
-                        <stop offset="100%" stop-color="#1e3a8a"></stop>
-                      </lineargradient>
-                      <radialgradient id="blueGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#1e40af" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="blueShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#1e40af" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#blueGlow)" opacity="0.4"></circle>
-                    <!--  3D Bar Columns with depth  -->
-                    <rect x="20" y="39" width="8" height="13" rx="4" fill="#0f172a" opacity="0.15"></rect>
-                    <rect x="20" y="38" width="8" height="14" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
-                    <rect x="31" y="29" width="8" height="23" rx="4" fill="#0f172a" opacity="0.15"></rect>
-                    <rect x="31" y="28" width="8" height="24" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
-                    <rect x="42" y="21" width="8" height="31" rx="4" fill="#0f172a" opacity="0.15"></rect>
-                    <rect x="42" y="20" width="8" height="32" rx="4" fill="url(#blueBarGrad)" filter="url(#blueShadow)"></rect>
-                    <!--  Highlight on bars  -->
-                    <rect x="20" y="38" width="3" height="14" rx="4" fill="#ffffff" opacity="0.25"></rect>
-                    <rect x="31" y="28" width="3" height="24" rx="4" fill="#ffffff" opacity="0.25"></rect>
-                    <rect x="42" y="20" width="3" height="32" rx="4" fill="#ffffff" opacity="0.25"></rect>
-                    <!--  Upward Arrow  -->
-                    <g filter="url(#blueShadow)">
-                      <path d="M50 16 L58 22 L54 22 L54 26" fill="url(#blueBarGrad)" stroke="#ffffff" stroke-width="0.5" opacity="0.95"></path>
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge">
-                <div class="metric-value">+25%</div>
-                <div class="metric-label">Revenue Lift</div>
-                <div class="metric-chart">
-                  <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
-                    <path d="M1 11L13 8L23 10L41 2" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
+        <!--  Card 2  -->
+        <div class="card theme-purple">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #7c3aed 0%, #a855f7 70%, #d8b4fe 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="purpleShield" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#e9d5ff"></stop>
+                      <stop offset="50%" stop-color="#d8b4fe"></stop>
+                      <stop offset="100%" stop-color="#7c3aed"></stop>
+                    </lineargradient>
+                    <filter id="purpleShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#581c87" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#e9d5ff" opacity="0.4"></circle>
+                  <path d="M36 14 L52 24 L52 38 C52 50, 36 60, 36 60 C36 60, 20 50, 20 38 L20 24 Z" fill="#581c87" opacity="0.1" transform="translate(0, 1)"></path>
+                  <path d="M36 14 L52 24 L52 38 C52 50, 36 60, 36 60 C36 60, 20 50, 20 38 L20 24 Z" fill="url(#purpleShield)" filter="url(#purpleShadow)"></path>
+                  <path d="M24 26 L36 18 L48 26" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"></path>
+                  <path d="M36 30 L39 38 L47 38 L41 43 L44 51 L36 46 L28 51 L31 43 L25 38 L33 38 Z" fill="#fbbf24" opacity="0.95"></path>
+                  <path d="M36 31 L38 37 L36 40 L34 37 Z" fill="#ffffff" opacity="0.5"></path>
+                </svg>
               </div>
             </div>
-            <h3 class="card-title">Drive Revenue Increase</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Higher conversion through targeted offers</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Upsell and cross-sell opportunities</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Stronger customer loyalty and retention</li>
-            </ul>
+            <div class="metric-badge">
+              <div class="metric-value">2.7x</div>
+              <div class="metric-label">Brand Trust Increase</div>
+              <div class="metric-chart">
+                <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
+                  <path d="M1 11L14 8L25 10L41 2" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <!--  Card 2: Authentic Brand Engagement  -->
-          <div class="card theme-purple">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-purple"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="purpleShield" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#e9d5ff"></stop>
-                        <stop offset="50%" stop-color="#d8b4fe"></stop>
-                        <stop offset="100%" stop-color="#7c3aed"></stop>
-                      </lineargradient>
-                      <radialgradient id="purpleGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#581c87" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="purpleShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#581c87" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#purpleGlow)" opacity="0.4"></circle>
-                    <!--  Shield shadow  -->
-                    <path d="M36 14 L52 24 L52 38 C52 50, 36 60, 36 60 C36 60, 20 50, 20 38 L20 24 Z" fill="#581c87" opacity="0.1" transform="translate(0, 1)"></path>
-                    <!--  Shield body - classic badge shape  -->
-                    <path d="M36 14 L52 24 L52 38 C52 50, 36 60, 36 60 C36 60, 20 50, 20 38 L20 24 Z" fill="url(#purpleShield)" filter="url(#purpleShadow)"></path>
-                    <!--  Shield highlight edge  -->
-                    <path d="M24 26 L36 18 L48 26" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"></path>
-                    <!--  Star inside shield  -->
-                    <path d="M36 30 L39 38 L47 38 L41 43 L44 51 L36 46 L28 51 L31 43 L25 38 L33 38 Z" fill="#fbbf24" opacity="0.95"></path>
-                    <!--  Star shine  -->
-                    <path d="M36 31 L38 37 L36 40 L34 37 Z" fill="#ffffff" opacity="0.5"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge">
-                <div class="metric-value">2.7x</div>
-                <div class="metric-label">Brand Trust Increase</div>
-                <div class="metric-chart">
-                  <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
-                    <path d="M1 11L14 8L25 10L41 2" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
+          <h3 class="card-title">Authentic Brand Engagement</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Verify authenticity and build trust</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Strengthen brand loyalty</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Encourage repeat engagement</li>
+          </ul>
+        </div>
+        <!--  Card 3  -->
+        <div class="card theme-green">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #059669 0%, #34d399 70%, #a7f3d0 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#a7f3d0"></stop>
+                      <stop offset="50%" stop-color="#6ee7b7"></stop>
+                      <stop offset="100%" stop-color="#10b981"></stop>
+                    </lineargradient>
+                    <filter id="greenShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#065f46" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#a7f3d0" opacity="0.4"></circle>
+                  <ellipse cx="37" cy="38" rx="16" ry="18" fill="#0f172a" opacity="0.1" transform="translate(0, 1)"></ellipse>
+                  <path d="M36 16 C28 22, 24 30, 26 42 C28 52, 36 56, 42 52 C48 48, 50 38, 48 28 C46 18, 42 14, 36 16 Z" fill="url(#leafGrad)" filter="url(#greenShadow)"></path>
+                  <path d="M36 18 Q38 28, 40 42" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"></path>
+                  <path d="M30 24 Q32 30, 34 36" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"></path>
+                </svg>
               </div>
             </div>
-            <h3 class="card-title">Authentic Brand Engagement</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Verify authenticity and build trust</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Strengthen brand loyalty</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Encourage repeat engagement</li>
-            </ul>
+            <div class="metric-badge">
+              <div class="metric-value">-30%</div>
+              <div class="metric-label">Environmental Impact</div>
+              <div class="metric-chart">
+                <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
+                  <path d="M1 2L15 6L26 4L41 12" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <!--  Card 3: Sustainability Information  -->
-          <div class="card theme-green">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-green"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#a7f3d0"></stop>
-                        <stop offset="50%" stop-color="#6ee7b7"></stop>
-                        <stop offset="100%" stop-color="#10b981"></stop>
-                      </lineargradient>
-                      <radialgradient id="greenGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#065f46" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="greenShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#065f46" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#greenGlow)" opacity="0.4"></circle>
-                    <!--  Leaf shadow  -->
-                    <ellipse cx="37" cy="38" rx="16" ry="18" fill="#0f172a" opacity="0.1" transform="translate(0, 1)"></ellipse>
-                    <!--  Main leaf shape  -->
-                    <path d="M36 16 C28 22, 24 30, 26 42 C28 52, 36 56, 42 52 C48 48, 50 38, 48 28 C46 18, 42 14, 36 16 Z" fill="url(#leafGrad)" filter="url(#greenShadow)"></path>
-                    <!--  Leaf vein  -->
-                    <path d="M36 18 Q38 28, 40 42" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"></path>
-                    <!--  Leaf highlight  -->
-                    <path d="M30 24 Q32 30, 34 36" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge">
-                <div class="metric-value">-30%</div>
-                <div class="metric-label">Environmental Impact</div>
-                <div class="metric-chart">
-                  <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
-                    <path d="M1 2L15 6L26 4L41 12" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
+          <h3 class="card-title">Sustainability Information</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Share product impact</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Ingredients, sourcing and certifications</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Enable responsible consumer choices</li>
+          </ul>
+        </div>
+        <!--  Card 4  -->
+        <div class="card theme-cyan">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #0369a1 0%, #38bdf8 70%, #cffafe 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="truckBody" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#a5f3fc"></stop>
+                      <stop offset="40%" stop-color="#7dd3fc"></stop>
+                      <stop offset="70%" stop-color="#38bdf8"></stop>
+                      <stop offset="100%" stop-color="#0369a1"></stop>
+                    </lineargradient>
+                    <filter id="cyanShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#082f49" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#a5f3fc" opacity="0.4"></circle>
+                  <circle cx="14" cy="22" r="3" fill="#38bdf8" filter="url(#cyanShadow)"></circle>
+                  <circle cx="58" cy="22" r="3" fill="#38bdf8" filter="url(#cyanShadow)"></circle>
+                  <rect x="18" y="28" width="22" height="15" rx="3" fill="url(#truckBody)" filter="url(#cyanShadow)"></rect>
+                  <path d="M40 32 L47 32 L52 37 L52 43 L40 43 Z" fill="url(#truckBody)" filter="url(#cyanShadow)"></path>
+                  <circle cx="26" cy="45" r="2.5" fill="#38bdf8"></circle>
+                  <circle cx="45" cy="45" r="2.5" fill="#38bdf8"></circle>
+                  <rect x="18" y="28" width="6" height="15" rx="3" fill="#ffffff" opacity="0.2"></rect>
+                </svg>
               </div>
             </div>
-            <h3 class="card-title">Sustainability Information</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Share product impact</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Ingredients, sourcing and certifications</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Enable responsible consumer choices</li>
-            </ul>
+            <div class="metric-badge">
+              <div class="metric-label" style="margin-top:0;">End-to-End</div>
+              <div class="metric-value" style="color: #0284c7; font-size:0.9rem;">Visibility</div>
+              <div class="metric-chart" style="justify-content: center;">
+                <svg width="36" height="12" viewbox="0 0 36 12" fill="none">
+                  <circle cx="4" cy="6" r="2" fill="#0284c7"></circle>
+                  <path d="M6 6 C 14 2, 22 10, 30 6" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="2 2"></path>
+                  <circle cx="32" cy="6" r="2" fill="#0284c7"></circle>
+                </svg>
+              </div>
+            </div>
           </div>
-          <!--  Card 4: Supply Chain Transparency  -->
-          <div class="card theme-cyan">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-cyan"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="truckBody" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#a5f3fc"></stop>
-                        <stop offset="40%" stop-color="#7dd3fc"></stop>
-                        <stop offset="70%" stop-color="#38bdf8"></stop>
-                        <stop offset="100%" stop-color="#0369a1"></stop>
-                      </lineargradient>
-                      <radialgradient id="cyanGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#a5f3fc" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#082f49" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="cyanShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#082f49" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#cyanGlow)" opacity="0.4"></circle>
-                    <!--  Location pins  -->
-                    <circle cx="14" cy="22" r="3.5" fill="#0369a1" opacity="0.3" transform="translate(0, 1)"></circle>
-                    <circle cx="14" cy="22" r="3" fill="#38bdf8" filter="url(#cyanShadow)"></circle>
-                    <circle cx="58" cy="22" r="3.5" fill="#0369a1" opacity="0.3" transform="translate(0, 1)"></circle>
-                    <circle cx="58" cy="22" r="3" fill="#38bdf8" filter="url(#cyanShadow)"></circle>
-                    <!--  Truck body shadow  -->
-                    <rect x="18" y="29" width="22" height="15" rx="3" fill="#0f172a" opacity="0.15"></rect>
-                    <!--  Truck cargo  -->
-                    <rect x="18" y="28" width="22" height="15" rx="3" fill="url(#truckBody)" filter="url(#cyanShadow)"></rect>
-                    <!--  Truck cab shadow  -->
-                    <path d="M40 33 L47 33 L52 38 L40 38 Z" fill="#0f172a" opacity="0.15"></path>
-                    <!--  Truck cab  -->
-                    <path d="M40 32 L47 32 L52 37 L52 43 L40 43 Z" fill="url(#truckBody)" filter="url(#cyanShadow)"></path>
-                    <!--  Wheels  -->
-                    <circle cx="26" cy="45" r="4" fill="#0f172a"></circle>
-                    <circle cx="26" cy="45" r="2.5" fill="#38bdf8"></circle>
-                    <circle cx="45" cy="45" r="4" fill="#0f172a"></circle>
-                    <circle cx="45" cy="45" r="2.5" fill="#38bdf8"></circle>
-                    <!--  Truck highlight  -->
-                    <rect x="18" y="28" width="6" height="15" rx="3" fill="#ffffff" opacity="0.2"></rect>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge" style="text-align: center;">
-                <div class="metric-label" style="margin-top:0;">End-to-End</div>
-                <div class="metric-label" style="font-weight: 800; color: #0284c7; margin-bottom: 2px;">Visibility</div>
-                <div class="metric-chart" style="justify-content: center;">
-                  <svg width="36" height="12" viewbox="0 0 36 12" fill="none">
-                    <circle cx="4" cy="6" r="2" fill="#0284c7"></circle>
-                    <path d="M6 6 C 14 2, 22 10, 30 6" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="2 2"></path>
-                    <circle cx="32" cy="6" r="2" fill="#0284c7"></circle>
-                  </svg>
-                </div>
+          <h3 class="card-title">Supply Chain Transparency</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> End-to-end visibility</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Recall management</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Reduce waste and operational costs</li>
+          </ul>
+        </div>
+        <!--  Card 5  -->
+        <div class="card theme-orange">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #c2410c 0%, #fb923c 70%, #fed7aa 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="lockBody" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#fed7aa"></stop>
+                      <stop offset="40%" stop-color="#fdba74"></stop>
+                      <stop offset="70%" stop-color="#fb923c"></stop>
+                      <stop offset="100%" stop-color="#b45309"></stop>
+                    </lineargradient>
+                    <lineargradient id="shackle" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#fcdcb9"></stop>
+                      <stop offset="50%" stop-color="#fdba74"></stop>
+                      <stop offset="100%" stop-color="#d97706"></stop>
+                    </lineargradient>
+                    <filter id="orangeShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#7c2d12" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#fed7aa" opacity="0.4"></circle>
+                  <rect x="23" y="31" width="26" height="20" rx="5" fill="url(#lockBody)" filter="url(#orangeShadow)"></rect>
+                  <path d="M28 32 V25 C28 20.5, 31.5 17, 36 17 C40.5 17, 44 20.5, 44 25 V32" stroke="url(#shackle)" stroke-width="5" stroke-linecap="round" filter="url(#orangeShadow)"></path>
+                  <circle cx="36" cy="39" r="2" fill="#ffffff" opacity="0.8"></circle>
+                  <rect x="35" y="41" width="2" height="4" fill="#ffffff" opacity="0.8" rx="1"></rect>
+                  <ellipse cx="30" cy="35" rx="4" ry="5" fill="#ffffff" opacity="0.15"></ellipse>
+                </svg>
               </div>
             </div>
-            <h3 class="card-title">Supply Chain Transparency</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> End-to-end visibility</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Recall management</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Reduce waste and operational costs</li>
-            </ul>
+            <div class="metric-badge">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Counterfeit Protection</div>
+              <div class="metric-chart" style="justify-content: flex-end;">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+            </div>
           </div>
-          <!--  Card 5: Product Security and Safety  -->
-          <div class="card theme-orange">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-orange"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="lockBody" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#fed7aa"></stop>
-                        <stop offset="40%" stop-color="#fdba74"></stop>
-                        <stop offset="70%" stop-color="#fb923c"></stop>
-                        <stop offset="100%" stop-color="#b45309"></stop>
-                      </lineargradient>
-                      <lineargradient id="shackle" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#fcdcb9"></stop>
-                        <stop offset="50%" stop-color="#fdba74"></stop>
-                        <stop offset="100%" stop-color="#d97706"></stop>
-                      </lineargradient>
-                      <radialgradient id="orangeGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#7c2d12" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="orangeShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#7c2d12" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#orangeGlow)" opacity="0.4"></circle>
-                    <!--  Lock body shadow  -->
-                    <rect x="23" y="32" width="26" height="20" rx="5" fill="#0f172a" opacity="0.15" transform="translate(0, 1)"></rect>
-                    <!--  Lock body  -->
-                    <rect x="23" y="31" width="26" height="20" rx="5" fill="url(#lockBody)" filter="url(#orangeShadow)"></rect>
-                    <!--  Shackle shadow  -->
-                    <path d="M28 33 V25 C28 20.5, 31.5 17, 36 17 C40.5 17, 44 20.5, 44 25 V33" stroke="#7c2d12" stroke-width="5.5" stroke-linecap="round" opacity="0.2" transform="translate(0, 1)"></path>
-                    <!--  Shackle  -->
-                    <path d="M28 32 V25 C28 20.5, 31.5 17, 36 17 C40.5 17, 44 20.5, 44 25 V32" stroke="url(#shackle)" stroke-width="5" stroke-linecap="round" filter="url(#orangeShadow)"></path>
-                    <!--  Keyhole circle  -->
-                    <circle cx="36" cy="39" r="3" fill="#0f172a" opacity="0.15" transform="translate(0, 1)"></circle>
-                    <circle cx="36" cy="39" r="2.5" fill="#7c2d12" opacity="0.4"></circle>
-                    <circle cx="36" cy="39" r="2" fill="#ffffff" opacity="0.8"></circle>
-                    <!--  Keyhole line  -->
-                    <rect x="35" y="41" width="2" height="4" fill="#ffffff" opacity="0.8" rx="1"></rect>
-                    <!--  Lock highlight  -->
-                    <ellipse cx="30" cy="35" rx="4" ry="5" fill="#ffffff" opacity="0.15"></ellipse>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge">
-                <div class="metric-value">100%</div>
-                <div class="metric-label">Counterfeit Protection</div>
-                <div class="metric-chart" style="justify-content: flex-end;">
-                  <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <polyline points="9 12 11 14 15 10"></polyline>
-                  </svg>
-                </div>
+          <h3 class="card-title">Product Security and Safety</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Anti-counterfeit protection</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Tamper detection and provenance</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Safety alerts and regulatory updates</li>
+          </ul>
+        </div>
+        <!--  Card 6  -->
+        <div class="card theme-blue">
+          <div class="card-top">
+            <div class="icon-halo-container">
+              <div class="icon-halo-bg" style="background: radial-gradient(circle, #2563eb 0%, #60a5fa 70%, #93c5fd 100%);"></div>
+              <div class="icon-svg-wrapper">
+                <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
+                  <defs>
+                    <lineargradient id="pieGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#bfdbfe"></stop>
+                      <stop offset="40%" stop-color="#93c5fd"></stop>
+                      <stop offset="70%" stop-color="#3b82f6"></stop>
+                      <stop offset="100%" stop-color="#1e3a8a"></stop>
+                    </lineargradient>
+                    <lineargradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#93c5fd"></stop>
+                      <stop offset="40%" stop-color="#60a5fa"></stop>
+                      <stop offset="70%" stop-color="#3b82f6"></stop>
+                      <stop offset="100%" stop-color="#1e3a8a"></stop>
+                    </lineargradient>
+                    <filter id="pieShadow">
+                      <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#1e40af" flood-opacity="0.25">
+                    </fedropshadow></filter>
+                  </defs>
+                  <circle cx="36" cy="36" r="28" fill="#bfdbfe" opacity="0.4"></circle>
+                  <path d="M34 20 A 15 15 0 0 1 49 35 L34 35 Z" fill="#bfdbfe" filter="url(#pieShadow)"></path>
+                  <path d="M32 21 A 15 15 0 1 0 47 37 L32 37 Z" fill="url(#pieGrad)" filter="url(#pieShadow)"></path>
+                  <rect x="44" y="32" width="5" height="16" rx="2.5" fill="url(#barGrad2)" filter="url(#pieShadow)"></rect>
+                  <rect x="51" y="26" width="5" height="22" rx="2.5" fill="url(#barGrad2)" filter="url(#pieShadow)"></rect>
+                  <rect x="44" y="32" width="2" height="16" rx="2.5" fill="#ffffff" opacity="0.25"></rect>
+                  <rect x="51" y="26" width="2" height="22" rx="2.5" fill="#ffffff" opacity="0.25"></rect>
+                  <path d="M35 22 A 12 12 0 0 1 40 26" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"></path>
+                </svg>
               </div>
             </div>
-            <h3 class="card-title">Product Security and Safety</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Anti-counterfeit protection</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Tamper detection and provenance</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Safety alerts and regulatory updates</li>
-            </ul>
+            <div class="metric-badge">
+              <div class="metric-value">+40%</div>
+              <div class="metric-label">Marketing ROI</div>
+              <div class="metric-chart">
+                <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
+                  <path d="M1 10L11 8L22 10L41 2" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <!--  Card 6: Data-Driven Growth  -->
-          <div class="card theme-blue">
-            <div class="card-top">
-              <div class="icon-halo-container">
-                <div class="icon-halo-bg halo-blue"></div>
-                <div class="icon-svg-wrapper">
-                  <svg width="72" height="72" viewbox="0 0 72 72" fill="none">
-                    <defs>
-                      <lineargradient id="pieGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#bfdbfe"></stop>
-                        <stop offset="40%" stop-color="#93c5fd"></stop>
-                        <stop offset="70%" stop-color="#3b82f6"></stop>
-                        <stop offset="100%" stop-color="#1e3a8a"></stop>
-                      </lineargradient>
-                      <lineargradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#93c5fd"></stop>
-                        <stop offset="40%" stop-color="#60a5fa"></stop>
-                        <stop offset="70%" stop-color="#3b82f6"></stop>
-                        <stop offset="100%" stop-color="#1e3a8a"></stop>
-                      </lineargradient>
-                      <radialgradient id="pieGlow" cx="35%" cy="35%">
-                        <stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.6"></stop>
-                        <stop offset="100%" stop-color="#1e40af" stop-opacity="0"></stop>
-                      </radialgradient>
-                      <filter id="pieShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <fedropshadow dx="0" dy="4" stddeviation="3" flood-color="#1e40af" flood-opacity="0.25">
-                      </fedropshadow></filter>
-                    </defs>
-                    <!--  Background Glow  -->
-                    <circle cx="36" cy="36" r="28" fill="url(#pieGlow)" opacity="0.4"></circle>
-                    <!--  Pie Chart Sections with shadow  -->
-                    <path d="M34 20 A 15 15 0 0 1 49 35 L34 35 Z" fill="#0f172a" opacity="0.15" transform="translate(0.5, 0.5)"></path>
-                    <path d="M34 20 A 15 15 0 0 1 49 35 L34 35 Z" fill="#bfdbfe" filter="url(#pieShadow)"></path>
-                    <path d="M32 21 A 15 15 0 1 0 47 37 L32 37 Z" fill="url(#pieGrad)" filter="url(#pieShadow)"></path>
-                    <!--  Bar Columns  -->
-                    <rect x="44" y="33" width="5" height="15" rx="2.5" fill="#0f172a" opacity="0.15" transform="translate(0, 1)"></rect>
-                    <rect x="44" y="32" width="5" height="16" rx="2.5" fill="url(#barGrad2)" filter="url(#pieShadow)"></rect>
-                    <rect x="51" y="27" width="5" height="21" rx="2.5" fill="#0f172a" opacity="0.15" transform="translate(0, 1)"></rect>
-                    <rect x="51" y="26" width="5" height="22" rx="2.5" fill="url(#barGrad2)" filter="url(#pieShadow)"></rect>
-                    <!--  Bar highlights  -->
-                    <rect x="44" y="32" width="2" height="16" rx="2.5" fill="#ffffff" opacity="0.25"></rect>
-                    <rect x="51" y="26" width="2" height="22" rx="2.5" fill="#ffffff" opacity="0.25"></rect>
-                    <!--  Pie chart highlight  -->
-                    <path d="M35 22 A 12 12 0 0 1 40 26" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="metric-badge">
-                <div class="metric-value">+40%</div>
-                <div class="metric-label">Marketing ROI</div>
-                <div class="metric-chart">
-                  <svg width="42" height="14" viewbox="0 0 42 14" fill="none">
-                    <path d="M1 10L11 8L22 10L41 2" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <h3 class="card-title">Data-Driven Growth</h3>
-            <ul class="card-list">
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Real-time insights</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Better decisions with analytics</li>
-              <li><span class="check-icon"><svg viewbox="0 0 24 24">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg></span> Optimize marketing ROI</li>
-            </ul>
+          <h3 class="card-title">Data-Driven Growth</h3>
+          <ul class="card-list">
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Real-time insights</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Better decisions with analytics</li>
+            <li><span class="check-icon"><svg viewbox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg></span> Optimize marketing ROI</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-banner-wrapper">
+        <div class="bottom-banner">
+          <div class="banner-icon">
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path>
+            </svg>
+          </div>
+          <div class="banner-text">
+            <strong>Smarter connections. Measurable impact.</strong>
+            <span class="banner-divider">|</span>
+            AI Lens turns every scan into value—across your entire ecosystem.
           </div>
         </div>
-        <!--  Bottom Banner  -->
-        <div class="bottom-banner-wrapper">
-          <div class="bottom-banner">
-            <div class="banner-icon">
-              <svg width="15" height="15" viewbox="0 0 24 24" fill="currentColor">
-                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path>
-              </svg>
-            </div>
-            <div class="banner-text">
-              <strong>Smarter connections. Measurable impact.</strong>
-              <span class="banner-divider">|</span>
-              AI Lens turns every scan into value—across your entire ecosystem.
-            </div>
-          </div>
-        </div>
-      </section>
-    </body>
-    </html>
+      </div>
+    </section>
   </div>
   <div class="w-embed w-script">
     <!DOCTYPE html>
