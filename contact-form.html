@@ -19,47 +19,171 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
-  <div>
-    <div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
-      <div class="container-29 w-container">
-        <a href="index.html" class="w-inline-block"><img src="images/Fiduciaai-Logo.png" loading="lazy" width="191" sizes="191px" alt="" srcset="images/Fiduciaai-Logo-p-500.png 500w, images/Fiduciaai-Logo-p-800.png 800w, images/Fiduciaai-Logo-p-1080.png 1080w, images/Fiduciaai-Logo.png 1213w" class="image-17"></a>
-        <nav role="navigation" class="nav-menu w-nav-menu">
-          <a href="#" class="w-nav-link"></a>
-          <div data-hover="false" data-delay="0" id="Platform12" class="platform12 w-dropdown">
-            <div class="w-dropdown-toggle">
-              <div class="w-icon-dropdown-toggle"></div>
-              <div>Platform</div>
+  <div class="w-embed w-script">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Header Navigation Bar</title>
+      <style>
+    .custom-header-wrapper { width: 100%; background-color: #ffffff; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; position: relative; }
+    .custom-brand-logo { display: flex; align-items: center; text-decoration: none; transition: opacity 0.2s ease; }
+    .custom-brand-logo:hover { opacity: 0.85; }
+    .custom-brand-logo img { height: 52px; width: auto; object-fit: contain; }
+    .mobile-hamburger-btn { display: none; background: transparent !important; border: none !important; padding: 8px; cursor: pointer; outline: none; align-items: center; justify-content: center; }
+    .hamburger-icon { width: 18px; height: 14px; display: flex; flex-direction: column; justify-content: space-between; }
+    .hamburger-icon span { display: block; width: 100%; height: 3px; background-color: #000000; border-radius: 2px; transition: all 0.3s ease; }
+    .custom-header-right { display: flex; align-items: center; gap: 12px; margin-right: 180px; }
+    .dropdown-container { position: relative; }
+    /* Strict Header Button Styles Only */
+    .custom-header-wrapper .custom-nav-btn, 
+    .custom-header-wrapper .header-img-item { 
+      background-color: #ffffff !important; 
+      background: #ffffff !important; 
+      color: #0f172a !important; 
+      font-weight: 700; 
+      font-size: 15px; 
+      padding: 4px 8px; 
+      border: 1px solid #e2e8f0 !important; 
+      border-radius: 12px; 
+      outline: none; 
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important; 
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 6px; 
+      cursor: pointer; 
+      text-decoration: none; 
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); 
+      font-family: inherit; 
+      width: 115px; 
+      height: 48px; 
+      box-sizing: border-box; 
+      flex-shrink: 0; 
+    }
+    /* Soft Light-Blue Hover & Active Fill for Header Buttons */
+    .custom-header-wrapper .custom-nav-btn:hover, 
+    .custom-header-wrapper .header-img-item:hover, 
+    .custom-header-wrapper .dropdown-container.active .custom-nav-btn, 
+    .custom-header-wrapper .dropdown-container.active .header-img-item,
+    .custom-header-wrapper .custom-nav-btn:focus,
+    .custom-header-wrapper .header-img-item:focus { 
+      background-color: #dbeafe !important; 
+      background: #dbeafe !important;
+      border-color: #93c5fd !important; 
+      color: #1e3a8a !important; 
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12) !important; 
+    }
+    .header-img-item img { max-height: 38px; max-width: 100%; width: auto; object-fit: contain; }
+    .dropdown-arrow { width: 14px; height: 14px; fill: #0f172a; transition: transform 0.2s ease, fill 0.2s ease; }
+    .custom-header-wrapper .custom-nav-btn:hover .dropdown-arrow, 
+    .custom-header-wrapper .dropdown-container.active .dropdown-arrow { fill: #1e3a8a !important; }
+    .dropdown-container.active .dropdown-arrow { transform: rotate(180deg); }
+    .platform-menu { position: absolute; top: calc(100% + 10px); left: 0; width: 220px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border: 1px solid #f1f5f9; padding: 8px 0; display: none; z-index: 1000; }
+    .dropdown-container.active .platform-menu { display: block; }
+    .platform-item { display: flex; align-items: center; gap: 12px; padding: 10px 16px; text-decoration: none; background: none !important; transition: color 0.2s ease; }
+    .platform-item:hover { background: none !important; }
+    .platform-item:hover .platform-title { color: #2563eb; }
+    .platform-icon { width: 32px; height: 32px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
+    .platform-title { font-size: 15px; font-weight: 600; color: #334155; transition: color 0.2s ease; }
+    .ibm-menu { position: absolute; top: calc(100% + 10px); right: 0; width: 200px; background-color: #ffffff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid #f1f5f9; padding: 8px 0; display: none; z-index: 1000; box-sizing: border-box; }
+    .dropdown-container.active .ibm-menu { display: block; }
+    .ibm-link-item { display: flex; align-items: center; padding: 10px 16px; text-decoration: none; border-top: none; transition: color 0.2s ease; }
+    .ibm-link-item:hover .ibm-item-title { color: #2563eb; }
+    .ibm-item-left { display: flex; align-items: center; gap: 12px; }
+    .ibm-item-icon { width: 24px; height: 24px; object-fit: contain; }
+    .ibm-item-title { font-size: 15px; font-weight: 600; color: #334155; transition: color 0.2s ease; }
+    /* Strips white button box from floating AI agent widgets */
+    div[class*="agent"] button,
+    div[id*="agent"] button,
+    div[class*="chat"] button,
+    div[id*="chat"] button,
+    .ai-agent-widget button,
+    .chat-widget button {
+      background: transparent !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      width: auto !important;
+      height: auto !important;
+      padding: 0 !important;
+      outline: none !important;
+    }
+    @media (max-width: 991px) {
+      .custom-header-wrapper { padding: 12px 16px; position: relative; justify-content: flex-start; }
+      .mobile-hamburger-btn { display: flex; order: 1; }
+      .custom-brand-logo { order: 2; position: absolute; left: 50%; transform: translateX(-50%); }
+      .custom-brand-logo img { height: 42px; }
+      .custom-header-right { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: #ffffff; flex-direction: column; align-items: flex-start; padding: 20px 24px; gap: 16px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); margin-right: 0; box-sizing: border-box; z-index: 999; }
+      .custom-header-right.mobile-open { display: flex; }
+      .dropdown-container, .custom-nav-btn, .header-img-item { width: 100%; justify-content: space-between; }
+      .header-img-item { justify-content: flex-start; }
+      .platform-menu, .ibm-menu { position: relative; top: 0; left: 0; width: 100%; box-shadow: none; border: none; padding: 10px 0 0 12px; }
+    }
+  </style>
+    </head>
+    <body>
+      <header class="custom-header-wrapper">
+        <button class="mobile-hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+          <div class="hamburger-icon"><span></span><span></span><span></span></div>
+        </button>
+        <a href="index.html" target="_self" class="custom-brand-logo">
+          <img src="images/Fiduciaai-Logo.png" alt="Fiducia AI Logo">
+        </a>
+        <div class="custom-header-right" id="mobileNavMenu">
+          <div class="dropdown-container" id="platformDropdown">
+            <button class="custom-nav-btn" onclick="toggleDropdown(event, 'platformDropdown')">
+              Platform <svg class="dropdown-arrow" viewbox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z"></path>
+              </svg>
+            </button>
+            <div class="platform-menu">
+              <a href="speedshotx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/speedshot-x.png" alt="SpeedShotX"><span class="platform-title">SpeedShotX</span></a>
+              <a href="intellix.html" target="_self" class="platform-item"><img class="platform-icon" src="images/Intelli-logo.png" alt="IntelliX"><span class="platform-title">IntelliX</span></a>
+              <a href="knowledge-x.html" target="_self" class="platform-item"><img class="platform-icon" src="images/knowledge-x.png" alt="KnowledgeX"><span class="platform-title">KnowledgeX</span></a>
+              <a href="videox.html" target="_self" class="platform-item"><img class="platform-icon" src="images/video-x.png" alt="VideoX"><span class="platform-title">VideoX</span></a>
+              <a href="fitx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/fit-x.png" alt="FitX"><span class="platform-title">FitX</span></a>
             </div>
-            <nav class="dropdown-list w-dropdown-list">
-              <a href="speedshotx.html" class="div-block-14 w-inline-block"><img src="images/speedshot-x.png" loading="lazy" width="29" sizes="100vw" alt="" srcset="images/speedshot-x-p-500.png 500w, images/speedshot-x-p-800.png 800w, images/speedshot-x.png 944w">
-                <div>SpeedShotX</div>
-              </a>
-              <a href="intellix.html" class="div-block-14 w-inline-block"><img src="images/Intelli-logo.png" loading="lazy" width="29" height="Auto" alt="" srcset="images/Intelli-logo-p-500.png 500w, images/Intelli-logo-p-800.png 800w, images/Intelli-logo.png 898w" sizes="100vw" class="image-18">
-                <div>IntelliX</div>
-              </a>
-              <a href="knowledge-x.html" class="div-block-9 w-inline-block"><img width="29" sizes="100vw" alt="" src="images/knowledge-x.png" loading="lazy" srcset="images/knowledge-x-p-500.png 500w, images/knowledge-x-p-800.png 800w, images/knowledge-x.png 882w">
-                <div>KnowledgeX</div>
-              </a>
-              <a href="videox.html" class="div-block-10 w-inline-block"><img src="images/video-x.png" loading="lazy" width="29" sizes="100vw" alt="" srcset="images/video-x-p-500.png 500w, images/video-x.png 723w">
-                <div>VideoX</div>
-              </a>
-              <a href="fitx.html" class="div-block-12 w-inline-block"><img src="images/fit-x.png" loading="lazy" width="29" sizes="100vw" alt="" srcset="images/fit-x-p-500.png 500w, images/fit-x-p-800.png 800w, images/fit-x.png 948w">
-                <div>FitX</div>
-              </a>
-            </nav>
           </div>
-          <a href="company.html" class="w-nav-link">Company</a>
-          <div class="partner">
-            <a href="forgeonex.html" class="link-block w-inline-block"><img src="images/F.jpeg" loading="lazy" width="98" sizes="(max-width: 767px) 100vw, 98px" alt="" srcset="images/F-p-500.jpeg 500w, images/F-p-800.jpeg 800w, images/F-p-1080.jpeg 1080w, images/F.jpeg 1600w" class="image-16"></a>
-            <a href="ibm.html" class="link-block-2 w-inline-block"><img src="images/ibm-silver-partner.png" loading="lazy" width="70" sizes="(max-width: 767px) 100vw, 70px" alt="" srcset="images/ibm-silver-partner-p-500.png 500w, images/ibm-silver-partner.png 1536w"></a>
-            <a href="gs1.html" class="link-block-3 w-inline-block"><img src="images/GS.jpeg" loading="lazy" width="91" sizes="(max-width: 767px) 100vw, 91px" alt="" srcset="images/GS-p-500.jpeg 500w, images/GS-p-800.jpeg 800w, images/GS-p-1080.jpeg 1080w, images/GS.jpeg 1600w"></a>
+          <a href="company.html" target="_self" class="custom-nav-btn">Company</a>
+          <a href="forgeonex.html" target="_self" class="header-img-item"><img src="images/ForgeOneX.png" alt="ForgeOneX Logo"></a>
+          <div class="dropdown-container" id="ibmDropdown">
+            <button class="header-img-item" onclick="toggleDropdown(event, 'ibmDropdown')">
+              <img src="images/ibm-silver-partner.png" alt="IBM Silver Partner Logo">
+            </button>
+            <div class="ibm-menu">
+              <a href="ibm.html" target="_self" class="ibm-link-item">
+                <div class="ibm-item-left"><img class="ibm-item-icon" src="images/IBM..png" alt="IBM Icon"><span class="ibm-item-title">IBM</span></div>
+              </a>
+              <a href="ibm-cloud.html" target="_self" class="ibm-link-item">
+                <div class="ibm-item-left"><img class="ibm-item-icon" src="images/ibm_cloud.png" alt="IBM Cloud Icon"><span class="ibm-item-title">IBM Cloud</span></div>
+              </a>
+              <a href="ibm-power.html" target="_self" class="ibm-link-item">
+                <div class="ibm-item-left"><img class="ibm-item-icon" src="images/power.png" alt="IBM Power Icon"><span class="ibm-item-title">IBM Power</span></div>
+              </a>
+            </div>
           </div>
-        </nav>
-        <div class="w-nav-button">
-          <div class="w-icon-nav-menu"></div>
+          <a href="gs1.html" target="_self" class="header-img-item"><img src="images/GS1-1.png" alt="GS1 Standard Solution Partner Logo"></a>
         </div>
-      </div>
-    </div>
+      </header>
+      <script>
+    function toggleMobileMenu() { document.getElementById('mobileNavMenu').classList.toggle('mobile-open'); }
+    function toggleDropdown(event, containerId) {
+      event.stopPropagation();
+      const targetContainer = document.getElementById(containerId);
+      document.querySelectorAll('.dropdown-container').forEach(container => { if (container !== targetContainer) container.classList.remove('active'); });
+      targetContainer.classList.toggle('active');
+    }
+    document.addEventListener('click', function(event) {
+      const headerWrapper = document.querySelector('.custom-header-wrapper');
+      if (headerWrapper && !headerWrapper.contains(event.target)) {
+        document.querySelectorAll('.dropdown-container').forEach(container => container.classList.remove('active'));
+        const mobileNav = document.getElementById('mobileNavMenu');
+        if (mobileNav) mobileNav.classList.remove('mobile-open');
+      }
+    });
+  </script>
   </div>
   <section>
     <div class="w-embed w-script">
@@ -81,27 +205,72 @@
     main { display:grid; grid-template-columns:.88fr 1.12fr; gap:clamp(36px,7vw,105px); align-items:center; min-height:100vh; padding:68px 0; }
     .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; color:var(--blue); font-size:12px; font-weight:800; letter-spacing:1.45px; text-transform:uppercase; }
     .eyebrow::before { content:""; width:32px; height:3px; border-radius:4px; background:linear-gradient(90deg,var(--blue),var(--cyan)); }
-    h1 { max-width:520px; margin:0; font-size:clamp(38px,4.3vw,62px); line-height:1.04; letter-spacing:-3px; }
-    h1 span { color:var(--blue); }
+    h1 { max-width:520px; margin:0; font-size:clamp(38px,4.3vw,62px); line-height:1.04; letter-spacing:-3px; } h1 span { color:var(--blue); }
     .intro { max-width:490px; margin:24px 0 34px; color:var(--muted); font-size:16px; line-height:1.72; }
     .form-card { position:relative; padding:clamp(25px,3.4vw,42px); overflow:hidden; border:1px solid rgba(210,222,242,.9); border-radius:24px; background:rgba(255,255,255,.88); box-shadow:0 24px 65px rgba(30,61,130,.12); backdrop-filter:blur(10px); }
     .form-card::after { content:""; position:absolute; right:-95px; top:-100px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle,rgba(26,205,212,.17),rgba(26,205,212,0) 68%); pointer-events:none; }
     .form-card h2 { position:relative; margin:0 0 8px; font-size:25px; letter-spacing:-1px; } .form-card > p { position:relative; margin:0 0 27px; color:var(--muted); font-size:13px; line-height:1.6; }
     .source-context { position:relative; display:none; align-items:center; gap:10px; margin:0 0 21px; padding:12px 14px; border:1px solid #cfe5f7; border-radius:10px; color:#214f7c; font-size:12px; line-height:1.45; background:#f2f9ff; }
-    .source-context.show { display:flex; }
-    .source-context strong { color:var(--ink); }
+    .source-context.show { display:flex; } .source-context strong { color:var(--ink); }
     form { position:relative; display:grid; gap:17px; } .two-col { display:grid; grid-template-columns:1fr 1fr; gap:17px; }
-    label { display:grid; gap:8px; color:#273858; font-size:12px; font-weight:700; }
-    .required-mark { color:#d92d20; }
+    label { display:grid; gap:8px; color:#273858; font-size:12px; font-weight:700; } .required-mark { color:#d92d20; }
     input, select, textarea { width:100%; min-height:47px; padding:12px 13px; border:1px solid var(--line); border-radius:10px; outline:none; color:var(--ink); font:400 13px Inter,Arial,sans-serif; background:#fff; transition:border-color .2s,box-shadow .2s; }
     textarea { min-height:108px; resize:vertical; } input::placeholder,textarea::placeholder { color:#9aa8c0; }
     input:focus,select:focus,textarea:focus { border-color:#6674ed; box-shadow:0 0 0 4px rgba(41,53,217,.1); }
     .form-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:3px; }
     .privacy { max-width:255px; color:#7c89a0; font-size:10px; line-height:1.5; } .privacy a { color:var(--blue); }
-    button { min-width:147px; padding:14px 18px; border:0; border-radius:10px; color:#fff; cursor:pointer; font:700 13px Inter,Arial,sans-serif; background:linear-gradient(135deg,#2935d9,#4658eb); box-shadow:0 10px 20px rgba(41,53,217,.25); transition:transform .2s,box-shadow .2s; } button:hover { transform:translateY(-2px); box-shadow:0 14px 27px rgba(41,53,217,.3); }
-    .status { display:none; padding:10px 12px; border-radius:8px; color:#13756f; font-size:12px; font-weight:600; background:#e8faf8; } .status.show { display:block; } .status.error { color:#b42318; background:#fff1f0; }
+    #contact-form button { min-width:147px; padding:14px 18px; border:0; border-radius:10px; color:#fff; cursor:pointer; font:700 13px Inter,Arial,sans-serif; background:linear-gradient(135deg,#2935d9,#4658eb); box-shadow:0 10px 20px rgba(41,53,217,.25); transition:transform .2s,box-shadow .2s, background .3s; }
+    #contact-form button:hover { transform:translateY(-2px); box-shadow:0 14px 27px rgba(41,53,217,.3); }
+    [hidden] { display:none !important; }
+    .email-verify-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0; align-items:stretch; } 
+    .email-verify-row input { border-radius:10px 0 0 10px; }
+    .email-verify-row.verified input { border-radius:10px 0 0 10px; border-right:0; }
+    #contact-form .otp-send-btn { min-width:108px !important; border-radius:0 10px 10px 0 !important; box-shadow:none !important; white-space:nowrap; }
+    #contact-form .otp-send-btn:disabled,#contact-form .submit-btn:disabled { cursor:not-allowed; opacity:.55; transform:none !important; box-shadow:none !important; }
+    .email-verified-icon { display:inline-flex; align-items:center; justify-content:center; padding:0 14px; border:1px solid var(--line); border-left:0; border-radius:0 10px 10px 0; background:#fff; }
+    .email-verified-icon span { display:grid; place-items:center; width:22px; height:22px; border-radius:50%; color:#fff; background:#08a94f; font-size:12px; font-weight:800; }
+    .otp-panel { overflow:hidden; border:1px solid #dbe4f3; border-radius:12px; background:linear-gradient(135deg,#f9fbff,#fff); }
+    .otp-panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; background:linear-gradient(90deg,#f4f8ff,#fff); border-bottom:1px solid #eef4fc; }
+    .otp-panel-head .otp-title-text { color:#07143a; font-size:15px; font-weight:700; letter-spacing:-.2px; margin:0; }
+    .otp-panel-head p { margin:0; color:#53658d; font-size:11px; line-height:1.3; text-align:right; } .otp-panel-head strong { color:#07143a; }
+    .otp-panel-body { display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px; padding:14px 16px; align-items:start; }
+    .otp-code-label { gap:8px; } 
+    .otp-inputs { display:flex; gap:4px; }
+    .otp-inputs input { width:32px; min-height:40px; padding:0; text-align:center; font-size:18px; font-weight:700; border-radius:6px; border:1px solid var(--line); }
+    .otp-meta-box { padding:10px 12px; border-radius:8px; color:#4d6090; font-size:11px; background:#f5f8ff; display:flex; flex-direction:column; gap:4px; width:100%; }
+    .otp-validity { display:flex; gap:6px; align-items:center; font-size:11px; font-weight:500; line-height:1.2; }
+    .otp-clock { display:grid; place-items:center; width:16px; height:16px; flex-shrink:0; border:1.5px solid #37549a; border-radius:50%; color:#37549a; font-size:10px; font-weight:700; }
+    .otp-meta-box p { margin:2px 0 0 0; color:#53658d; font-size:11px; line-height:1.2; }
+    #contact-form .otp-resend-btn { min-width:0 !important; margin:0; padding:0; border:0; border-radius:0; color:#1237ff; font-size:11px; font-weight:700; background:transparent !important; box-shadow:none !important; text-align:left; width:fit-content; }
+    #contact-form .otp-resend-btn:hover { transform:none !important; box-shadow:none !important; text-decoration:underline; } #contact-form .otp-resend-btn:disabled { cursor:not-allowed; opacity:1; text-decoration:none; }
+    .verified-success { display:flex; align-items:center; gap:14px; padding:18px 20px; border:1px solid #bcefd5; border-radius:10px; color:#069146; background:linear-gradient(90deg,#eefff6,#f8fffb); }
+    .verified-success-icon { display:grid; flex:0 0 auto; place-items:center; width:38px; height:38px; border-radius:50%; color:#fff; font-size:22px; font-weight:800; background:#08a94f; }
+    .verified-success strong { display:block; font-size:14px; } .verified-success small { display:block; margin-top:3px; color:#53658d; font-size:12px; }
+    #contact-form .submit-btn:not(:disabled) { background:linear-gradient(135deg,#2430ff,#3448ff) !important; box-shadow:0 12px 24px rgba(36,48,255,.28) !important; }
+    /* Green success state for Send Message button */
+    #contact-form .submit-btn.success {
+      background: linear-gradient(135deg, #08a94f, #069146) !important;
+      box-shadow: 0 10px 20px rgba(8, 169, 79, 0.3) !important;
+      opacity: 1 !important;
+      cursor: default;
+    }
+    .status { display:none; padding:10px 12px; border-radius:8px; color:#13756f; font-size:12px; font-weight:600; background:#e8faf8; }
+    .status.show { display:block; } .status.error { color:#b42318; background:#fff1f0; }
+    div[class*="agent"] button,
+    div[id*="agent"] button,
+    div[class*="chat"] button,
+    div[id*="chat"] button {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      width: auto !important;
+      height: auto !important;
+      min-width: 0 !important;
+      padding: 0 !important;
+    }
     @media (max-width:780px) { .page { width:min(100% - 32px,580px); } main { grid-template-columns:1fr; gap:40px; min-height:auto; padding:52px 0; } h1 { letter-spacing:-2px; } .intro { margin-bottom:27px; } }
-    @media (max-width:430px) { .two-col { grid-template-columns:1fr; gap:17px; } .form-bottom { align-items:flex-start; flex-direction:column; } button { width:100%; } }
+    @media (max-width:520px) { .otp-panel-body { grid-template-columns:1fr; gap:12px; } .otp-inputs input { width:100%; max-width:40px; } }
+    @media (max-width:430px) { .two-col { grid-template-columns:1fr; gap:17px; } .form-bottom { align-items:flex-start; flex-direction:column; } #contact-form button { width:100%; } .email-verify-row { grid-template-columns:1fr; gap:8px; } .email-verify-row input,.otp-send-btn,.email-verified-icon { width:100%; min-height:47px; border:1px solid var(--line); border-radius:10px; } .otp-panel-head { flex-direction:column; align-items:flex-start; gap:6px; } .otp-panel-head p { text-align:left; margin:0; } }
   </style>
       </head>
       <body>
@@ -115,23 +284,36 @@
             <section class="form-card" aria-labelledby="form-title">
               <h2 id="form-title">How can we help?</h2>
               <p>Share a few details and the right Fiducia AI expert will be in touch.</p>
-              <form id="contact-form">
-                <div class="source-context" id="source-context" role="status">
-                  <span aria-hidden="true">&#10022;</span>
-                  <span>You’re contacting us about <strong id="source-name"></strong>.</span>
-                </div>
+              <form id="contact-form" novalidate="">
+                <div class="source-context" id="source-context" role="status"><span aria-hidden="true">&#10022;</span><span>You’re contacting us about <strong id="source-name"></strong>.</span></div>
                 <div class="two-col">
                   <label><span>First name <span class="required-mark" aria-hidden="true">*</span></span><input name="firstName" autocomplete="given-name" placeholder="Jane" required=""></label>
                   <label><span>Last name <span class="required-mark" aria-hidden="true">*</span></span><input name="lastName" autocomplete="family-name" placeholder="Doe" required=""></label>
                 </div>
                 <div class="two-col">
-                  <label><span>Work email <span class="required-mark" aria-hidden="true">*</span></span><input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required=""></label>
                   <label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label>
+                  <label><span>Work email <span class="required-mark" aria-hidden="true">*</span></span><span class="email-verify-row" id="email-verify-row"><input type="email" name="email" id="work-email" autocomplete="email" placeholder="jane@company.com" required=""><button type="button" class="otp-send-btn" id="send-otp-btn">Send OTP</button><span class="email-verified-icon" id="email-verified-icon" hidden="" title="Email verified"><span aria-hidden="true">✓</span></span></span></label>
                 </div>
-                <label>Message<textarea name="message" placeholder="Tell us a little about your goals..."></textarea></label>
+                <section class="otp-panel" id="otp-panel" hidden="" aria-label="Email Verification">
+                  <div class="otp-panel-head">
+                    <span class="otp-title-text">Verify your email</span>
+                    <p>Code sent to <strong id="otp-email-label"></strong></p>
+                  </div>
+                  <div class="otp-panel-body">
+                    <label class="otp-code-label"><span>Enter 6-digit code <span class="required-mark" aria-hidden="true">*</span></span><span class="otp-inputs" id="otp-inputs" aria-label="Enter 6 digit OTP"><input inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code"><input inputmode="numeric" pattern="[0-9]*" maxlength="1"><input inputmode="numeric" pattern="[0-9]*" maxlength="1"><input inputmode="numeric" pattern="[0-9]*" maxlength="1"><input inputmode="numeric" pattern="[0-9]*" maxlength="1"><input inputmode="numeric" pattern="[0-9]*" maxlength="1"></span></label>
+                    <div class="otp-meta-box">
+                      <div class="otp-validity"><span class="otp-clock" aria-hidden="true">◷</span><span>This OTP is valid for 10 minutes.</span></div>
+                      <p>Didn’t receive the code?</p>
+                      <button type="button" class="otp-resend-btn" id="resend-otp-btn" disabled="">Resend OTP in <span id="otp-countdown">01:00</span></button>
+                    </div>
+                  </div>
+                </section>
+                <div class="verified-success" id="verified-success" hidden="" role="status"><span class="verified-success-icon" aria-hidden="true">✓</span><span><strong>Email verified successfully</strong><small>You can now tell us your goals and send your message.</small></span></div>
+                <label>Message<textarea name="message" id="message-field" placeholder="Tell us a little about your goals..." disabled=""></textarea></label>
                 <input type="hidden" name="source" id="source-input">
-                <div class="status" id="form-status" role="status">Thanks — your message is ready to be sent. Connect this form to your preferred form service or backend endpoint to deliver submissions.</div>
-                <div class="form-bottom"><span class="privacy">By submitting, you agree that Fiducia AI may contact you about this request.</span><button type="submit">Send message <span aria-hidden="true">→</span></button></div>
+                <input type="hidden" name="otpVerificationToken" id="otp-verification-token">
+                <div class="status" id="form-status" role="status"></div>
+                <div class="form-bottom"><span class="privacy">By submitting, you agree that Fiducia AI may contact you about this request.</span><button type="submit" class="submit-btn" id="submit-btn" disabled="">Send message <span aria-hidden="true">→</span></button></div>
               </form>
             </section>
           </main>
@@ -139,58 +321,95 @@
         <script>
     const source = new URLSearchParams(window.location.search).get('source');
     if (source) {
-      const sourceName = source.replace(/[-_]+/g, ' ').replace(/\b\w/g, function (letter) { return letter.toUpperCase(); });
+      const sourceName = source.replace(/[-_]+/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       document.getElementById('source-name').textContent = sourceName;
       document.getElementById('source-input').value = sourceName;
       document.getElementById('source-context').classList.add('show');
     }
     var API_BASE_URL = (window.FIDUCIA_API_BASE_URL || window.FIDUCIA_BACKEND_BASE_URL || 'https://uat-api.speedshotx.com').replace(/\/$/, '');
-    var DEMO_MAIL_ENDPOINT = API_BASE_URL + '/api/saveDemoRecord';
-    var form = document.getElementById('contact-form');
-    var status = document.getElementById('form-status');
-    var submitButton = form.querySelector('button[type="submit"]');
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var data = new FormData(form);
-      var sourceValue = (data.get('source') || '').trim();
-      var message = (data.get('message') || '').trim();
-      var payload = {
-        firstName: (data.get('firstName') || '').trim(),
-        lastName: (data.get('lastName') || '').trim(),
-        email: (data.get('email') || '').trim(),
-        phone: '',
-        companyName: (data.get('company') || '').trim(),
-        description: message,
-        demo_source: sourceValue || 'General'
-      };
-      status.textContent = '';
-      status.className = 'status';
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+    var REQUEST_OTP_ENDPOINT = API_BASE_URL + '/api/sendOTPEmail', VERIFY_OTP_ENDPOINT = API_BASE_URL + '/api/verifyOtp', DEMO_MAIL_ENDPOINT = API_BASE_URL + '/api/saveDemoRecord';
+    var form = document.getElementById('contact-form'), status = document.getElementById('form-status'), emailInput = document.getElementById('work-email'), emailVerifyRow = document.getElementById('email-verify-row'), sendOtpButton = document.getElementById('send-otp-btn'), otpPanel = document.getElementById('otp-panel'), otpEmailLabel = document.getElementById('otp-email-label'), otpInputs = Array.prototype.slice.call(document.querySelectorAll('#otp-inputs input')), resendOtpButton = document.getElementById('resend-otp-btn'), otpCountdown = document.getElementById('otp-countdown'), verifiedIcon = document.getElementById('email-verified-icon'), verifiedSuccess = document.getElementById('verified-success'), messageField = document.getElementById('message-field'), submitButton = document.getElementById('submit-btn'), verificationTokenInput = document.getElementById('otp-verification-token');
+    var verifiedEmail = '', resendTimer = null, resendSecondsLeft = 60, isVerifyingOtp = false;
+    function showStatus(msg, err) { status.textContent = msg || ''; status.className = msg ? 'status show' + (err ? ' error' : '') : 'status'; }
+    function clearOtpInputs() { otpInputs.forEach(i => i.value = ''); }
+    function stopResendCountdown() { if (resendTimer) { clearInterval(resendTimer); resendTimer = null; } }
+    function startResendCountdown(sec) {
+      resendSecondsLeft = sec || 60; resendOtpButton.disabled = true;
+      function render() {
+        var m = String(Math.floor(resendSecondsLeft / 60)).padStart(2, '0'), s = String(resendSecondsLeft % 60).padStart(2, '0');
+        resendOtpButton.innerHTML = 'Resend OTP in <span id="otp-countdown">' + m + ':' + s + '</span>';
+        otpCountdown = document.getElementById('otp-countdown');
+      }
+      render(); stopResendCountdown();
+      resendTimer = setInterval(() => {
+        resendSecondsLeft -= 1; render();
+        if (resendSecondsLeft <= 0) { stopResendCountdown(); resendOtpButton.disabled = false; resendOtpButton.textContent = 'Resend OTP'; }
+      }, 1000);
+    }
+    function setVerifiedState(email, token) {
+      verifiedEmail = email; verificationTokenInput.value = token; otpPanel.hidden = true; verifiedSuccess.hidden = false; verifiedIcon.hidden = false; sendOtpButton.hidden = true; emailVerifyRow.classList.add('verified'); emailInput.readOnly = true; messageField.disabled = false; submitButton.disabled = false; stopResendCountdown(); showStatus('', false);
+    }
+    function resetVerificationState() {
+      verifiedEmail = ''; verificationTokenInput.value = ''; otpPanel.hidden = true; verifiedSuccess.hidden = true; verifiedIcon.hidden = true; sendOtpButton.hidden = false; emailVerifyRow.classList.remove('verified'); emailInput.readOnly = false; messageField.disabled = true; submitButton.disabled = true; submitButton.classList.remove('success'); submitButton.innerHTML = 'Send message <span aria-hidden="true">→</span>'; clearOtpInputs(); stopResendCountdown();
+    }
+    async function requestOtp() {
+      var email = emailInput.value.trim().toLowerCase(), emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) return showStatus('Please enter a valid email address.', true);
+      sendOtpButton.disabled = true; sendOtpButton.textContent = 'Sending...'; showStatus('', false);
       try {
-        var response = await fetch(DEMO_MAIL_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        var result = await response.json().catch(function () { return {}; });
-        if (!response.ok || result.status === false) throw new Error(result.message || 'Unable to send your message.');
-        status.textContent = result.message || 'Thank you. Your message has been sent successfully.';
-        status.className = 'status show';
-        form.reset();
-        document.getElementById('source-input').value = sourceValue;
-      } catch (error) {
-        status.textContent = error.message || 'Something went wrong. Please try again.';
-        status.className = 'status show error';
-      } finally {
+        var res = await fetch(REQUEST_OTP_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ receiver: email }) });
+        var result = await res.json().catch(() => ({}));
+        if (!res.ok || result.status === false) throw new Error(result.message || 'Unable to send OTP.');
+        otpEmailLabel.textContent = email; otpPanel.hidden = false; verifiedSuccess.hidden = true; verificationTokenInput.value = ''; clearOtpInputs(); otpInputs[0].focus(); startResendCountdown(60);
+      } catch (err) { showStatus(err.message || 'Unable to send OTP. Please try again.', true); }
+      finally { sendOtpButton.disabled = false; sendOtpButton.textContent = 'Send OTP'; }
+    }
+    async function verifyOtpIfReady() {
+      var otp = otpInputs.map(i => i.value).join(''), email = emailInput.value.trim().toLowerCase();
+      if (otp.length !== 6 || isVerifyingOtp) return;
+      isVerifyingOtp = true; showStatus('', false);
+      try {
+        var res = await fetch(VERIFY_OTP_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ email: email, otp: otp }) });
+        var result = await res.json().catch(() => ({}));
+        if (!res.ok || result.status !== true) throw new Error(result.message || 'Invalid OTP. Please try again.');
+        setVerifiedState(email, email + ':' + Date.now());
+      } catch (err) { showStatus(err.message || 'Invalid OTP. Please try again.', true); clearOtpInputs(); otpInputs[0].focus(); }
+      finally { isVerifyingOtp = false; }
+    }
+    sendOtpButton.addEventListener('click', requestOtp); resendOtpButton.addEventListener('click', requestOtp);
+    emailInput.addEventListener('input', () => { if (verifiedEmail && emailInput.value.trim().toLowerCase() !== verifiedEmail) resetVerificationState(); });
+    otpInputs.forEach((input, index) => {
+      input.addEventListener('input', () => { input.value = input.value.replace(/\D/g, '').slice(0, 1); if (input.value && otpInputs[index + 1]) otpInputs[index + 1].focus(); verifyOtpIfReady(); });
+      input.addEventListener('keydown', e => { if (e.key === 'Backspace' && !input.value && otpInputs[index - 1]) otpInputs[index - 1].focus(); });
+      input.addEventListener('paste', e => {
+        var pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6); if (!pasted) return; e.preventDefault();
+        otpInputs.forEach((otpInput, i) => { otpInput.value = pasted[i] || ''; }); verifyOtpIfReady();
+      });
+    });
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!verificationTokenInput.value || emailInput.value.trim().toLowerCase() !== verifiedEmail) return showStatus('Please verify your email address before sending your message.', true);
+      if (!form.checkValidity()) return form.reportValidity();
+      var data = new FormData(form), sourceVal = (data.get('source') || '').trim();
+      var payload = { firstName: (data.get('firstName') || '').trim(), lastName: (data.get('lastName') || '').trim(), email: (data.get('email') || '').trim(), phone: '', companyName: (data.get('company') || '').trim(), description: (data.get('message') || '').trim(), demo_source: sourceVal || 'General' };
+      showStatus('', false); submitButton.disabled = true; submitButton.textContent = 'Sending...';
+      try {
+        var res = await fetch(DEMO_MAIL_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+        var result = await res.json().catch(() => ({}));
+        if (!res.ok || result.status === false) throw new Error(result.message || 'Unable to send your message.');
+        // Show successful message and update button state
+        showStatus(result.message || 'Thank you. Your message has been sent successfully.', false);
         submitButton.disabled = false;
-        submitButton.textContent = 'Send message';
+        submitButton.classList.add('success');
+        submitButton.innerHTML = 'Sent successfully ✓';
+      } catch (err) { 
+        showStatus(err.message || 'Something went wrong. Please try again.', true); 
+        submitButton.disabled = false; 
+        submitButton.classList.remove('success');
+        submitButton.innerHTML = 'Send message <span aria-hidden="true">→</span>'; 
       }
     });
   </script>
-      </body>
-      </html>
     </div>
     <div class="w-embed w-script">
       <!DOCTYPE html>
@@ -552,7 +771,7 @@
             <div class="fidux-footer-grid">
               <!--  Column 1: Logo & Mission  -->
               <div class="fidux-footer-brand">
-                <a href="index.html" class="fidux-footer-logo-link" aria-label="Fiducia AI Homepage">
+                <a href="https://s-fiducia-ai.webflow.io/" class="fidux-footer-logo-link" aria-label="Fiducia AI Homepage">
                   <img src="images/Footer-Logo.png" alt="Fiducia AI" class="fidux-footer-logo-img">
                 </a>
                 <p class="fidux-footer-desc">
@@ -642,7 +861,7 @@
                 © 2026 Fiducia AI. All rights reserved.
               </div>
               <div>
-                <a href="privacy-policy.html" target="_blank" rel="noopener" class="fidux-privacy-link">
+                <a href="https://s-fiducia-ai.webflow.io/privacy-policy" target="_blank" rel="noopener" class="fidux-privacy-link">
                   Privacy Policy ↗
                 </a>
               </div>
@@ -668,696 +887,259 @@
       }
     }
   </script>
-      </body>
-      </html>
     </div>
   </section>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6a78a050329a705e8a1b7425" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <button id="fiducia-ai-agent" type="button" aria-label="Open AI Agent">
-    <img src="images/aiagent.png" alt="AI Agent" class="fiducia-ai-icon">
+    <img src="images/gagent.png" alt="AI Agent" class="fiducia-ai-icon">
   </button>
   <div id="fiducia-ai-overlay" aria-hidden="true">
     <div id="fiducia-ai-frame">
-      <iframe id="fiducia-ai-iframe" src="about:blank" title="Fiducia AI Agent" allow="
-        microphone;
-        camera;
-        autoplay;
-        clipboard-read;
-        clipboard-write;
-        fullscreen
-      " allowfullscreen=""></iframe>
-      <button id="fiducia-ai-close" type="button" aria-label="Close AI Agent">
-        ×
-      </button>
+      <iframe id="fiducia-ai-iframe" src="about:blank" title="Fiducia AI Agent" allow="microphone; camera; autoplay; clipboard-read; clipboard-write; fullscreen" allowfullscreen=""></iframe>
+      <button id="fiducia-ai-close" type="button" aria-label="Minimize AI Agent">−</button>
     </div>
   </div>
   <style>
-.w-webflow-badge {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
+.w-webflow-badge { display: none !important; }
 #fiducia-ai-agent {
-  position: fixed !important;
-  right: 24px !important;
-  bottom:
-    calc(
-      38px + env(safe-area-inset-bottom)
-    ) !important;
-  width: 64px !important;
-  height: 64px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: #ffffff !important;
-  cursor: pointer !important;
-  z-index: 2147483000 !important;
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.25) !important;
-  -webkit-tap-highlight-color:
-    transparent !important;
-  touch-action: manipulation !important;
-  pointer-events: auto !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  animation:
-    fiducia-ai-floating
-    2.6s
-    ease-in-out
-    infinite !important;
-  will-change:
-    transform !important;
-  transition:
-    width .25s ease,
-    height .25s ease,
-    box-shadow .25s ease !important;
+  position: fixed !important; right: 24px !important; top: 24px !important; bottom: auto !important;
+  width: 64px !important; height: 64px !important; min-width: 64px !important; max-width: 64px !important;
+  min-height: 64px !important; max-height: 64px !important; padding: 0 !important; margin: 0 !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  flex: 0 0 64px !important; aspect-ratio: 1 / 1 !important; border: 0 !important; border-radius: 50% !important;
+  overflow: hidden !important; background: #ffffff !important; cursor: pointer !important;
+  z-index: 2147483000 !important; box-sizing: border-box !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25) !important;
+  animation: fiducia-ai-floating 2.6s ease-in-out infinite !important;
+  will-change: transform, left, top !important; appearance: none !important; -webkit-appearance: none !important;
+  touch-action: none !important; user-select: none !important; -webkit-user-select: none !important;
+}
+#fiducia-ai-agent.fiducia-ai-dragging { animation: none !important; cursor: grabbing !important; transition: none !important; }
+#fiducia-ai-agent .fiducia-ai-icon {
+  position: absolute !important; inset: 0 !important; width: 64px !important; height: 64px !important;
+  min-width: 64px !important; max-width: 64px !important; min-height: 64px !important; max-height: 64px !important;
+  display: block !important; margin: 0 !important; padding: 0 !important; flex: none !important;
+  border: 0 !important; border-radius: 50% !important; object-fit: cover !important;
+  object-position: center !important; pointer-events: none !important; box-sizing: border-box !important;
 }
 @keyframes fiducia-ai-floating {
-  0% {
-    transform:
-      translateY(0);
-  }
-  25% {
-    transform:
-      translateY(-9px);
-  }
-  50% {
-    transform:
-      translateY(-14px);
-  }
-  75% {
-    transform:
-      translateY(-7px);
-  }
-  100% {
-    transform:
-      translateY(0);
-  }
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-9px); }
+  50% { transform: translateY(-14px); }
+  75% { transform: translateY(-7px); }
 }
-#fiducia-ai-agent.fiducia-ai-near {
-  animation-play-state: paused !important;
-  transform:
-    scale(1.14) !important;
-  box-shadow:
-    0 14px 38px rgba(0,0,0,.34) !important;
-}
-#fiducia-ai-agent.fiducia-ai-close {
-  animation-play-state: paused !important;
-  transform:
-    scale(1.40) !important;
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.40) !important;
-}
-.fiducia-ai-icon {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  object-fit: cover !important;
-  pointer-events: none !important;
-  user-select: none !important;
-}
+#fiducia-ai-agent.fiducia-ai-near { animation-play-state: paused !important; transform: scale(1.14) !important; box-shadow: 0 14px 38px rgba(0,0,0,.34) !important; }
+#fiducia-ai-agent.fiducia-ai-close { animation-play-state: paused !important; transform: scale(1.40) !important; box-shadow: 0 18px 45px rgba(0,0,0,.40) !important; }
 #fiducia-ai-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  box-sizing: border-box !important;
-  display: none !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 24px !important;
-  pointer-events: auto !important;
-  touch-action: auto !important;
-  background:
-    rgba(0,0,0,.18) !important;
-  z-index: 2147482000 !important;
-  overflow: hidden !important;
+  position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important;
+  display: none !important; align-items: center !important; justify-content: flex-end !important;
+  padding: 24px !important; box-sizing: border-box !important; background: rgba(0,0,0,.18) !important;
+  z-index: 2147482000 !important; overflow: hidden !important;
 }
-#fiducia-ai-overlay.fiducia-ai-open {
-  display: flex !important;
-}
+#fiducia-ai-overlay.fiducia-ai-open { display: flex !important; }
 #fiducia-ai-frame {
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: #ffffff !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  isolation: isolate !important;
-  pointer-events: auto !important;
-  touch-action: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.35) !important;
+  position: relative !important; width: min(360px, 42vh) !important; max-width: 360px !important;
+  height: calc(100vh - 120px) !important; max-height: calc(100vh - 120px) !important;
+  background: #ffffff !important; border-radius: 18px !important; overflow: hidden !important;
+  box-sizing: border-box !important; box-shadow: 0 20px 60px rgba(0,0,0,.35) !important;
 }
 #fiducia-ai-iframe {
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: none !important;
-  max-height: none !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: #ffffff !important;
-  pointer-events: auto !important;
-  touch-action: auto !important;
-  user-select: auto !important;
-  -webkit-user-select: auto !important;
-  -webkit-touch-callout: default !important;
-  -webkit-overflow-scrolling: touch !important;
+  position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important;
+  min-width: 0 !important; min-height: 0 !important; max-width: 100% !important; max-height: 100% !important;
+  display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #ffffff !important;
 }
 #fiducia-ai-close {
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  width: 42px !important;
-  height: 42px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  outline: none !important;
-  background: transparent !important;
-  color: #000000 !important;
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif !important;
-  font-size: 30px !important;
-  font-weight: 600 !important;
-  line-height: 42px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-  z-index: 2147483647 !important;
-  pointer-events: auto !important;
-  touch-action: manipulation !important;
-  -webkit-tap-highlight-color:
-    transparent !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  opacity: .9 !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
+  position: absolute !important; top: 4px !important; right: 10px !important; width: 42px !important; height: 42px !important;
+  padding: 0 !important; margin: 0 !important; border: 0 !important; outline: none !important;
+  background: transparent !important; color: #000000 !important; font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 34px !important; font-weight: 500 !important; line-height: 42px !important; display: flex !important;
+  align-items: center !important; justify-content: center !important; cursor: pointer !important;
+  z-index: 2147483647 !important; opacity: .9 !important; appearance: none !important; -webkit-appearance: none !important;
 }
-#fiducia-ai-close:hover {
-  opacity: 1 !important;
-  transform:
-    scale(1.08) !important;
-}
-#fiducia-ai-close:active {
-  transform:
-    scale(.90) !important;
-}
-@media screen and (min-width: 768px) {
-  #fiducia-ai-overlay {
-    padding: 24px !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-  #fiducia-ai-frame {
-    width: 340px !important;
-    max-width: 340px !important;
-    height:
-      calc(100vh - 80px) !important;
-    max-height:
-      calc(100vh - 80px) !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
-  }
-  #fiducia-ai-iframe {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    pointer-events: auto !important;
-    touch-action: auto !important;
-  }
-  #fiducia-ai-close {
-    top: 10px !important;
-    right: 10px !important;
-  }
-}
-@media screen and (min-width: 1400px) {
-  #fiducia-ai-overlay {
-    padding: 24px !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-  #fiducia-ai-frame {
-    width: 360px !important;
-    max-width: 360px !important;
-    height:
-      calc(100vh - 80px) !important;
-    max-height:
-      calc(100vh - 80px) !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
-  }
-  #fiducia-ai-iframe {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-  }
-}
+#fiducia-ai-close:hover { opacity: 1 !important; transform: scale(1.08) !important; }
+#fiducia-ai-close:active { transform: scale(.90) !important; }
+html.fiducia-ai-lock-scroll, body.fiducia-ai-lock-scroll { overflow: hidden !important; }
 @media screen and (max-width: 767px) {
-  #fiducia-ai-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100dvh !important;
-    min-height: 100dvh !important;
-    padding: 8px !important;
-    box-sizing: border-box !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    touch-action: auto !important;
-    overflow: hidden !important;
-  }
-  #fiducia-ai-frame {
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: none !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-radius: 16px !important;
-    overflow: hidden !important;
-    pointer-events: auto !important;
-    touch-action: auto !important;
-    background: #ffffff !important;
-    box-shadow:
-      0 10px 35px rgba(0,0,0,.35) !important;
-  }
-  #fiducia-ai-iframe {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: none !important;
-    max-height: none !important;
-    border: 0 !important;
-    display: block !important;
-    pointer-events: auto !important;
-    touch-action: auto !important;
-    user-select: auto !important;
-    -webkit-user-select: auto !important;
-    -webkit-touch-callout: default !important;
-    -webkit-overflow-scrolling:
-      touch !important;
-  }
-  #fiducia-ai-close {
-    top: 8px !important;
-    right: 8px !important;
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 30px !important;
-    line-height: 44px !important;
-    z-index:
-      2147483647 !important;
-    pointer-events:
-      auto !important;
-    touch-action:
-      manipulation !important;
-  }
-  #fiducia-ai-agent {
-    width: 56px !important;
-    height: 56px !important;
-    right: 24px !important;
-    bottom:
-      calc(
-        38px +
-        env(safe-area-inset-bottom)
-      ) !important;
-  }
+  #fiducia-ai-overlay { width: 100vw !important; height: 100dvh !important; padding: 8px !important; align-items: center !important; justify-content: center !important; }
+  #fiducia-ai-frame { width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; border-radius: 16px !important; }
+  #fiducia-ai-agent { width: 56px !important; height: 56px !important; min-width: 56px !important; max-width: 56px !important; min-height: 56px !important; max-height: 56px !important; flex: 0 0 56px !important; right: 24px !important; top: 20px !important; bottom: auto !important; }
+  #fiducia-ai-agent .fiducia-ai-icon { width: 56px !important; height: 56px !important; min-width: 56px !important; max-width: 56px !important; min-height: 56px !important; max-height: 56px !important; }
+  #fiducia-ai-close { top: 2px !important; right: 8px !important; width: 44px !important; height: 44px !important; font-size: 34px !important; line-height: 44px !important; }
 }
 @media screen and (max-width: 390px) {
-  #fiducia-ai-overlay {
-    padding: 8px !important;
-  }
-  #fiducia-ai-frame {
-    border-radius: 14px !important;
-  }
-  #fiducia-ai-close {
-    top: 7px !important;
-    right: 7px !important;
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 30px !important;
-  }
-  #fiducia-ai-agent {
-    width: 52px !important;
-    height: 52px !important;
-    right: 22px !important;
-    bottom:
-      calc(
-        36px +
-        env(safe-area-inset-bottom)
-      ) !important;
-  }
-}
-@media screen and (max-width: 767px)
-and (orientation: landscape) {
-  #fiducia-ai-overlay {
-    padding: 8px !important;
-  }
-  #fiducia-ai-frame {
-    border-radius: 14px !important;
-  }
-}
-html.fiducia-ai-lock-scroll,
-body.fiducia-ai-lock-scroll {
-  overflow: hidden !important;
+  #fiducia-ai-agent { width: 52px !important; height: 52px !important; min-width: 52px !important; max-width: 52px !important; min-height: 52px !important; max-height: 52px !important; flex: 0 0 52px !important; right: 22px !important; top: 18px !important; bottom: auto !important; }
+  #fiducia-ai-agent .fiducia-ai-icon { width: 52px !important; height: 52px !important; min-width: 52px !important; max-width: 52px !important; min-height: 52px !important; max-height: 52px !important; }
+  #fiducia-ai-frame { border-radius: 14px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  #fiducia-ai-agent {
-    animation: none !important;
-  }
+  #fiducia-ai-agent { animation: none !important; }
 }
 </style>
   <script>
 (function () {
   "use strict";
-  var bot =
-    document.getElementById(
-      "fiducia-ai-agent"
-    );
-  var overlay =
-    document.getElementById(
-      "fiducia-ai-overlay"
-    );
-  var iframe =
-    document.getElementById(
-      "fiducia-ai-iframe"
-    );
-  var closeButton =
-    document.getElementById(
-      "fiducia-ai-close"
-    );
-  var AI_AGENT_URL =
-    "https://engage.speedshotx.com/ar/multiexp?exp=43502810x608x855x760";
-  var agentOpen = false;
-  var historyStateAdded = false;
-  var closeHandled = false;
-  var proximityEnabled =
-    window.matchMedia(
-      "(hover: hover) and (pointer: fine)"
-    ).matches;
+  var bot = document.getElementById("fiducia-ai-agent");
+  var overlay = document.getElementById("fiducia-ai-overlay");
+  var iframe = document.getElementById("fiducia-ai-iframe");
+  var closeButton = document.getElementById("fiducia-ai-close");
+  var AI_AGENT_URL = "https://engage.speedshotx.com/ar/multiexp?exp=43502810x608x855x760";
+  var agentOpen = false, historyStateAdded = false, closeHandled = false;
+  var proximityEnabled = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var proximityDistance = 170;
-  if (
-    bot &&
-    bot.parentElement !== document.body
-  ) {
-    document.body.appendChild(bot);
+  var isDragging = false, dragMoved = false, dragStartX = 0, dragStartY = 0, elementStartX = 0, elementStartY = 0;
+  function moveAgentToBody() {
+    if (bot && bot.parentElement !== document.body) document.body.appendChild(bot);
+    if (overlay && overlay.parentElement !== document.body) document.body.appendChild(overlay);
   }
-  if (
-    overlay &&
-    overlay.parentElement !== document.body
-  ) {
-    document.body.appendChild(overlay);
+  function forceAgentSize() {
+    if (!bot) return;
+    var size = window.innerWidth <= 390 ? 52 : (window.innerWidth <= 767 ? 56 : 64);
+    ['width', 'height', 'min-width', 'max-width', 'min-height', 'max-height'].forEach(function(prop) {
+      bot.style.setProperty(prop, size + "px", "important");
+    });
+    bot.style.setProperty("flex", "0 0 " + size + "px", "important");
+    bot.style.setProperty("border-radius", "50%", "important");
+    var icon = bot.querySelector(".fiducia-ai-icon");
+    if (icon) {
+      ['width', 'height', 'min-width', 'max-width', 'min-height', 'max-height'].forEach(function(prop) {
+        icon.style.setProperty(prop, size + "px", "important");
+      });
+      icon.style.setProperty("border-radius", "50%", "important");
+      icon.style.setProperty("object-fit", "cover", "important");
+      icon.style.setProperty("display", "block", "important");
+    }
+  }
+  function initDraggable() {
+    if (!bot) return;
+    function onDragStart(e) {
+      if (agentOpen) return;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      var rect = bot.getBoundingClientRect();
+      isDragging = true; dragMoved = false;
+      dragStartX = clientX; dragStartY = clientY;
+      elementStartX = rect.left; elementStartY = rect.top;
+      bot.classList.add("fiducia-ai-dragging");
+      if (e.type === "mousedown") {
+        document.addEventListener("mousemove", onDragMove, { passive: false });
+        document.addEventListener("mouseup", onDragEnd, false);
+      } else if (e.type === "touchstart") {
+        document.addEventListener("touchmove", onDragMove, { passive: false });
+        document.addEventListener("touchend", onDragEnd, false);
+        document.addEventListener("touchcancel", onDragEnd, false);
+      }
+    }
+    function onDragMove(e) {
+      if (!isDragging) return;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      var deltaX = clientX - dragStartX, deltaY = clientY - dragStartY;
+      if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) dragMoved = true;
+      if (!dragMoved) return;
+      if (e.cancelable) e.preventDefault();
+      var rect = bot.getBoundingClientRect();
+      var newLeft = Math.max(0, Math.min(elementStartX + deltaX, window.innerWidth - rect.width));
+      var newTop = Math.max(0, Math.min(elementStartY + deltaY, window.innerHeight - rect.height));
+      bot.style.setProperty("left", newLeft + "px", "important");
+      bot.style.setProperty("top", newTop + "px", "important");
+      bot.style.setProperty("right", "auto", "important");
+      bot.style.setProperty("bottom", "auto", "important");
+    }
+    function onDragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      bot.classList.remove("fiducia-ai-dragging");
+      document.removeEventListener("mousemove", onDragMove);
+      document.removeEventListener("mouseup", onDragEnd);
+      document.removeEventListener("touchmove", onDragMove);
+      document.removeEventListener("touchend", onDragEnd);
+      document.removeEventListener("touchcancel", onDragEnd);
+    }
+    bot.addEventListener("mousedown", onDragStart, false);
+    bot.addEventListener("touchstart", onDragStart, { passive: false });
   }
   function updateProximity(event) {
-    if (
-      !proximityEnabled ||
-      !bot ||
-      agentOpen
-    ) {
-      return;
-    }
-    var rect =
-      bot.getBoundingClientRect();
-    var centerX =
-      rect.left +
-      rect.width / 2;
-    var centerY =
-      rect.top +
-      rect.height / 2;
-    var distanceX =
-      event.clientX - centerX;
-    var distanceY =
-      event.clientY - centerY;
-    var distance =
-      Math.sqrt(
-        distanceX * distanceX +
-        distanceY * distanceY
-      );
-    if (
-      distance <= 65
-    ) {
-      bot.classList.add(
-        "fiducia-ai-close"
-      );
-      bot.classList.remove(
-        "fiducia-ai-near"
-      );
-    } else if (
-      distance <= proximityDistance
-    ) {
-      bot.classList.add(
-        "fiducia-ai-near"
-      );
-      bot.classList.remove(
-        "fiducia-ai-close"
-      );
+    if (!proximityEnabled || !bot || agentOpen || isDragging) return;
+    var rect = bot.getBoundingClientRect();
+    var distance = Math.hypot(event.clientX - (rect.left + rect.width / 2), event.clientY - (rect.top + rect.height / 2));
+    if (distance <= 65) {
+      bot.classList.add("fiducia-ai-close"); bot.classList.remove("fiducia-ai-near");
+    } else if (distance <= proximityDistance) {
+      bot.classList.add("fiducia-ai-near"); bot.classList.remove("fiducia-ai-close");
     } else {
-      bot.classList.remove(
-        "fiducia-ai-near"
-      );
-      bot.classList.remove(
-        "fiducia-ai-close"
-      );
+      bot.classList.remove("fiducia-ai-near", "fiducia-ai-close");
     }
-  }
-  if (proximityEnabled) {
-    document.addEventListener(
-      "mousemove",
-      updateProximity,
-      {
-        passive: true
-      }
-    );
   }
   function resetProximity() {
-    if (!bot) {
-      return;
-    }
-    bot.classList.remove(
-      "fiducia-ai-near"
-    );
-    bot.classList.remove(
-      "fiducia-ai-close"
-    );
+    if (bot) bot.classList.remove("fiducia-ai-near", "fiducia-ai-close");
   }
   function openAgent() {
-    if (agentOpen) {
-      return;
-    }
+    if (agentOpen) return;
     agentOpen = true;
     resetProximity();
-    iframe.src =
-      AI_AGENT_URL;
-    overlay.classList.add(
-      "fiducia-ai-open"
-    );
-    overlay.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-    bot.style.setProperty(
-      "display",
-      "none",
-      "important"
-    );
-    document.documentElement.classList.add(
-      "fiducia-ai-lock-scroll"
-    );
-    document.body.classList.add(
-      "fiducia-ai-lock-scroll"
-    );
+    iframe.src = AI_AGENT_URL;
+    overlay.classList.add("fiducia-ai-open");
+    overlay.setAttribute("aria-hidden", "false");
+    bot.style.setProperty("display", "none", "important");
+    document.documentElement.classList.add("fiducia-ai-lock-scroll");
+    document.body.classList.add("fiducia-ai-lock-scroll");
     if (!historyStateAdded) {
-      history.pushState(
-        {
-          fiduciaAI: true
-        },
-        "",
-        window.location.href
-      );
+      history.pushState({ fiduciaAI: true }, "", window.location.href);
       historyStateAdded = true;
     }
   }
-  function closeAgent(
-    fromBrowserBack
-  ) {
-    if (!agentOpen) {
-      return;
-    }
+  function closeAgent(fromBrowserBack) {
+    if (!agentOpen) return;
     agentOpen = false;
-    overlay.classList.remove(
-      "fiducia-ai-open"
-    );
-    overlay.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-    iframe.src =
-      "about:blank";
-    bot.style.setProperty(
-      "display",
-      "flex",
-      "important"
-    );
-    document.documentElement.classList.remove(
-      "fiducia-ai-lock-scroll"
-    );
-    document.body.classList.remove(
-      "fiducia-ai-lock-scroll"
-    );
-    if (
-      !fromBrowserBack &&
-      historyStateAdded
-    ) {
-      historyStateAdded =
-        false;
+    overlay.classList.remove("fiducia-ai-open");
+    overlay.setAttribute("aria-hidden", "true");
+    iframe.src = "about:blank";
+    moveAgentToBody();
+    forceAgentSize();
+    bot.style.setProperty("display", "flex", "important");
+    document.documentElement.classList.remove("fiducia-ai-lock-scroll");
+    document.body.classList.remove("fiducia-ai-lock-scroll");
+    if (!fromBrowserBack && historyStateAdded) {
+      historyStateAdded = false;
       history.back();
     }
   }
+  function handleCloseEvent(e) {
+    e.preventDefault(); e.stopPropagation();
+    if (closeHandled) return;
+    closeHandled = true;
+    closeAgent(false);
+    setTimeout(function () { closeHandled = false; }, 500);
+  }
+  moveAgentToBody();
+  forceAgentSize();
+  initDraggable();
+  window.addEventListener("resize", forceAgentSize, { passive: true });
+  if (proximityEnabled) document.addEventListener("mousemove", updateProximity, { passive: true });
   if (bot) {
-    bot.addEventListener(
-      "click",
-      function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        openAgent();
-      },
-      false
-    );
+    bot.addEventListener("click", function (e) {
+      if (dragMoved) { e.preventDefault(); e.stopPropagation(); dragMoved = false; return; }
+      e.preventDefault(); e.stopPropagation();
+      openAgent();
+    }, false);
   }
   if (closeButton) {
-    closeButton.addEventListener(
-      "pointerdown",
-      function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (closeHandled) {
-          return;
-        }
-        closeHandled = true;
-        closeAgent(false);
-        setTimeout(
-          function () {
-            closeHandled = false;
-          },
-          500
-        );
-      },
-      {
-        passive: false
-      }
-    );
-    closeButton.addEventListener(
-      "touchstart",
-      function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (closeHandled) {
-          return;
-        }
-        closeHandled = true;
-        closeAgent(false);
-        setTimeout(
-          function () {
-            closeHandled = false;
-          },
-          500
-        );
-      },
-      {
-        passive: false
-      }
-    );
-    closeButton.addEventListener(
-      "click",
-      function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (closeHandled) {
-          return;
-        }
-        closeAgent(false);
-      },
-      false
-    );
+    closeButton.addEventListener("pointerdown", handleCloseEvent, { passive: false });
+    closeButton.addEventListener("touchstart", handleCloseEvent, { passive: false });
+    closeButton.addEventListener("click", function(e) {
+      e.preventDefault(); e.stopPropagation();
+      if (!closeHandled) closeAgent(false);
+    }, false);
   }
-  document.addEventListener(
-    "keydown",
-    function (event) {
-      if (
-        event.key === "Escape" &&
-        agentOpen
-      ) {
-        event.preventDefault();
-        closeAgent(false);
-      }
-    },
-    false
-  );
-  window.addEventListener(
-    "popstate",
-    function () {
-      if (agentOpen) {
-        historyStateAdded =
-          false;
-        closeAgent(true);
-      }
-    },
-    false
-  );
-  if (overlay) {
-    overlay.classList.remove(
-      "fiducia-ai-open"
-    );
-    overlay.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-  }
-  if (bot) {
-    bot.style.setProperty(
-      "display",
-      "flex",
-      "important"
-    );
-  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && agentOpen) { e.preventDefault(); closeAgent(false); }
+  }, false);
+  window.addEventListener("popstate", function () {
+    if (agentOpen) { historyStateAdded = false; closeAgent(true); }
+  }, false);
+  if (overlay) { overlay.classList.remove("fiducia-ai-open"); overlay.setAttribute("aria-hidden", "true"); }
+  if (bot) { moveAgentToBody(); forceAgentSize(); bot.style.setProperty("display", "flex", "important"); }
 })();
 </script>
 </body>
