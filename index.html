@@ -84,11 +84,11 @@
               </svg>
             </button>
             <div class="platform-menu">
-              <a href="speedshotx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/speedshot-x.png" alt="SpeedShotX"><span class="platform-title">SpeedShotX</span></a>
-              <a href="intellix.html" target="_self" class="platform-item"><img class="platform-icon" src="images/Intelli-logo.png" alt="IntelliX"><span class="platform-title">IntelliX</span></a>
-              <a href="knowledge-x.html" target="_self" class="platform-item"><img class="platform-icon" src="images/knowledge-x.png" alt="KnowledgeX"><span class="platform-title">KnowledgeX</span></a>
-              <a href="videox.html" target="_self" class="platform-item"><img class="platform-icon" src="images/video-x.png" alt="VideoX"><span class="platform-title">VideoX</span></a>
-              <a href="fitx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/fit-x.png" alt="FitX"><span class="platform-title">FitX</span></a>
+              <a href="speedshotx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/icon-1.png" alt="SpeedShotX"><span class="platform-title">SpeedShotX</span></a>
+              <a href="intellix.html" target="_self" class="platform-item"><img class="platform-icon" src="images/intellix..png" alt="IntelliX"><span class="platform-title">IntelliX</span></a>
+              <a href="knowledge-x.html" target="_self" class="platform-item"><img class="platform-icon" src="images/icon-3.png" alt="KnowledgeX"><span class="platform-title">KnowledgeX</span></a>
+              <a href="videox.html" target="_self" class="platform-item"><img class="platform-icon" src="images/icon-4.png" alt="VideoX"><span class="platform-title">VideoX</span></a>
+              <a href="fitx.html" target="_self" class="platform-item"><img class="platform-icon" src="images/icon-5.png" alt="FitX"><span class="platform-title">FitX</span></a>
             </div>
           </div>
           <a href="company.html" target="_self" class="custom-nav-btn">Company</a>
@@ -148,22 +148,28 @@
     #fidux-hero header{display:none}
     #fidux-hero .brand{display:flex;align-items:center;gap:9px;white-space:nowrap;color:#142a92}#fidux-hero .seal{width:57px;height:57px;border:2px solid #1f55d8;border-radius:50%;display:grid;place-items:center;font-size:27px;box-shadow:inset 0 0 0 4px #d6e6ff}#fidux-hero .brand strong{font-size:23px;letter-spacing:1px}#fidux-hero .brand small{display:block;font-size:7px;letter-spacing:.45px;font-weight:800;text-align:center;margin-top:1px}
     #fidux-hero nav{display:flex;align-items:center;gap:clamp(28px,4.2vw,76px);font-size:17px;font-weight:600}#fidux-hero .active{color:#1934d5}#fidux-hero .chev{font-size:17px;margin-left:5px}#fidux-hero .badges{margin-left:auto;display:flex;align-items:center;gap:25px;color:#102050;font-size:9px;font-weight:800}#fidux-hero .badge{border:1px solid #d9dce4;padding:8px 6px;min-width:76px;text-align:center}#fidux-hero .badge:last-child{background:#ffd9d0;border:0}#fidux-hero .badge b{display:block;font-size:12px}
-    .intro{position:absolute;top:5vh;left:clamp(32px,2.7vw,48px);width:min(410px,27vw);z-index:2}.intro h1{font-size:clamp(28px,2.55vw,43px);line-height:1.07;letter-spacing:-1.7px;margin:0;font-weight:850}.intro h1 span{color:#3031df;display:block}.rules{display:flex;gap:16px;margin:25px 0 31px}.rules i{width:35px;height:4px;border-radius:99px;background:#2b31d7}.rules i+ i{width:27px;background:#20cdd0}.watch{display:inline-flex;align-items:center;gap:15px;padding:18px 20px;background:#fff;border-radius:11px;border:1px solid #cad0db;color:#1828ca;font-weight:800;font-size:17px;box-shadow:0 10px 24px rgba(53,88,160,.1);transition:.25s}.watch:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(33,55,177,.24)}.play{width:24px;height:24px;border:2px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:10px;padding-left:1px}
+    /* Intro Hero Section Text Sizing & Margins Fix */
+    .intro{position:absolute;top:3.5vh;left:clamp(32px,2.7vw,48px);width:min(420px,28vw);z-index:2}
+    .intro h1{font-size:clamp(22px,2.1vw,36px);line-height:1.08;letter-spacing:-1.2px;margin:0;font-weight:850;word-break:break-word;overflow-wrap:anywhere}
+    .intro h1 span{color:#3031df;display:block}
+    .rules{display:flex;gap:16px;margin:14px 0 16px}.rules i{width:35px;height:4px;border-radius:99px;background:#2b31d7}.rules i+ i{width:27px;background:#20cdd0}
+    .watch{display:inline-flex;align-items:center;gap:15px;padding:14px 18px;background:#fff;border-radius:11px;border:1px solid #cad0db;color:#1828ca;font-weight:800;font-size:15px;box-shadow:0 10px 24px rgba(53,88,160,.1);transition:.25s}.watch:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(33,55,177,.24)}.play{width:22px;height:22px;border:2px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:10px;padding-left:1px}
+    /* Auto-Scale text when document translates to longer scripts */
+    :lang(ta) .intro h1, :lang(ml) .intro h1, :lang(te) .intro h1, :lang(hi) .intro h1, :lang(bn) .intro h1, :lang(ar) .intro h1 {
+      font-size: clamp(17px, 1.6vw, 26px) !important;
+      line-height: 1.15 !important;
+      letter-spacing: normal !important;
+    }
     .connectors{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}.connectors path{fill:none;stroke-width:3;stroke-linecap:round}.connectors circle{fill:#d7e7ff;stroke-width:3}.p1{stroke:#382ee6}.p2{stroke:#3933eb}.p3{stroke:#259138}.p4{stroke:#3454f1}.p5{stroke:#fa1e24}.data-link{fill:none;stroke:#b9eaff;stroke-width:1.35;stroke-linecap:round;stroke-dasharray:2 5;opacity:.92;animation:dataFlow 2.8s linear infinite}.data-link:nth-child(2n){stroke:#5db9ff;stroke-width:1.1;animation-duration:3.5s}@keyframes dataFlow{to{stroke-dashoffset:-42}}
-    .stack{position:absolute;right:clamp(28px,2.7vw,49px);top:47%;transform:translateY(-50%);width:min(325px,21.2vw);display:grid;gap:9px;z-index:2}.card{height:78px;padding:11px 14px;display:flex;align-items:center;gap:13px;border-radius:15px;background:var(--glass);box-shadow:0 14px 30px rgba(41,81,156,.12);backdrop-filter:blur(8px);transform:translateX(35px);opacity:0;animation:rise .65s cubic-bezier(.2,.8,.2,1) forwards;transition:transform .23s,box-shadow .23s}.card:nth-child(2){animation-delay:.11s}.card:nth-child(3){animation-delay:.22s}.card:nth-child(4){animation-delay:.33s}.card:nth-child(5){animation-delay:.44s}.card:hover{transform:translateX(-9px) scale(1.025)!important;box-shadow:0 20px 35px rgba(32,67,148,.25)}@keyframes rise{to{opacity:1;transform:translateX(0)}}
-    .icon{flex:0 0 52px;width:52px;height:52px}.icon img{display:block;width:100%;height:100%;object-fit:contain}.card h2{margin:0 0 4px;font-size:18px;line-height:1;color:#1d2ad0}.green h2{color:#178637}.red h2{color:#e51522}.card h2 sup{font-size:8px}.card b{display:block;color:#1724be;font-size:10px;margin-bottom:5px}.card p{margin:0;font-size:11px;white-space:nowrap}
-    @media (max-width:1050px){.intro{width:32vw}.globe{width:54vw;left:22%;bottom:4%}.phone{height:42vh;left:5%;bottom:5%}.stack{width:31vw;right:25px}.card{height:74px;padding:10px;gap:10px}.icon{flex-basis:46px;width:46px;height:46px}.card h2{font-size:16px}.card b{font-size:9px}.card p{font-size:9px}.connectors{opacity:.75}}
-    @media (max-width:760px){#fidux-hero{min-height:720px;height:auto;min-height:100svh;padding-bottom:25px;overflow:visible}.hero-bg{object-position:center;opacity:.88}#fidux-hero:after{background:linear-gradient(180deg,rgba(226,237,255,.84),rgba(215,229,255,.42))}.globe{width:92vw;left:4%;top:28%;bottom:auto;opacity:.92;z-index:1;max-height:50vh}.phone{height:34vh;left:auto;right:-4%;bottom:1%;opacity:.35}#fidux-hero header{height:65px;padding:0 18px;gap:0}#fidux-hero .seal{width:42px;height:42px;font-size:20px}#fidux-hero .brand strong{font-size:17px}#fidux-hero .brand small{font-size:5px}#fidux-hero nav{margin-left:auto;gap:17px;font-size:13px}#fidux-hero nav span:last-child{display:none}.intro{position:relative;top:auto;left:auto;padding:52px 24px 0;width:min(480px,100%);z-index:3}.intro h1{font-size:36px}.rules{margin:18px 0 22px}.watch{padding:14px 16px;font-size:15px}.stack{position:relative;top:auto;right:auto;transform:none;width:auto;margin:30px 18px 0;gap:10px;z-index:3}.card{height:80px;border-radius:14px;transform:translateY(20px)}@keyframes rise{to{opacity:1;transform:translateY(0)}}.card:hover{transform:scale(1.015)!important}.connectors{display:none}.card h2{font-size:16px}.card b{margin-bottom:4px}.card p{font-size:10px}.icon{flex-basis:48px;width:48px;height:48px}}
-    @media (max-width:430px){nav{gap:13px;font-size:12px}.intro h1{font-size:31px}.card{padding:10px}.card p{white-space:normal}.card h2{font-size:15px}}
-    @media (prefers-reduced-motion:reduce){#fidux-hero *,#fidux-hero *:before,#fidux-hero *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-    /* Webflow-safe names and specificity for the card component. */
-    #fidux-hero .fidux-card-stack{position:absolute!important;right:clamp(28px,2.7vw,49px)!important;top:47%!important;transform:translateY(-50%)!important;width:min(325px,21.2vw)!important;display:grid!important;gap:9px!important;z-index:2!important}
-    #fidux-hero .fidux-card{height:78px!important;padding:11px 14px!important;display:flex!important;align-items:center!important;gap:13px!important;border-radius:15px!important;background:rgba(255,255,255,.87)!important;box-shadow:0 14px 30px rgba(41,81,156,.12)!important;overflow:visible!important;will-change:transform,box-shadow,background-color;transition:transform .42s cubic-bezier(.22,1,.36,1),box-shadow .42s cubic-bezier(.22,1,.36,1),background-color .42s ease!important}
+    /* Stack Container & Equal Card Sizing */
+    #fidux-hero .fidux-card-stack{position:absolute!important;right:clamp(16px,2vw,30px)!important;top:50%!important;transform:translateY(-50%)!important;width:min(360px,24vw)!important;display:flex!important;flex-direction:column!important;gap:9px!important;z-index:2!important}
+    #fidux-hero .fidux-card{flex:1 1 auto!important;min-height:78px!important;height:auto!important;padding:10px 12px!important;display:flex!important;align-items:center!important;gap:11px!important;border-radius:15px!important;background:rgba(255,255,255,.87)!important;box-shadow:0 14px 30px rgba(41,81,156,.12)!important;overflow:visible!important;will-change:transform,box-shadow,background-color;transition:transform .42s cubic-bezier(.22,1,.36,1),box-shadow .42s cubic-bezier(.22,1,.36,1),background-color .42s ease!important}
+    .card-content{display:flex;flex-direction:column;justify-content:center;min-width:0;flex:1}
     @media (hover:hover) and (pointer:fine){#fidux-hero .fidux-card:hover{transform:translateX(-8px) scale(1.018)!important;background:rgba(255,255,255,.97)!important;box-shadow:0 22px 40px rgba(32,67,148,.24)!important}#fidux-hero .fidux-card:hover .fidux-card-icon{transform:scale(1.06)}#fidux-hero .fidux-card-icon{transition:transform .42s cubic-bezier(.22,1,.36,1)}}
-    #fidux-hero .fidux-card-icon{flex:0 0 52px!important;width:52px!important;height:52px!important;display:block!important}#fidux-hero .fidux-card-icon img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
-    #fidux-hero .fidux-card h2{display:block!important;margin:0 0 4px!important;font:700 18px/1 Inter,Arial,sans-serif!important;color:#1d2ad0!important;white-space:nowrap!important}#fidux-hero .fidux-card.green h2{color:#178637!important}#fidux-hero .fidux-card.red h2{color:#e51522!important}#fidux-hero .fidux-card b{display:block!important;color:#1724be!important;font:700 10px/1.1 Inter,Arial,sans-serif!important;margin:0 0 5px!important;white-space:nowrap!important}#fidux-hero .fidux-card p{display:block!important;margin:0!important;color:#070707!important;font:400 11px/1.1 Inter,Arial,sans-serif!important;white-space:nowrap!important}
-    @media (max-width:1050px){#fidux-hero .fidux-card-stack{width:31vw!important;right:25px!important}#fidux-hero .fidux-card{height:74px!important;padding:10px!important;gap:10px!important}#fidux-hero .fidux-card-icon{flex-basis:46px!important;width:46px!important;height:46px!important}#fidux-hero .fidux-card h2{font-size:16px!important}#fidux-hero .fidux-card b{font-size:9px!important}#fidux-hero .fidux-card p{font-size:9px!important}}
-    @media (max-width:760px){#fidux-hero .fidux-card-stack{position:relative!important;top:auto!important;right:auto!important;transform:none!important;width:auto!important;margin:30px 18px 0!important;gap:10px!important}#fidux-hero .fidux-card{height:80px!important;border-radius:14px!important}#fidux-hero .fidux-card-icon{flex-basis:48px!important;width:48px!important;height:48px!important}}
+    #fidux-hero .fidux-card-icon{flex:0 0 46px!important;width:46px!important;height:46px!important;display:block!important}#fidux-hero .fidux-card-icon img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
+    #fidux-hero .fidux-card h2{display:block!important;margin:0 0 2px!important;font:700 16px/1.2 Inter,Arial,sans-serif!important;color:#1d2ad0!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}#fidux-hero .fidux-card.green h2{color:#178637!important}#fidux-hero .fidux-card.red h2{color:#e51522!important}#fidux-hero .fidux-card b{display:block!important;color:#1724be!important;font:700 10px/1.2 Inter,Arial,sans-serif!important;margin:0 0 2px!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}#fidux-hero .fidux-card p{display:block!important;margin:0!important;color:#070707!important;font:400 10.5px/1.25 Inter,Arial,sans-serif!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}
+    @media (max-width:1050px){.intro{width:32vw}.globe{width:54vw;left:22%;bottom:4%}.phone{height:42vh;left:5%;bottom:5%}#fidux-hero .fidux-card-stack{width:32vw!important;right:16px!important}#fidux-hero .fidux-card{min-height:74px!important;padding:9px!important;gap:8px!important}#fidux-hero .fidux-card-icon{flex-basis:40px!important;width:40px!important;height:40px!important}#fidux-hero .fidux-card h2{font-size:15px!important}#fidux-hero .fidux-card b{font-size:9px!important}#fidux-hero .fidux-card p{font-size:9px!important}}
+    @media (max-width:760px){#fidux-hero{min-height:720px;height:auto;min-height:100svh;padding-bottom:25px;overflow:visible}.hero-bg{object-position:center;opacity:.88}#fidux-hero:after{background:linear-gradient(180deg,rgba(226,237,255,.84),rgba(215,229,255,.42))}.globe{width:92vw;left:4%;top:28%;bottom:auto;opacity:.92;z-index:1;max-height:50vh}.phone{height:34vh;left:auto;right:-4%;bottom:1%;opacity:.35}#fidux-hero header{height:65px;padding:0 18px;gap:0}#fidux-hero .seal{width:42px;height:42px;font-size:20px}#fidux-hero .brand strong{font-size:17px}#fidux-hero .brand small{font-size:5px}#fidux-hero nav{margin-left:auto;gap:17px;font-size:13px}#fidux-hero nav span:last-child{display:none}.intro{position:relative;top:auto;left:auto;padding:52px 24px 0;width:min(480px,100%);z-index:3}.intro h1{font-size:32px!important}.rules{margin:14px 0 16px}.watch{padding:14px 16px;font-size:15px}#fidux-hero .fidux-card-stack{position:relative!important;top:auto!important;right:auto!important;transform:none!important;width:auto!important;margin:30px 18px 0!important;gap:10px!important}#fidux-hero .fidux-card{min-height:80px!important;border-radius:14px!important}#fidux-hero .fidux-card-icon{flex-basis:46px!important;width:46px!important;height:46px!important}}
     .video-modal[hidden]{display:none}.video-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:rgba(8,17,45,.72);backdrop-filter:blur(5px)}.video-modal__dialog{position:relative;width:min(100%,1050px);aspect-ratio:16/9;background:#111;border-radius:16px;overflow:visible;box-shadow:0 24px 65px rgba(0,0,0,.45)}.video-modal__frame{display:block;width:100%;height:100%;border:0;border-radius:16px;background:#111}.video-modal__close{position:absolute;z-index:1;top:12px;right:12px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(0,0,0,.78);color:#fff;font:700 30px/1 Arial,sans-serif;cursor:pointer;transition:transform .2s,background .2s}.video-modal__close:hover,.video-modal__close:focus-visible{transform:scale(1.08);background:#1828ca;outline:3px solid #fff;outline-offset:2px}@media (max-width:600px){.video-modal{padding:16px}.video-modal__dialog{width:100%;border-radius:12px}.video-modal__frame{border-radius:12px}.video-modal__close{top:8px;right:8px;width:38px;height:38px;font-size:27px}}
   </style>
       </head>
@@ -182,42 +188,47 @@
           </header>
           <section class="intro">
             <h1>Enterprise First AI,<span>Ready Today.</span><span>Built for Tomorrow.</span></h1>
-            <div class="rules"><i></i><i></i></div><button class="watch" onclick="window.open('https://studio.speedshotx.com/ce/fiducia/forward?fwkey=43502810x756x844', 'VideoPreview', 'width=1050,height=600,left='+(screen.width-1050)/2+',top='+(screen.height-600)/2)">Watch Overview <span class="play">▶</span></button>
+            <div class="rules"><i></i><i></i></div>
+            <button class="watch" onclick="window.open('https://studio.speedshotx.com/ce/fiducia/forward?fwkey=43502810x756x844', 'VideoPreview', 'width=1050,height=600,left='+(screen.width-1050)/2+',top='+(screen.height-600)/2)">Watch Overview <span class="play">▶</span></button>
           </section>
           <svg class="connectors" aria-hidden="true"></svg>
           <section class="fidux-card-stack" aria-label="AI platform products">
             <a href="speedshotx.html" class="fidux-card" style="text-decoration:none;">
               <div class="fidux-card-icon"><img src="images/icon-1.png" alt=""></div>
-              <div>
-                <h2>SpeedShotX<sup>™</sup></h2><b>AI Multi Model Engagement</b>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">SpeedShotX</h2>
+                <b>AI Multi Model Engagement</b>
                 <p>Visual AI. Short Links. Real-Time Action.</p>
               </div>
             </a>
             <a href="intellix.html" class="fidux-card" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/icon-2.png" alt=""></div>
-              <div>
-                <h2>IntelliX</h2>
+              <div class="fidux-card-icon"><img src="images/intellix..png" alt=""></div>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">IntelliX Prime</h2>
                 <p>Frontier &amp; Open-Weight Model Suite.</p>
               </div>
             </a>
             <a href="knowledge-x.html" class="fidux-card green" style="text-decoration:none;">
               <div class="fidux-card-icon"><img src="images/icon-3.png" alt=""></div>
-              <div>
-                <h2>KnowledgeX<sup>™</sup></h2><b>AI-Powered Knowledge Intelligence</b>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">KnowledgeX</h2>
+                <b>AI-Powered Knowledge Intelligence</b>
                 <p>RAG. Govern. Deliver.</p>
               </div>
             </a>
             <a href="videox.html" class="fidux-card" style="text-decoration:none;">
               <div class="fidux-card-icon"><img src="images/icon-4.png" alt=""></div>
-              <div>
-                <h2>VideoX<sup>™</sup></h2><b>AI Video Intelligence</b>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">VideoX</h2>
+                <b>AI Video Intelligence</b>
                 <p>Index. Search. Translate. Act.</p>
               </div>
             </a>
             <a href="fitx.html" class="fidux-card red" style="text-decoration:none;">
               <div class="fidux-card-icon"><img src="images/icon-5.png" alt=""></div>
-              <div>
-                <h2>FitX<sup>™</sup></h2><b>AI Fit &amp; Sizing</b>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">FitX</h2>
+                <b>AI Fit &amp; Sizing</b>
                 <p>Virtual Try-On.Perfect Fit. Every Time.</p>
               </div>
             </a>
@@ -232,16 +243,12 @@
         <script>
     const hero=document.querySelector('#fidux-hero'), globe=document.querySelector('.globe'), phone=document.querySelector('.phone'), svg=document.querySelector('.connectors');
     const NS='http://www.w3.org/2000/svg', colours=['p1','p2','p3','p4','p5'];
-    // Each anchor is a percentage of the separately positioned globe artwork.
-    // The artwork has transparent padding on its right edge, so these are placed
-    // directly on the visible globe contour rather than at the PNG box edge.
     const globeAnchors=[[.76,.34],[.78,.44],[.77,.55],[.73,.65],[.70,.68]];
     function drawConnectors(){
       if(innerWidth<=760)return;
       const box=hero.getBoundingClientRect(), globeBox=globe.getBoundingClientRect();
       svg.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`); svg.replaceChildren();
       const phoneBox=phone.getBoundingClientRect();
-      // The parallel dotted flows join the phone to the left side of the globe.
       const streams=[[.88,.37,.205,.45],[.89,.40,.195,.48],[.90,.43,.185,.51],[.91,.46,.22,.54],[.92,.49,.215,.57],[.93,.52,.21,.60],[.94,.55,.205,.63]];
       streams.forEach(([phoneX,phoneY,globeX,globeY])=>{
         const sx=phoneBox.left-box.left+phoneBox.width*phoneX, sy=phoneBox.top-box.top+phoneBox.height*phoneY;
@@ -260,7 +267,6 @@
     addEventListener('resize',drawConnectors); addEventListener('load',drawConnectors); drawConnectors();
     new ResizeObserver(drawConnectors).observe(hero);
     document.querySelectorAll('.fidux-card').forEach(card=>card.addEventListener('transitionend',drawConnectors));
-    // Redraw while cards move so the connector endpoint follows the hover transition.
     let connectorAnimation;
     function animateConnectors(){
       cancelAnimationFrame(connectorAnimation);
@@ -275,7 +281,14 @@
       card.addEventListener('mouseenter',animateConnectors);
       card.addEventListener('mouseleave',animateConnectors);
     });
-    // Re-check after the staggered card entrance has completed.
+    // Resize & Mutation Observers to automatically adjust line connections when translation text changes
+    const translateObserver = new MutationObserver(() => {
+      drawConnectors();
+    });
+    document.querySelectorAll('.fidux-card').forEach(card => {
+      translateObserver.observe(card, { childList: true, subtree: true, characterData: true });
+      new ResizeObserver(drawConnectors).observe(card);
+    });
     setTimeout(drawConnectors,900);
     document.querySelectorAll('img').forEach(img => {
       if (img.complete && img.naturalHeight === 0) img.style.display = 'none';
