@@ -998,20 +998,28 @@ var fiduciaLanguages = [
   { code: 'vi', shortCode: 'VI', name: 'Vietnamese', flag: 'https://flagcdn.com/w40/vn.png' }
 ];
 function clearTranslateCookies() {
-  document.cookie = "googtrans=; path=/; max-age=0";
+  // Clear all translation-related cookies and storage
+  document.cookie = "googtrans=; path=/; max-age=0; SameSite=Lax";
+  sessionStorage.removeItem("fiducia_active_lang");
+  localStorage.removeItem("fiducia_active_lang");
 }
 function setTranslateCookie(langCode, isManualSelection) {
   clearTranslateCookies();
+  
   if (isManualSelection !== false) {
     if (langCode === 'en') {
       sessionStorage.removeItem("fiducia_active_lang");
+      localStorage.removeItem("fiducia_active_lang");
     } else {
       sessionStorage.setItem("fiducia_active_lang", langCode);
+      localStorage.setItem("fiducia_active_lang", langCode);
     }
   }
   if (langCode !== 'en') {
     var cookieVal = "/en/" + langCode;
-    document.cookie = "googtrans=" + cookieVal + "; path=/";
+    var expirationDate = new Date();
+    expirationDate.setTime(expirationDate.getTime() + (365 * 24 * 60 * 60 * 1000));
+    document.cookie = "googtrans=" + cookieVal + "; path=/; expires=" + expirationDate.toUTCString() + "; SameSite=Lax";
   }
 }
 function getTranslateCookie() {
@@ -1030,12 +1038,16 @@ function getTranslateCookie() {
   return sessionStorage.getItem("fiducia_active_lang") || 'en';
 }
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'ar,bn,zh-CN,nl,en,fr,de,hi,it,ja,ko,ml,pt,es,ta,te,tr,vi',
-    autoDisplay: false,
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
+  var container = document.getElementById('google_translate_element');
+  if (container && !container._gtTranslateelement_inited) {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'ar,bn,zh-CN,nl,en,fr,de,hi,it,ja,ko,ml,pt,es,ta,te,tr,vi',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+    container._gtTranslateelement_inited = true;
+  }
 }
 function cleanGoogleTranslateInjections() {
   var initialTitle = document.title;
@@ -1276,8 +1288,18 @@ function applyBrandProtection() {
                          '<span class="fiducia-lang-code-text">' + lang.shortCode + '</span>' +
                          (isActive ? '<span class="fiducia-check-icon">✓</span>' : '');
         item.addEventListener('click', function() {
+          // Add visual feedback - fade out effect
+          item.style.opacity = '0.5';
+          item.style.pointerEvents = 'none';
+          
+          // Set the cookie and trigger immediate reload
           setTranslateCookie(lang.code, true);
-          window.location.reload();
+          
+          // Very short delay (50ms) to ensure cookie is committed before reload
+          setTimeout(function() {
+            // Force hard reload to bust cache and ensure Google Translate re-initializes
+            window.location.href = window.location.href;
+          }, 50);
         });
         langGrid.appendChild(item);
       });
