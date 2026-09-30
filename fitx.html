@@ -132,126 +132,864 @@
   </script>
   </div>
   <section>
-    <div class="w-embed w-script">
+   <div class="w-embed w-script">
       <!doctype html>
       <html lang="en">
       <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
         <title>FitX — AI Fitting Platform</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/lucide@latest"></script>
         <style>
-    :root{--pink:#f40082;--ink:#101632;--muted:#555c73;--line:#e9eaf2;--soft:#fff7fc;--radius:20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.055em}button{font:inherit;border:0;cursor:pointer}.shell{width:min(1480px,calc(100% - 72px));margin:auto}.pink{color:var(--pink)}.eyebrow{display:inline-flex;gap:7px;align-items:center;color:var(--pink);font-size:11px;font-weight:700;border:1px solid #ffd2e9;border-radius:30px;padding:7px 12px;background:#fff8fc}.eyebrow:before{content:'✦';font-size:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:11px;padding:15px 24px;font-weight:700;font-size:14px;transition:.25s}.btn-primary{color:#fff;background:linear-gradient(115deg,#fb0082,#df0074);box-shadow:0 12px 24px #f4008240}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 17px 30px #f4008255}.btn-light{color:var(--ink);background:#fff;border:1px solid #ebedf4;box-shadow:0 6px 18px #18214b12}.btn-light:hover{border-color:#ffabd4;transform:translateY(-2px)}
-    /* Hero */.hero{position:relative;min-height:655px;padding:42px 0 25px;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 72% 62%,#ffd4ed 0,transparent 21%),linear-gradient(130deg,#fff 2%,#fff8fc 75%,#fff)}.hero:after{content:'';position:absolute;inset:auto 0 0;height:220px;background:repeating-radial-gradient(ellipse at 62% 100%,transparent 0 25px,#f8b8df90 26px 27px,transparent 29px 51px);opacity:.65;z-index:-1}.hero-grid{display:grid;grid-template-columns:40% 60%;align-items:center;min-height:570px}.hero-copy{z-index:2;padding:10px 0 30px}.hero h1{font-size:clamp(38px,4.1vw,64px);line-height:1.14;margin:24px 0 22px;max-width:540px}.hero-copy>p{color:var(--muted);font-size:15px;line-height:1.75;max-width:490px}.mini-features{display:flex;flex-wrap:wrap;gap:17px;margin:27px 0}.mini-features span{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700}.mini-features i{color:var(--pink);width:15px}.hero-actions{display:flex;gap:13px}.phone-stage{height:570px;position:relative;min-width:0}.phone{position:absolute;border:7px solid #111527;border-radius:34px;background:#101425;box-shadow:0 25px 27px #11162b48,0 0 0 2px #c7c9d3;width:200px;height:480px;overflow:hidden;top:38px;transition:transform .35s ease}.phone:hover{transform:translateY(-12px) rotate(-1deg)!important}.phone:before{content:'';position:absolute;z-index:5;top:7px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:12px;background:#0b0e19}.phone img{width:100%;height:100%;object-fit:cover}.phone.one{left:5%;transform:rotate(1deg)}.phone.two{z-index:2;width:235px;height:525px;top:8px;left:32%;background:radial-gradient(circle at 50% 33%,#713576,#0a0b27 51%,#16092f)}.phone.three{right:3%;transform:rotate(-1deg)}.fit-ui{position:absolute;inset:40px 10px 12px;color:#fff;text-align:center}.fit-ui h3{letter-spacing:-.03em;font-size:14px}.avatar{margin:52px auto 22px;width:119px;height:210px;border-radius:55px 55px 20px 20px;background:linear-gradient(#ff99d2,#f50086 35%,transparent 36%),radial-gradient(circle at 50% 26%,#f7d3e4 0 23%,transparent 24%),linear-gradient(90deg,transparent 45%,#ffd1e9 46% 53%,transparent 54%);filter:drop-shadow(0 0 14px #fd40ae);animation:pulse 2.5s infinite}.rings{position:absolute;bottom:0;left:15%;width:70%;aspect-ratio:2.3;border:2px solid #ff3cab;border-radius:50%;box-shadow:0 0 20px #ff17a5,0 0 0 16px #df21ad23,0 0 0 35px #df21ad16}.ui-chip{position:absolute;background:#f70689;border-radius:8px;padding:7px;font-size:8px}.ui-chip:nth-of-type(1){left:2px;top:50px}.ui-chip:nth-of-type(2){right:2px;top:50px}.ui-chip:nth-of-type(3){left:4px;top:215px}.ui-chip:nth-of-type(4){right:4px;top:215px}.buy{position:absolute;bottom:5px;left:6px;right:6px;padding:12px;background:#f70083;border-radius:9px;font-weight:800;font-size:11px}.arrow{position:absolute;top:47%;color:var(--pink);font-size:22px}.a1{left:28%}.a2{right:27%}.float{position:absolute;right:-5px;background:white;border-radius:50%;width:51px;height:51px;display:grid;place-items:center;color:var(--pink);box-shadow:0 10px 22px #2b245d26}.float.f1{top:33%}.float.f2{top:55%}
-    /* steps */section{padding:42px 0}.steps-wrap{margin-top:-10px;position:relative;z-index:3}.steps{background:#fff;border:1px solid #ececf3;border-radius:16px;padding:23px 30px;box-shadow:0 13px 37px #18214b12}.section-title{text-align:center;font-size:27px;margin-bottom:22px}.step-row{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:center}.step{min-height:142px;border:1px solid #ececf3;border-radius:13px;padding:22px;display:flex;gap:18px;align-items:center;position:relative}.num{position:absolute;left:-7px;top:-9px;width:26px;height:26px;color:white;background:var(--pink);border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:bold}.iconbox{width:66px;height:66px;flex:none;border-radius:13px;display:grid;place-items:center;color:var(--pink);background:#fff3f9}.iconbox i{width:32px;height:32px}.step h3{font-size:14px;letter-spacing:-.03em;margin-bottom:8px}.step p{font-size:11px;line-height:1.55;color:#4b5264}.next{text-align:center;color:#151b39;font-size:24px}
-    /* intelligence */.intelligence{padding-top:82px;overflow:hidden}.intel-grid{display:grid;grid-template-columns:35% 65%;align-items:center;gap:10px}.intel-copy h2,.works-copy h2{font-size:29px;line-height:1.18;margin-bottom:15px}.intel-copy p,.works-copy p{line-height:1.65;color:var(--muted);font-size:14px;max-width:370px}.stats{display:flex;gap:17px;margin-top:31px}.stat{padding-right:13px;border-right:1px solid #e7e7ee}.stat:last-child{border:0}.stat i{color:var(--pink);width:23px}.stat b{display:block;color:var(--pink);font-size:19px;margin:8px 0 3px}.stat small{font-size:9px;font-weight:700;line-height:1.3;display:block}.intel-visual{width:100%;overflow:hidden;border-radius:22px}.intel-visual img{display:block;width:100%;height:auto;transition:transform .5s ease}.intel-visual:hover img{transform:scale(1.025)}
-    /* works */.works{background:linear-gradient(100deg,#fff,#fff7fc,#fff);padding:35px 0}.works-grid{display:grid;grid-template-columns:24% 76%;align-items:center}.outline-btn{border:1px solid #ff8fc6;background:#fff;color:var(--pink);border-radius:30px;padding:10px 16px;font-size:11px;font-weight:700;margin-top:20px}.flow{display:flex;align-items:center;justify-content:space-between}.flow-item{text-align:center;max-width:100px;font-size:11px;font-weight:800;transition:color .42s ease}.flow-icon{width:86px;height:86px;margin:0 auto 11px;border-radius:50%;display:grid;place-items:center;background:white;color:var(--pink);box-shadow:0 10px 25px #56326f18;transition:transform .42s cubic-bezier(.2,.8,.2,1),background .42s ease,box-shadow .42s ease}.flow-icon i{width:31px;height:31px;transition:transform .42s ease}.flow-item.active{color:var(--pink)}.flow-item.active .flow-icon{background:#ffe7f5;transform:translateY(-7px) scale(1.08);box-shadow:0 0 0 15px #f7d1e980,0 0 0 31px #fae7f233,0 15px 28px #f4008240}.flow-item.active .flow-icon i{transform:scale(1.13)}.flow-line{height:2px;flex:1;background:#f8c5df;position:relative;top:-15px;overflow:hidden}.flow-line:before{content:'';position:absolute;inset:0 auto 0 -35%;width:35%;background:linear-gradient(90deg,transparent,#f40082,transparent);opacity:0}.flow-line.lit:before{animation:flow-pulse .65s ease-out}.flow-line:after{content:'◆';color:#f7a4d0;position:absolute;right:-4px;top:-8px;font-size:9px;transition:color .3s ease}.flow-line.lit:after{color:var(--pink)}@keyframes flow-pulse{from{left:-35%;opacity:.1}25%{opacity:1}to{left:110%;opacity:.15}}
-    /* platforms + industries */.platforms{background:#fbf9ff;padding:27px 0}.platform-row{display:flex;align-items:center;gap:17px}.platform-row h2{font-size:21px;width:230px;flex:none}.logos{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;flex:1}.logo{background:#fff;border-radius:8px;min-height:71px;display:grid;place-items:center;text-align:center;font-size:12px;font-weight:800;box-shadow:0 4px 13px #3b31530a}.logo em{color:#5ba035;font-size:20px}.industries{padding-bottom:34px}.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}.industry{height:231px;border-radius:12px;overflow:hidden;position:relative;background:#222;isolation:isolate;transition:.3s}.industry:hover{transform:translateY(-8px);box-shadow:0 18px 26px #16224e33}.industry:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#111d)}.industry img{width:100%;height:100%;object-fit:cover}.industry b,.industry span{position:absolute;left:13px;right:12px;z-index:1;color:#fff}.industry b{bottom:41px;font-size:13px}.industry span{bottom:12px;font-size:10px;line-height:1.35}.dots{text-align:center;color:var(--pink);letter-spacing:7px;margin-top:13px}
-    /* trust */.trust{padding-top:0}.trust-grid{display:grid;grid-template-columns:46% 54%;gap:14px}.trust-card{background:#fbfaff;border:1px solid #f0edf6;border-radius:13px;padding:22px}.trust-card h2{font-size:19px;margin-bottom:18px}.partners{display:flex;justify-content:space-between;align-items:center;font-weight:800;color:#555b71;margin:17px 0 26px}.partners b:first-child{font-family:serif;font-size:24px}.certs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.cert{font-size:9px;line-height:1.35}.cert i{display:block;color:var(--pink);width:19px;margin-bottom:8px}.results{background:linear-gradient(110deg,#fff8fc,#ffe7f4);position:relative;overflow:hidden}.metrics{display:flex;gap:25px}.metrics b{font-size:28px;color:var(--pink);display:block}.metrics span{font-size:10px;line-height:1.3;display:block;margin-top:5px}.quote{font-size:13px;font-weight:700;line-height:1.55;max-width:360px;margin-top:27px}.author{font-size:11px;color:#777;margin-top:8px}.woman{position:absolute;right:0;bottom:0;width:175px;height:190px;object-fit:cover;object-position:50% 15%;border-radius:80px 80px 0 0;filter:saturate(.9)}.cta{margin:23px 0 25px;border-radius:15px;padding:27px 45px;color:#fff;background:linear-gradient(110deg,#f2a4d8,#f60082 40%,#e50078 64%,#fbcde9);display:flex;align-items:center;gap:24px}.cta .cta-icon{width:66px;height:66px;flex:none;border-radius:50%;display:grid;place-items:center;color:var(--pink);background:#fff}.cta h2{font-size:25px;flex:1;letter-spacing:-.04em}.cta .btn-light{color:var(--ink)}
-    .hero-visual{width:min(760px,100%);height:auto;display:block;margin:-25px auto -35px;filter:drop-shadow(0 22px 20px rgba(169,0,104,.16));transition:transform .25s ease;will-change:transform}.phone-stage:has(.hero-visual){height:auto;display:flex;align-items:center;justify-content:center;overflow:visible}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}@keyframes pulse{50%{filter:drop-shadow(0 0 26px #ff7acd);transform:scale(1.035)}}
-    @media(max-width:900px){.shell{width:min(100% - 36px,680px)}.hero{padding-top:22px}.hero-grid,.intel-grid,.works-grid,.trust-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy>p{margin:auto}.mini-features,.hero-actions{justify-content:center}.phone-stage:has(.hero-visual){width:100%;height:auto;transform:none;margin:0}.hero-visual{max-width:620px;margin:-5px auto -22px}.phone.one{left:0}.phone.two{left:31%}.phone.three{right:0}.a1{left:25%}.a2{right:24%}.step-row{grid-template-columns:1fr;gap:14px}.next{transform:rotate(90deg);height:12px}.intelligence{padding-top:50px}.intel-copy{text-align:center}.stats{justify-content:center}.body-art{order:3}.nodes{grid-template-columns:1fr 1fr;margin-top:18px}.works-copy{text-align:center;margin-bottom:28px}.works-copy p{margin:auto}.flow{gap:3px}.flow-icon{width:59px;height:59px}.flow-line{min-width:6px}.platform-row{display:block}.platform-row h2{width:auto;margin-bottom:15px}.logos{grid-template-columns:repeat(4,1fr)}.cards{grid-template-columns:repeat(3,1fr)}.trust-grid{gap:14px}.cta{padding:24px;flex-wrap:wrap}.cta h2{font-size:21px;min-width:70%}}
-    @media(max-width:520px){.shell{width:calc(100% - 26px)}.hero h1{font-size:37px}.hero-copy>p{font-size:13px}.phone-stage:has(.hero-visual){transform:none;margin:0;height:auto}.hero-visual{width:122%;max-width:none;margin:0 -11% -20px}.phone.one{left:2%}.phone.three{right:2%}.steps{padding:18px 13px}.section-title{font-size:21px}.step{padding:17px}.stats{gap:7px}.stat{padding-right:8px}.stat b{font-size:16px}.intel-copy h2,.works-copy h2{font-size:25px}.nodes{grid-template-columns:1fr}.flow{display:flex;flex-direction:column;align-items:center;gap:16px}.flow-item{max-width:none}.flow-line{width:2px;height:22px;min-width:0;top:0;margin:0 auto}.flow-line:after{content:'▼';right:-3px;top:auto;bottom:-9px;font-size:9px}.platforms{margin-top:0}.logos{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr 1fr;gap:10px}.industry{height:200px}.trust-card{padding:18px}.certs{grid-template-columns:repeat(3,1fr)}.metrics{gap:14px}.woman{opacity:.3}.cta{justify-content:center;text-align:center}.cta .btn{width:100%}}
-    </style>
+    /* ── PREVENT OVERLAY BLUR & BACKGROUND ISSUES ON TRANSLATION ── */
+    html, body {
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      color: var(--ink);
+    }
+    font.goog-text-highlight,
+    font[style*="background-color"] {
+      background-color: transparent !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    :root {
+      --pink: #f40082;
+      --ink: #101632;
+      --muted: #555c73;
+      --line: #e9eaf2;
+      --soft: #fff7fc;
+      --radius: 20px;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: #fff;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    /* Text & Typography Safeguards */
+    h1, h2, h3, p, span, button {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    h1, h2, h3 {
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: -.04em;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    button {
+      font: inherit;
+      border: 0;
+      cursor: pointer;
+    }
+    /* Centered Main Layout Container */
+    .shell {
+      width: min(1480px, calc(100% - 48px));
+      margin: 0 auto !important;
+      max-width: 100%;
+    }
+    .pink {
+      color: var(--pink);
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid #ffd2e9;
+      border-radius: 30px;
+      padding: 7px 14px;
+      background: #fff8fc;
+      max-width: 100%;
+      white-space: nowrap;
+    }
+    .eyebrow:before {
+      content: '✦';
+      font-size: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: clamp(11px, 0.9vw, 14px);
+      transition: all 0.25s ease;
+      text-align: center;
+      white-space: normal;
+      line-height: 1.25;
+      flex: 0 1 auto;
+      max-width: 100%;
+    }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(115deg, #fb0082, #df0074);
+      box-shadow: 0 12px 24px rgba(244, 0, 130, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 17px 30px rgba(244, 0, 130, 0.35);
+    }
+    .btn-light {
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #ebedf4;
+      box-shadow: 0 6px 18px rgba(24, 33, 75, 0.07);
+    }
+    .btn-light:hover {
+      border-color: #ffabd4;
+      transform: translateY(-2px);
+    }
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      min-height: 620px;
+      padding: 42px 0 25px;
+      isolation: isolate;
+      overflow: hidden;
+      background: radial-gradient(circle at 72% 62%, #ffd4ed 0, transparent 21%), linear-gradient(130deg, #fff 2%, #fff8fc 75%, #fff);
+    }
+    .hero:after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0;
+      height: 220px;
+      background: repeating-radial-gradient(ellipse at 62% 100%, transparent 0 25px, rgba(248, 184, 223, 0.55) 26px 27px, transparent 29px 51px);
+      opacity: .65;
+      z-index: -1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      align-items: center;
+      min-height: 540px;
+    }
+    .hero-copy {
+      z-index: 2;
+      padding: 10px 0 30px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 3.8vw, 60px);
+      line-height: 1.15;
+      margin: 22px 0 20px;
+      max-width: 540px;
+    }
+    .hero-copy > p {
+      color: var(--muted);
+      font-size: clamp(14px, 1.2vw, 16px);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .mini-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .mini-features span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .mini-features i {
+      color: var(--pink);
+      width: 16px;
+      height: 16px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 10px;
+      max-width: 100%;
+    }
+    .phone-stage {
+      height: auto;
+      position: relative;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-visual {
+      width: min(740px, 100%);
+      height: auto;
+      display: block;
+      margin: -20px auto -30px;
+      filter: drop-shadow(0 22px 20px rgba(169,0,104,.16));
+      transition: transform .25s ease;
+      will-change: transform;
+    }
+    /* ── STEPS SECTION ── */
+    section {
+      padding: 42px 0;
+    }
+    .steps-wrap {
+      margin-top: -10px;
+      position: relative;
+      z-index: 3;
+    }
+    .steps {
+      background: #fff;
+      border: 1px solid #ececf3;
+      border-radius: 18px;
+      padding: 26px 32px;
+      box-shadow: 0 13px 37px rgba(24, 33, 75, 0.07);
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(22px, 2.2vw, 29px);
+      margin-bottom: 24px;
+    }
+    .step-row {
+      display: grid;
+      grid-template-columns: 1fr 30px 1fr 30px 1fr;
+      align-items: center;
+    }
+    .step {
+      min-height: 140px;
+      border: 1px solid #ececf3;
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      position: relative;
+    }
+    .num {
+      position: absolute;
+      left: -8px;
+      top: -9px;
+      width: 26px;
+      height: 26px;
+      color: white;
+      background: var(--pink);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .iconbox {
+      width: 62px;
+      height: 62px;
+      flex: none;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      background: #fff3f9;
+    }
+    .iconbox i {
+      width: 30px;
+      height: 30px;
+    }
+    .step h3 {
+      font-size: 15px;
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+    }
+    .step p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #4b5264;
+    }
+    .next {
+      text-align: center;
+      color: #151b39;
+      font-size: 22px;
+    }
+    /* ── INTELLIGENCE SECTION ── */
+    .intelligence {
+      padding-top: 72px;
+      overflow: hidden;
+    }
+    .intel-grid {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      align-items: center;
+      gap: 20px;
+    }
+    .intel-copy h2, .works-copy h2 {
+      font-size: clamp(24px, 2.4vw, 32px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .intel-copy p, .works-copy p {
+      line-height: 1.65;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 400px;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .stat {
+      padding-right: 14px;
+      border-right: 1px solid #e7e7ee;
+    }
+    .stat:last-child {
+      border: 0;
+    }
+    .stat i {
+      color: var(--pink);
+      width: 22px;
+      height: 22px;
+    }
+    .stat b {
+      display: block;
+      color: var(--pink);
+      font-size: 20px;
+      margin: 6px 0 2px;
+    }
+    .stat small {
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.3;
+      display: block;
+    }
+    .intel-visual {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+    .intel-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform .5s ease;
+    }
+    .intel-visual:hover img {
+      transform: scale(1.02);
+    }
+    /* ── HOW IT WORKS FLOW SECTION ── */
+    .works {
+      background: linear-gradient(100deg, #fff, #fff7fc, #fff);
+      padding: 40px 0;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: 26% 74%;
+      align-items: center;
+    }
+    .outline-btn {
+      border: 1px solid #ff8fc6;
+      background: #fff;
+      color: var(--pink);
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 18px;
+    }
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .flow-item {
+      text-align: center;
+      max-width: 110px;
+      font-size: 11px;
+      font-weight: 800;
+      transition: color .42s ease;
+    }
+    .flow-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: var(--pink);
+      box-shadow: 0 10px 25px rgba(86, 50, 111, 0.09);
+      transition: transform .42s cubic-bezier(.2,.8,.2,1), background .42s ease, box-shadow .42s ease;
+    }
+    .flow-icon i {
+      width: 28px;
+      height: 28px;
+      transition: transform .42s ease;
+    }
+    .flow-item.active {
+      color: var(--pink);
+    }
+    .flow-item.active .flow-icon {
+      background: #ffe7f5;
+      transform: translateY(-6px) scale(1.06);
+      box-shadow: 0 0 0 12px rgba(247, 209, 233, 0.5), 0 0 0 24px rgba(250, 231, 242, 0.2), 0 12px 24px rgba(244, 0, 130, 0.25);
+    }
+    .flow-item.active .flow-icon i {
+      transform: scale(1.1);
+    }
+    .flow-line {
+      height: 2px;
+      flex: 1;
+      background: #f8c5df;
+      position: relative;
+      top: -15px;
+      overflow: hidden;
+    }
+    .flow-line:before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 -35%;
+      width: 35%;
+      background: linear-gradient(90deg, transparent, #f40082, transparent);
+      opacity: 0;
+    }
+    .flow-line.lit:before {
+      animation: flow-pulse .65s ease-out;
+    }
+    .flow-line:after {
+      content: '◆';
+      color: #f7a4d0;
+      position: absolute;
+      right: -4px;
+      top: -8px;
+      font-size: 9px;
+      transition: color .3s ease;
+    }
+    .flow-line.lit:after {
+      color: var(--pink);
+    }
+    @keyframes flow-pulse {
+      from { left: -35%; opacity: .1; }
+      25% { opacity: 1; }
+      to { left: 110%; opacity: .15; }
+    }
+    /* ── CTA BANNER (CENTERED) ── */
+    .cta-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta {
+      width: 100%;
+      margin: 24px auto 28px !important;
+      border-radius: 18px;
+      padding: 30px 42px;
+      color: #fff;
+      background: linear-gradient(110deg, #f2a4d8, #f60082 40%, #e50078 64%, #fbcde9);
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+    .cta .cta-icon {
+      width: 62px;
+      height: 62px;
+      flex: none;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--pink);
+      background: #fff;
+    }
+    .cta h2 {
+      font-size: clamp(20px, 2vw, 26px);
+      flex: 1;
+      letter-spacing: -.03em;
+      min-width: 260px;
+    }
+    .cta .btn-light {
+      color: var(--ink);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+    /* ── PAGE CONTENT WRAPPER & SCROLL LOCK ── */
+    #page-content {
+      width: 100%;
+      transition: filter 0.35s ease, opacity 0.35s ease;
+    }
+    body.modal-open {
+      overflow: hidden !important;
+      touch-action: none;
+    }
+    body.modal-open #page-content {
+      filter: blur(14px) brightness(0.65);
+      pointer-events: none;
+      user-select: none;
+    }
+    /* ── MANDATORY HIDE RULE FOR ALL FLOATING AI AGENT BADGES & TRANSLATORS ── */
+    body.modal-open [class*="widget"],
+    body.modal-open [id*="widget"],
+    body.modal-open [class*="chat"],
+    body.modal-open [id*="chat"],
+    body.modal-open [class*="agent"],
+    body.modal-open [id*="agent"],
+    body.modal-open [class*="translate"],
+    body.modal-open [id*="translate"],
+    body.modal-open [class*="lang"],
+    body.modal-open [id*="lang"],
+    body.modal-open [class*="badge"],
+    body.modal-open [id*="badge"],
+    body.modal-open [class*="float"],
+    body.modal-open [id*="float"],
+    body.modal-open .goog-te-banner-frame,
+    body.modal-open .goog-te-menu-frame,
+    body.modal-open .skiptranslate,
+    body.modal-open #google_translate_element,
+    body.modal-open iframe:not(#fitx-iframe) {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: scale(0) !important;
+    }
+    /* ── CENTERED IFRAME PHONE MODAL OVERLAY ── */
+    .phone-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 14, 30, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
+      padding: 16px;
+      margin: auto;
+    }
+    .phone-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    /* Perfect Centered Smartphone Frame - Desktop Default (> 640px) */
+    .phone-modal-container {
+      position: relative;
+      margin: auto;
+      width: min(430px, 92vw);
+      height: min(820px, 92vh);
+      background: #000;
+      border: 6px solid #20263a;
+      border-radius: 40px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.65), 0 0 0 2px rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+      transform: scale(0.92) translateY(12px);
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+      display: flex;
+      flex-direction: column;
+    }
+    .phone-modal-overlay.active .phone-modal-container {
+      transform: scale(1) translateY(0);
+    }
+    /* Red Cross Mark Icon with Circular White Background */
+    .phone-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      color: #e50000;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 30;
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .phone-modal-close:hover {
+      transform: scale(1.1);
+      opacity: 0.95;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .phone-modal-close i {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.8;
+    }
+    /* Frame Canvas */
+    .phone-modal-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+      border-radius: 34px;
+      display: block;
+    }
+    /* ── MOBILE RESPONSIVE TUNING (width 900px or below) ── */
+    @media (max-width: 900px) {
+      .shell { width: min(100% - 32px, 640px); }
+      .hero { padding-top: 20px; }
+      .hero-grid, .intel-grid, .works-grid { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .hero-copy > p { margin: auto; }
+      .mini-features { justify-content: center; }
+      .hero-actions { justify-content: center; flex-wrap: wrap; }
+      .hero-visual { max-width: 580px; margin: 0 auto -20px; }
+      .step-row { grid-template-columns: 1fr; gap: 14px; }
+      .next { transform: rotate(90deg); height: 12px; margin: -4px 0; }
+      .intelligence { padding-top: 48px; }
+      .intel-copy { text-align: center; }
+      .intel-copy p, .works-copy p { margin: auto; }
+      .stats { justify-content: center; }
+      .works-copy { text-align: center; margin-bottom: 26px; }
+      .flow { gap: 6px; }
+      .flow-icon { width: 62px; height: 62px; }
+      .flow-line { min-width: 8px; }
+      .cta { padding: 24px; text-align: center; justify-content: center; }
+      .cta h2 { min-width: 100%; font-size: 20px; }
+      .cta .btn { width: 100%; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: calc(100% - 24px); }
+      .hero h1 { font-size: clamp(28px, 8.2vw, 36px); line-height: 1.18; }
+      .hero-copy > p { font-size: 13px; }
+      .btn { width: 100%; padding: 14px 18px; font-size: 13px; }
+      .hero-actions { width: 100%; flex-direction: column; }
+      .hero-visual { width: 118%; margin: 0 -9% -18px; }
+      .steps { padding: 18px 14px; }
+      .section-title { font-size: 20px; }
+      .step { padding: 16px; min-height: auto; }
+      .step h3 { font-size: 14px; }
+      .step p { font-size: 11px; }
+      .intel-copy h2, .works-copy h2 { font-size: 22px; }
+      .stats { gap: 10px; }
+      .stat { padding-right: 10px; }
+      .stat b { font-size: 17px; }
+      .flow { flex-direction: column; gap: 14px; }
+      .flow-item { max-width: none; font-size: 12px; }
+      .flow-line { width: 2px; height: 20px; min-width: 0; top: 0; margin: 0 auto; }
+      .flow-line:after { content: '▼'; right: -3px; top: auto; bottom: -8px; font-size: 8px; }
+      /* Mobile Try-On Frame Dimensions (≤640px): max 430 × 820px with 16px spacing */
+      .phone-modal-overlay { padding: 16px; }
+      .phone-modal-container {
+        width: min(430px, calc(100vw - 32px));
+        height: min(820px, calc(100dvh - 32px));
+        border-width: 5px;
+        border-radius: 36px;
+      }
+      .phone-modal-iframe { border-radius: 31px; }
+    }
+  </style>
       </head>
       <body>
-        <header class="hero">
-          <div class="shell hero-grid">
-            <div class="hero-copy reveal"><span class="eyebrow">AI FIT &amp; VIRTUAL TRY-ON PLATFORM</span>
-              <h1>Perfect Fit.<br>Real Confidence.<br><span class="pink">More Conversions.</span></h1>
-              <p>FitX uses advanced AI to understand every shopper's body, brand style and preferences to deliver the perfect fit every time—online.</p>
-              <div class="mini-features"><span><i data-lucide="scan-line"></i>AI Body Analysis</span><span><i data-lucide="shopping-bag"></i>Size Recommendation</span><span><i data-lucide="shirt"></i>Virtual Try-On</span><span><i data-lucide="sparkles"></i>Style Matching</span></div>
-              <div class="hero-actions"><button class="btn btn-primary" onclick="event.stopImmediatePropagation();window.location.href='contact-form.html?source=FitX';return false;">Book a Demo <i data-lucide="arrow-right"></i></button><button class="btn btn-light"><i data-lucide="play-circle" class="pink"></i>See FitX in Action</button></div>
+        <div id="page-content">
+          <header class="hero">
+            <div class="shell hero-grid">
+              <div class="hero-copy reveal">
+                <span class="eyebrow">AI FIT &amp; VIRTUAL TRY-ON PLATFORM</span>
+                <h1>Perfect Fit.<br>Real Confidence.<br><span class="pink">More Conversions.</span></h1>
+                <p>FitX uses advanced AI to understand every shopper's body, brand style and preferences to deliver the perfect fit every time—online.</p>
+                <div class="mini-features">
+                  <span><i data-lucide="scan-line"></i>AI Body Analysis</span>
+                  <span><i data-lucide="shopping-bag"></i>Size Recommendation</span>
+                  <span><i data-lucide="shirt"></i>Virtual Try-On</span>
+                  <span><i data-lucide="sparkles"></i>Style Matching</span>
+                </div>
+                <div class="hero-actions">
+                  <button class="btn btn-primary" onclick="event.stopImmediatePropagation();window.location.href='https://s-fiducia-ai.webflow.io/contact-form?source=FitX';return false;">Book a Demo <i data-lucide="arrow-right"></i></button>
+                  <button class="btn btn-light" onclick="openFitXDemo()"><i data-lucide="play-circle" class="pink"></i>Experience Live Try-On</button>
+                </div>
+              </div>
+              <div class="phone-stage reveal">
+                <img class="hero-visual" src="images/fitx_site.jpg" alt="FitX AI fitting experience across three phones">
+              </div>
             </div>
-            <div class="phone-stage reveal"><img class="hero-visual" src="images/fitx_site.jpg" alt="FitX AI fitting experience across three phones"></div>
+          </header>
+          <main>
+            <section class="steps-wrap">
+              <div class="shell steps reveal">
+                <h2 class="section-title">The 3-Step <span class="pink">AI Fitting</span> Experience</h2>
+                <div class="step-row">
+                  <article class="step">
+                    <b class="num">1</b>
+                    <div class="iconbox"><i data-lucide="user-round"></i></div>
+                    <div>
+                      <h3>You</h3>
+                      <p>Input your basic measurements<br>or sync your profile.</p>
+                    </div>
+                  </article>
+                  <div class="next">→</div>
+                  <article class="step">
+                    <b class="num">2</b>
+                    <div class="iconbox"><i data-lucide="brain-circuit"></i></div>
+                    <div>
+                      <h3>AI Fit Engine</h3>
+                      <p>Our engine analyzes billions of<br>data points including body shape,<br>brand sizing and style preferences.</p>
+                    </div>
+                  </article>
+                  <div class="next">→</div>
+                  <article class="step">
+                    <b class="num">3</b>
+                    <div class="iconbox"><i data-lucide="shirt"></i></div>
+                    <div>
+                      <h3>Perfect Fit</h3>
+                      <p>Visualize styles, get your exact size<br>recommendation and shop with<br>complete confidence.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+            <section class="intelligence">
+              <div class="shell intel-grid">
+                <div class="intel-copy reveal">
+                  <h2>AI that understands<br>every body. <span class="pink">Every brand.</span></h2>
+                  <p>Advanced computer vision and machine learning deliver unmatched accuracy and personalization at scale.</p>
+                  <div class="stats">
+                    <div class="stat"><i data-lucide="chart-no-axes-combined"></i><b>99.5%</b><small>Size Prediction<br>Accuracy</small></div>
+                    <div class="stat"><i data-lucide="timer"></i><b>&lt; 2 sec</b><small>Real-time<br>Analysis</small></div>
+                    <div class="stat"><i data-lucide="shield-check"></i><b>300M+</b><small>Body Data Points<br>Analyzed</small></div>
+                    <div class="stat"><i data-lucide="languages"></i><b>90+</b><small>Languages<br>Supported</small></div>
+                  </div>
+                </div>
+                <div class="intel-visual reveal">
+                  <img src="images/fitx-analysis-visual.png" alt="FitX body analysis, brand size matching, fit prediction and personalized recommendation">
+                </div>
+              </div>
+            </section>
+            <section class="works">
+              <div class="shell works-grid">
+                <div class="works-copy reveal">
+                  <h2>How FitX Works</h2>
+                  <p>Seamlessly integrate. Instantly deliver better fit experiences that drive real business impact.</p>
+                  <button class="outline-btn" onclick="openFitXDemo()">Explore Platform&nbsp; →</button>
+                </div>
+                <div class="flow reveal" aria-label="FitX customer journey">
+                  <div class="flow-item">
+                    <div class="flow-icon"><i data-lucide="user-round"></i></div>Customer
+                  </div>
+                  <div class="flow-line"></div>
+                  <div class="flow-item">
+                    <div class="flow-icon"><i data-lucide="smartphone"></i></div>FitX<br>Widget
+                  </div>
+                  <div class="flow-line"></div>
+                  <div class="flow-item">
+                    <div class="flow-icon"><i data-lucide="brain-circuit"></i></div>AI Fit<br>Engine
+                  </div>
+                  <div class="flow-line"></div>
+                  <div class="flow-item">
+                    <div class="flow-icon"><i data-lucide="shirt"></i></div>Recommended<br>Size
+                  </div>
+                  <div class="flow-line"></div>
+                  <div class="flow-item">
+                    <div class="flow-icon"><i data-lucide="shopping-cart"></i></div>Add to Cart<br>with Confidence
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="cta-section">
+              <div class="shell">
+                <div class="cta reveal">
+                  <div class="cta-icon"><i data-lucide="shirt"></i></div>
+                  <h2>AI that understands fit.<br>Better fit. Better experience. Better business.</h2>
+                  <button class="btn btn-primary" onclick="event.stopImmediatePropagation();window.location.href='https://s-fiducia-ai.webflow.io/contact-form?source=FitX';return false;">Book a Demo <i data-lucide="arrow-right"></i></button>
+                  <button class="btn btn-light" onclick="openFitXDemo()"><i data-lucide="play-circle" class="pink"></i>Experience Live Try-On</button>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+        <!--  IFRAME PHONE MODAL OVERLAY  -->
+        <div id="fitx-modal" class="phone-modal-overlay" onclick="closeFitXDemo()">
+          <div class="phone-modal-container" onclick="event.stopPropagation()">
+            <button class="phone-modal-close" onclick="closeFitXDemo()" aria-label="Close modal" title="Close modal">
+              <i data-lucide="x"></i>
+            </button>
+            <iframe id="fitx-iframe" class="phone-modal-iframe" allow="camera; microphone; autoplay; clipboard-write"></iframe>
           </div>
-        </header>
-        <main>
-          <section class="steps-wrap">
-            <div class="shell steps reveal">
-              <h2 class="section-title">The 3-Step <span class="pink">AI Fitting</span> Experience</h2>
-              <div class="step-row">
-                <article class="step"><b class="num">1</b>
-                  <div class="iconbox"><i data-lucide="user-round"></i></div>
-                  <div>
-                    <h3>You</h3>
-                    <p>Input your basic measurements<br>or sync your profile.</p>
-                  </div>
-                </article>
-                <div class="next">→</div>
-                <article class="step"><b class="num">2</b>
-                  <div class="iconbox"><i data-lucide="brain-circuit"></i></div>
-                  <div>
-                    <h3>AI Fit Engine</h3>
-                    <p>Our engine analyzes billions of<br>data points including body shape,<br>brand sizing and style preferences.</p>
-                  </div>
-                </article>
-                <div class="next">→</div>
-                <article class="step"><b class="num">3</b>
-                  <div class="iconbox"><i data-lucide="shirt"></i></div>
-                  <div>
-                    <h3>Perfect Fit</h3>
-                    <p>Visualize styles, get your exact size<br>recommendation and shop with<br>complete confidence.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-          <section class="intelligence">
-            <div class="shell intel-grid">
-              <div class="intel-copy reveal">
-                <h2>AI that understands<br>every body. <span class="pink">Every brand.</span></h2>
-                <p>Advanced computer vision and machine learning deliver unmatched accuracy and personalization at scale.</p>
-                <div class="stats">
-                  <div class="stat"><i data-lucide="chart-no-axes-combined"></i><b>99.5%</b><small>Size Prediction<br>Accuracy</small></div>
-                  <div class="stat"><i data-lucide="timer"></i><b>&lt; 2 sec</b><small>Real-time<br>Analysis</small></div>
-                  <div class="stat"><i data-lucide="shield-check"></i><b>300M+</b><small>Body Data Points<br>Analyzed</small></div>
-                  <div class="stat"><i data-lucide="languages"></i><b>90+</b><small>Languages<br>Supported</small></div>
-                </div>
-              </div>
-              <div class="intel-visual reveal"><img src="images/fitx-analysis-visual.png" alt="FitX body analysis, brand size matching, fit prediction and personalized recommendation"></div>
-            </div>
-          </section>
-          <section class="works">
-            <div class="shell works-grid">
-              <div class="works-copy reveal">
-                <h2>How FitX Works</h2>
-                <p>Seamlessly integrate. Instantly deliver better fit experiences that drive real business impact.</p><button class="outline-btn">Explore Platform&nbsp; →</button>
-              </div>
-              <div class="flow reveal" aria-label="FitX customer journey">
-                <div class="flow-item">
-                  <div class="flow-icon"><i data-lucide="user-round"></i></div>Customer
-                </div>
-                <div class="flow-line"></div>
-                <div class="flow-item">
-                  <div class="flow-icon"><i data-lucide="smartphone"></i></div>FitX<br>Widget
-                </div>
-                <div class="flow-line"></div>
-                <div class="flow-item">
-                  <div class="flow-icon"><i data-lucide="brain-circuit"></i></div>AI Fit<br>Engine
-                </div>
-                <div class="flow-line"></div>
-                <div class="flow-item">
-                  <div class="flow-icon"><i data-lucide="shirt"></i></div>Recommended<br>Size
-                </div>
-                <div class="flow-line"></div>
-                <div class="flow-item">
-                  <div class="flow-icon"><i data-lucide="shopping-cart"></i></div>Add to Cart<br>with Confidence
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="shell cta reveal">
-              <div class="cta-icon"><i data-lucide="shirt"></i></div>
-              <h2>AI that understands fit.<br>Better fit. Better experience. Better business.</h2><button class="btn btn-primary" onclick="event.stopImmediatePropagation();window.location.href='contact-form.html?source=FitX';return false;">Book a Demo <i data-lucide="arrow-right"></i></button><button class="btn btn-light"><i data-lucide="play-circle" class="pink"></i>See FitX in Action</button>
-            </div>
-          </section>
-        </main>
-        <script>lucide.createIcons();const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));document.addEventListener('mousemove',e=>{const stage=document.querySelector('.phone-stage');if(!stage||innerWidth<901)return;const x=(e.clientX/innerWidth-.5)*9,y=(e.clientY/innerHeight-.5)*6;stage.style.transform=`translate(${x}px,${y}px)`});const items=[...document.querySelectorAll('.flow-item')],lines=[...document.querySelectorAll('.flow-line')];let current=-1;function runFlow(){items.forEach(i=>i.classList.remove('active'));lines.forEach(l=>l.classList.remove('lit'));current=(current+1)%items.length;items[current].classList.add('active');if(current>0)lines[current-1].classList.add('lit')}if(items.length){runFlow();setInterval(runFlow,1150)}</script>
+        </div>
+        <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    // Scroll Reveal Animation Observer
+    const observer = new IntersectionObserver(es => es.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('show');
+    }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(e => observer.observe(e));
+    // Stage Subtle Mouse Parallax
+    document.addEventListener('mousemove', e => {
+      const stage = document.querySelector('.phone-stage');
+      if(!stage || innerWidth < 901) return;
+      const x = (e.clientX / innerWidth - .5) * 8;
+      const y = (e.clientY / innerHeight - .5) * 5;
+      stage.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    // Journey Step Flow Animation Loop
+    const items = [...document.querySelectorAll('.flow-item')];
+    const lines = [...document.querySelectorAll('.flow-line')];
+    let current = -1;
+    function runFlow() {
+      items.forEach(i => i.classList.remove('active'));
+      lines.forEach(l => l.classList.remove('lit'));
+      current = (current + 1) % items.length;
+      items[current].classList.add('active');
+      if (current > 0) lines[current - 1].classList.add('lit');
+    }
+    if (items.length) {
+      runFlow();
+      setInterval(runFlow, 1150);
+    }
+    /* Modal Controls & Unblur Management */
+    const modalEl = document.getElementById('fitx-modal');
+    const iframeEl = document.getElementById('fitx-iframe');
+    const demoUrl = 'https://engage.speedshotx.com/ar/multiexp?exp=43502810x629x869x691';
+    function openFitXDemo() {
+      if (iframeEl.src !== demoUrl) {
+        iframeEl.src = demoUrl;
+      }
+      document.body.classList.add('modal-open');
+      modalEl.classList.add('active');
+    }
+    function closeFitXDemo() {
+      modalEl.classList.remove('active');
+      document.body.classList.remove('modal-open');
+      setTimeout(() => {
+        iframeEl.src = '';
+      }, 350);
+    }
+    // Keyboard ESC key handler
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modalEl.classList.contains('active')) {
+        closeFitXDemo();
+      }
+    });
+  </script>
     </div>
   </section>
   <div class="w-embed w-script">
@@ -732,8 +1470,7 @@
   </script>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6a78a050329a705e8a1b7425" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
-  <button id="fiducia-ai-agent" type="button" aria-label="Open AI Agent">
+  <script src="js/webflow.js" type="text/javascript"></script><button id="fiducia-ai-agent" type="button" aria-label="Open AI Agent">
     <img src="images/gagent.png" alt="AI Agent" class="fiducia-ai-icon">
   </button>
   <div id="fiducia-ai-overlay" aria-hidden="true">
@@ -742,20 +1479,76 @@
       <button id="fiducia-ai-close" type="button" aria-label="Minimize AI Agent">−</button>
     </div>
   </div>
+  <div id="google_translate_element" style="display: none !important;"></div>
+  <div class="fiducia-lang-container notranslate" translate="no">
+    <button id="fiducia-lang-trigger" type="button" class="fiducia-lang-trigger" aria-label="Change Language">
+      <img id="fiducia-active-flag" class="fiducia-flag-img" src="https://flagcdn.com/w40/us.png" alt="Selected Language">
+      <span id="fiducia-active-code" class="fiducia-trigger-code">EN</span>
+      <span class="fiducia-chevron">▼</span>
+    </button>
+    <div id="fiducia-lang-modal" class="fiducia-lang-modal">
+      <div class="fiducia-modal-arrow"></div>
+      <div class="fiducia-modal-header">
+        <h4 class="fiducia-modal-title">Select your language</h4>
+        <button id="fiducia-lang-modal-close" type="button" class="fiducia-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="fiducia-lang-grid" id="fiducia-lang-grid"></div>
+    </div>
+  </div>
   <style>
+/* ── FORCE DISABLE GOOGLE TRANSLATE BANNER VISUALLY WITHOUT BREAKING JS ── */
 .w-webflow-badge { display: none !important; }
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.VIpgJd-yD05df-IAcaJu,
+.VIpgJd-yD05df-IAcaJu-i5vt6e,
+#goog-gt- {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+iframe[id*=":1.container"],
+iframe[id*=":2.container"],
+.goog-te-banner-frame {
+  visibility: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+}
+html, body {
+  top: 0px !important;
+  margin-top: 0px !important;
+  position: static !important;
+}
+font.goog-text-highlight {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* ── FIDUCIA WIDGET STYLES ── */
 #fiducia-ai-agent {
-  position: fixed !important; right: 24px !important; top: 24px !important; bottom: auto !important;
+  position: fixed !important; right: 24px !important; top: 90px !important; bottom: auto !important;
   width: 64px !important; height: 64px !important; min-width: 64px !important; max-width: 64px !important;
   min-height: 64px !important; max-height: 64px !important; padding: 0 !important; margin: 0 !important;
   display: flex !important; align-items: center !important; justify-content: center !important;
   flex: 0 0 64px !important; aspect-ratio: 1 / 1 !important; border: 0 !important; border-radius: 50% !important;
   overflow: hidden !important; background: #ffffff !important; cursor: pointer !important;
-  z-index: 2147483000 !important; box-sizing: border-box !important;
+  z-index: 999990 !important; box-sizing: border-box !important;
   box-shadow: 0 8px 25px rgba(0,0,0,.25) !important;
   animation: fiducia-ai-floating 2.6s ease-in-out infinite !important;
   will-change: transform, left, top !important; appearance: none !important; -webkit-appearance: none !important;
   touch-action: none !important; user-select: none !important; -webkit-user-select: none !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
 }
 #fiducia-ai-agent.fiducia-ai-dragging { animation: none !important; cursor: grabbing !important; transition: none !important; }
 #fiducia-ai-agent .fiducia-ai-icon {
@@ -776,10 +1569,13 @@
 #fiducia-ai-overlay {
   position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important;
   display: none !important; align-items: center !important; justify-content: flex-end !important;
-  padding: 24px !important; box-sizing: border-box !important; background: rgba(0,0,0,.18) !important;
-  z-index: 2147482000 !important; overflow: hidden !important;
+  padding: 24px !important; box-sizing: border-box !important; background: rgba(0,0,0,.35) !important;
+  z-index: 999995 !important; overflow: hidden !important; pointer-events: none !important;
 }
-#fiducia-ai-overlay.fiducia-ai-open { display: flex !important; }
+#fiducia-ai-overlay.fiducia-ai-open { 
+  display: flex !important; 
+  pointer-events: auto !important;
+}
 #fiducia-ai-frame {
   position: relative !important; width: min(360px, 42vh) !important; max-width: 360px !important;
   height: calc(100vh - 120px) !important; max-height: calc(100vh - 120px) !important;
@@ -797,28 +1593,235 @@
   background: transparent !important; color: #000000 !important; font-family: Arial, Helvetica, sans-serif !important;
   font-size: 34px !important; font-weight: 500 !important; line-height: 42px !important; display: flex !important;
   align-items: center !important; justify-content: center !important; cursor: pointer !important;
-  z-index: 2147483647 !important; opacity: .9 !important; appearance: none !important; -webkit-appearance: none !important;
+  z-index: 999999 !important; opacity: .9 !important; appearance: none !important; -webkit-appearance: none !important;
 }
 #fiducia-ai-close:hover { opacity: 1 !important; transform: scale(1.08) !important; }
 #fiducia-ai-close:active { transform: scale(.90) !important; }
 html.fiducia-ai-lock-scroll, body.fiducia-ai-lock-scroll { overflow: hidden !important; }
+/* ── SLEEK SINGLE-COLUMN LANGUAGE DROPDOWN UI ── */
+.fiducia-lang-container {
+  position: absolute !important; right: 24px !important; top: 18px !important;
+  z-index: 999980 !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+.fiducia-lang-trigger {
+  background: transparent !important; border: 0 !important; cursor: pointer !important;
+  display: flex !important; align-items: center !important; gap: 6px !important; padding: 4px !important;
+}
+.fiducia-flag-img {
+  width: 26px !important; height: 26px !important; border-radius: 50% !important; object-fit: cover !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important; flex-shrink: 0 !important;
+}
+.fiducia-trigger-code {
+  font-size: 14px !important; font-weight: 700 !important; color: #0f172a !important; line-height: 1 !important;
+}
+.fiducia-chevron {
+  font-size: 10px !important; color: #2563eb !important; transition: transform 0.2s ease !important;
+}
+.fiducia-lang-container.open .fiducia-chevron { transform: rotate(180deg) !important; }
+.fiducia-lang-modal {
+  display: none; position: absolute !important; top: 42px !important; right: -6px !important;
+  width: 280px !important; background: #ffffff !important; border-radius: 20px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important; padding: 18px 16px !important;
+  box-sizing: border-box !important; z-index: 999985 !important; border: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+.fiducia-lang-container.open .fiducia-lang-modal { display: block !important; }
+.fiducia-modal-arrow {
+  position: absolute !important; top: -6px !important; right: 20px !important;
+  width: 12px !important; height: 12px !important; background: #ffffff !important;
+  transform: rotate(45deg) !important; border-left: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+.fiducia-modal-header {
+  display: flex !important; align-items: center !important; justify-content: space-between !important;
+  margin-bottom: 12px !important; padding: 0 4px !important;
+}
+.fiducia-modal-title {
+  font-size: 17px !important; font-weight: 700 !important; color: #1e293b !important; margin: 0 !important;
+}
+.fiducia-modal-close {
+  background: transparent !important; border: 0 !important; font-size: 16px !important;
+  color: #64748b !important; cursor: pointer !important; padding: 2px 6px !important; border-radius: 50% !important;
+}
+.fiducia-modal-close:hover { color: #0f172a !important; background: #f1f5f9 !important; }
+.fiducia-lang-grid {
+  display: flex !important; flex-direction: column !important; gap: 4px !important;
+  max-height: 360px !important; overflow-y: auto !important; overflow-x: hidden !important; padding-right: 4px !important;
+}
+.fiducia-lang-grid::-webkit-scrollbar { width: 5px !important; }
+.fiducia-lang-grid::-webkit-scrollbar-track { background: transparent !important; }
+.fiducia-lang-grid::-webkit-scrollbar-thumb { background: #2563eb !important; border-radius: 10px !important; }
+.fiducia-lang-item {
+  display: flex !important; align-items: center !important; gap: 12px !important;
+  padding: 8px 12px !important; border-radius: 14px !important; cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+.fiducia-lang-item:hover { background: #f1f5f9 !important; }
+.fiducia-lang-item.active { background: #eff6ff !important; }
+.fiducia-lang-item img {
+  width: 24px !important; height: 24px !important; border-radius: 50% !important; object-fit: cover !important; flex-shrink: 0 !important;
+}
+.fiducia-lang-item span.fiducia-lang-name {
+  font-size: 14px !important; font-weight: 500 !important; color: #334155 !important;
+  flex: 1 !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important;
+}
+.fiducia-lang-item.active span.fiducia-lang-name { color: #1e293b !important; font-weight: 600 !important; }
+.fiducia-lang-code-text { font-size: 12px !important; font-weight: 600 !important; color: #94a3b8 !important; text-transform: uppercase !important; }
+.fiducia-lang-item.active .fiducia-lang-code-text { color: #3b82f6 !important; }
+.fiducia-check-icon { font-size: 14px !important; font-weight: 700 !important; color: #2563eb !important; margin-left: 2px !important; }
+.notranslate, [translate="no"] {
+  -webkit-translate: no !important;
+  translate: no !important;
+}
 @media screen and (max-width: 767px) {
   #fiducia-ai-overlay { width: 100vw !important; height: 100dvh !important; padding: 8px !important; align-items: center !important; justify-content: center !important; }
   #fiducia-ai-frame { width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; border-radius: 16px !important; }
-  #fiducia-ai-agent { width: 56px !important; height: 56px !important; min-width: 56px !important; max-width: 56px !important; min-height: 56px !important; max-height: 56px !important; flex: 0 0 56px !important; right: 24px !important; top: 20px !important; bottom: auto !important; }
+  #fiducia-ai-agent { width: 56px !important; height: 56px !important; min-width: 56px !important; max-width: 56px !important; min-height: 56px !important; max-height: 56px !important; flex: 0 0 56px !important; right: 16px !important; top: 75px !important; bottom: auto !important; }
   #fiducia-ai-agent .fiducia-ai-icon { width: 56px !important; height: 56px !important; min-width: 56px !important; max-width: 56px !important; min-height: 56px !important; max-height: 56px !important; }
   #fiducia-ai-close { top: 2px !important; right: 8px !important; width: 44px !important; height: 44px !important; font-size: 34px !important; line-height: 44px !important; }
+  .fiducia-lang-container { right: 12px !important; top: 16px !important; }
+  .fiducia-lang-trigger { gap: 4px !important; padding: 2px !important; }
+  .fiducia-flag-img { width: 24px !important; height: 24px !important; }
+  .fiducia-trigger-code { font-size: 13px !important; }
+  .fiducia-lang-modal { width: 260px !important; right: -4px !important; padding: 14px 12px !important; top: 40px !important; }
+  .fiducia-modal-arrow { right: 18px !important; }
+  .fiducia-lang-grid { max-height: 320px !important; }
 }
 @media screen and (max-width: 390px) {
-  #fiducia-ai-agent { width: 52px !important; height: 52px !important; min-width: 52px !important; max-width: 52px !important; min-height: 52px !important; max-height: 52px !important; flex: 0 0 52px !important; right: 22px !important; top: 18px !important; bottom: auto !important; }
+  #fiducia-ai-agent { width: 52px !important; height: 52px !important; min-width: 52px !important; max-width: 52px !important; min-height: 52px !important; max-height: 52px !important; flex: 0 0 52px !important; right: 12px !important; top: 70px !important; bottom: auto !important; }
   #fiducia-ai-agent .fiducia-ai-icon { width: 52px !important; height: 52px !important; min-width: 52px !important; max-width: 52px !important; min-height: 52px !important; max-height: 52px !important; }
   #fiducia-ai-frame { border-radius: 14px !important; }
+  .fiducia-lang-container { right: 8px !important; top: 14px !important; }
+  .fiducia-flag-img { width: 22px !important; height: 22px !important; }
+  .fiducia-trigger-code { font-size: 12px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   #fiducia-ai-agent { animation: none !important; }
 }
 </style>
-  <script>
+  <script type="text/javascript">
+var fiduciaLanguages = [
+  { code: 'en', shortCode: 'EN', name: 'English', flag: 'https://flagcdn.com/w40/us.png' },
+  { code: 'ar', shortCode: 'AR', name: 'Arabic', flag: 'https://flagcdn.com/w40/sa.png' },
+  { code: 'bn', shortCode: 'BN', name: 'Bengali', flag: 'https://flagcdn.com/w40/bd.png' },
+  { code: 'zh-CN', shortCode: 'ZH', name: 'Chinese', flag: 'https://flagcdn.com/w40/cn.png' },
+  { code: 'nl', shortCode: 'NL', name: 'Dutch', flag: 'https://flagcdn.com/w40/nl.png' },
+  { code: 'fr', shortCode: 'FR', name: 'French', flag: 'https://flagcdn.com/w40/fr.png' },
+  { code: 'de', shortCode: 'DE', name: 'German', flag: 'https://flagcdn.com/w40/de.png' },
+  { code: 'hi', shortCode: 'HI', name: 'Hindi', flag: 'https://flagcdn.com/w40/in.png' },
+  { code: 'it', shortCode: 'IT', name: 'Italian', flag: 'https://flagcdn.com/w40/it.png' },
+  { code: 'ja', shortCode: 'JA', name: 'Japanese', flag: 'https://flagcdn.com/w40/jp.png' },
+  { code: 'ko', shortCode: 'KO', name: 'Korean', flag: 'https://flagcdn.com/w40/kr.png' },
+  { code: 'ml', shortCode: 'ML', name: 'Malayalam', flag: 'https://flagcdn.com/w40/in.png' },
+  { code: 'pt', shortCode: 'PT', name: 'Portuguese', flag: 'https://flagcdn.com/w40/pt.png' },
+  { code: 'es', shortCode: 'ES', name: 'Spanish', flag: 'https://flagcdn.com/w40/es.png' },
+  { code: 'ta', shortCode: 'TA', name: 'Tamil', flag: 'https://flagcdn.com/w40/in.png' },
+  { code: 'te', shortCode: 'TE', name: 'Telugu', flag: 'https://flagcdn.com/w40/in.png' },
+  { code: 'tr', shortCode: 'TR', name: 'Turkish', flag: 'https://flagcdn.com/w40/tr.png' },
+  { code: 'vi', shortCode: 'VI', name: 'Vietnamese', flag: 'https://flagcdn.com/w40/vn.png' }
+];
+function clearTranslateCookies() {
+  document.cookie = "googtrans=; path=/; max-age=0";
+}
+function setTranslateCookie(langCode, isManualSelection) {
+  clearTranslateCookies();
+  if (isManualSelection !== false) {
+    if (langCode === 'en') {
+      sessionStorage.removeItem("fiducia_active_lang");
+    } else {
+      sessionStorage.setItem("fiducia_active_lang", langCode);
+    }
+  }
+  if (langCode !== 'en') {
+    var cookieVal = "/en/" + langCode;
+    document.cookie = "googtrans=" + cookieVal + "; path=/";
+  }
+}
+function getTranslateCookie() {
+  var name = "googtrans=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i].trim();
+    if (c.indexOf(name) === 0) {
+      var val = c.substring(name.length, c.length);
+      var parts = val.split('/');
+      var lang = parts[parts.length - 1];
+      if (lang) return lang;
+    }
+  }
+  return sessionStorage.getItem("fiducia_active_lang") || 'en';
+}
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'ar,bn,zh-CN,nl,en,fr,de,hi,it,ja,ko,ml,pt,es,ta,te,tr,vi',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+function cleanGoogleTranslateInjections() {
+  var initialTitle = document.title;
+  var observer = new MutationObserver(function () {
+    if (document.body.style.top || document.body.style.marginTop) {
+      document.body.style.setProperty("top", "0px", "important");
+      document.body.style.setProperty("margin-top", "0px", "important");
+    }
+    if (document.title !== initialTitle && initialTitle.length > 0) {
+      document.title = initialTitle;
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, childList: true, subtree: true, characterData: true });
+}
+function applyBrandProtection() {
+  var protectedBrands = [
+    "SpeedshotX", 
+    "SpeedShotX", 
+    "Company", 
+    "Platform",
+    "platform",
+    "FitX", 
+    "KnowledgeX", 
+    "VideoX", 
+    "IntelliX", 
+    "IBM Power", 
+    "IBM Cloud", 
+    "IBM", 
+    "ForgeOneX", 
+    "FIDUCIA"
+  ];
+  function processNode(node) {
+    if (node.nodeType === 3) {
+      var text = node.nodeValue;
+      if (!text || !text.trim()) return;
+      var parent = node.parentNode;
+      if (!parent || parent.classList.contains("notranslate") || parent.getAttribute("translate") === "no" || ["SCRIPT", "STYLE", "TEXTAREA", "INPUT"].includes(parent.tagName)) {
+        return;
+      }
+      var hasBrand = protectedBrands.some(function(b) { return text.includes(b); });
+      if (hasBrand) {
+        var span = document.createElement("span");
+        var regex = new RegExp("(" + protectedBrands.map(function(b) {
+          return b.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        }).join("|") + ")", "g");
+        span.innerHTML = text.replace(regex, '<span class="notranslate" translate="no">$1</span>');
+        parent.replaceChild(span, node);
+      }
+    } else if (node.nodeType === 1 && !node.classList.contains("notranslate") && node.getAttribute("translate") !== "no") {
+      Array.from(node.childNodes).forEach(processNode);
+    }
+  }
+  Array.from(document.body.childNodes).forEach(processNode);
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(function (node) {
+        if (!node.classList || (!node.classList.contains("notranslate") && node.getAttribute("translate") !== "no")) {
+          processNode(node);
+        }
+      });
+    });
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+}
 (function () {
   "use strict";
   var bot = document.getElementById("fiducia-ai-agent");
@@ -954,28 +1957,107 @@ html.fiducia-ai-lock-scroll, body.fiducia-ai-lock-scroll { overflow: hidden !imp
     closeAgent(false);
     setTimeout(function () { closeHandled = false; }, 500);
   }
-  moveAgentToBody();
-  forceAgentSize();
-  initDraggable();
+  document.addEventListener("DOMContentLoaded", function () {
+    applyBrandProtection();
+    cleanGoogleTranslateInjections();
+    var currentLang = getTranslateCookie();
+    var container = document.querySelector('.fiducia-lang-container');
+    var triggerBtn = document.getElementById('fiducia-lang-trigger');
+    var activeCode = document.getElementById('fiducia-active-code');
+    var activeFlag = document.getElementById('fiducia-active-flag');
+    var langGrid = document.getElementById('fiducia-lang-grid');
+    var modalCloseBtn = document.getElementById('fiducia-lang-modal-close');
+    var currentObj = fiduciaLanguages.find(function(l) { return l.code === currentLang; }) || fiduciaLanguages[0];
+    if (activeFlag) activeFlag.src = currentObj.flag;
+    if (activeCode) activeCode.textContent = currentObj.shortCode;
+    function toggleLanguageModal(show) {
+      if (show) {
+        container.classList.add('open');
+        if (bot) {
+          bot.style.setProperty("display", "none", "important");
+          bot.style.setProperty("opacity", "0", "important");
+          bot.style.setProperty("visibility", "hidden", "important");
+        }
+      } else {
+        container.classList.remove('open');
+        if (bot && !agentOpen) {
+          bot.style.setProperty("display", "flex", "important");
+          bot.style.setProperty("opacity", "1", "important");
+          bot.style.setProperty("visibility", "visible", "important");
+        }
+      }
+    }
+    if (langGrid) {
+      langGrid.innerHTML = '';
+      fiduciaLanguages.forEach(function(lang) {
+        var isActive = lang.code === currentObj.code;
+        var item = document.createElement('div');
+        item.className = 'fiducia-lang-item' + (isActive ? ' active' : '');
+        item.innerHTML = '<img src="' + lang.flag + '" alt="' + lang.name + '" />' +
+                         '<span class="fiducia-lang-name">' + lang.name + '</span>' +
+                         '<span class="fiducia-lang-code-text">' + lang.shortCode + '</span>' +
+                         (isActive ? '<span class="fiducia-check-icon">✓</span>' : '');
+        item.addEventListener('click', function() {
+          setTranslateCookie(lang.code, true);
+          window.location.reload();
+        });
+        langGrid.appendChild(item);
+      });
+    }
+    if (triggerBtn && container) {
+      triggerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = container.classList.contains('open');
+        toggleLanguageModal(!isOpen);
+      });
+      if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleLanguageModal(false);
+        });
+      }
+      document.addEventListener('click', function(e) {
+        if (!container.contains(e.target)) {
+          toggleLanguageModal(false);
+        }
+      });
+    }
+    moveAgentToBody();
+    forceAgentSize();
+    initDraggable();
+    if (bot) {
+      bot.addEventListener("click", function (e) {
+        if (dragMoved) { e.preventDefault(); e.stopPropagation(); dragMoved = false; return; }
+        e.preventDefault(); e.stopPropagation();
+        openAgent();
+      }, false);
+    }
+    if (closeButton) {
+      closeButton.addEventListener("pointerdown", handleCloseEvent, { passive: false });
+      closeButton.addEventListener("touchstart", handleCloseEvent, { passive: false });
+      closeButton.addEventListener("click", function(e) {
+        e.preventDefault(); e.stopPropagation();
+        if (!closeHandled) closeAgent(false);
+      }, false);
+    }
+  });
   window.addEventListener("resize", forceAgentSize, { passive: true });
   if (proximityEnabled) document.addEventListener("mousemove", updateProximity, { passive: true });
-  if (bot) {
-    bot.addEventListener("click", function (e) {
-      if (dragMoved) { e.preventDefault(); e.stopPropagation(); dragMoved = false; return; }
-      e.preventDefault(); e.stopPropagation();
-      openAgent();
-    }, false);
-  }
-  if (closeButton) {
-    closeButton.addEventListener("pointerdown", handleCloseEvent, { passive: false });
-    closeButton.addEventListener("touchstart", handleCloseEvent, { passive: false });
-    closeButton.addEventListener("click", function(e) {
-      e.preventDefault(); e.stopPropagation();
-      if (!closeHandled) closeAgent(false);
-    }, false);
-  }
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && agentOpen) { e.preventDefault(); closeAgent(false); }
+    if (e.key === "Escape") {
+      var container = document.querySelector('.fiducia-lang-container');
+      if (container && container.classList.contains('open')) {
+        container.classList.remove('open');
+        if (bot && !agentOpen) {
+          bot.style.setProperty("display", "flex", "important");
+          bot.style.setProperty("opacity", "1", "important");
+          bot.style.setProperty("visibility", "visible", "important");
+        }
+      } else if (agentOpen) {
+        e.preventDefault();
+        closeAgent(false);
+      }
+    }
   }, false);
   window.addEventListener("popstate", function () {
     if (agentOpen) { historyStateAdded = false; closeAgent(true); }
@@ -983,6 +2065,14 @@ html.fiducia-ai-lock-scroll, body.fiducia-ai-lock-scroll { overflow: hidden !imp
   if (overlay) { overlay.classList.remove("fiducia-ai-open"); overlay.setAttribute("aria-hidden", "true"); }
   if (bot) { moveAgentToBody(); forceAgentSize(); bot.style.setProperty("display", "flex", "important"); }
 })();
+</script>
+  <script type="text/javascript">
+  if (!window.location.hostname.includes("canvas.webflow.com")) {
+    var gtScript = document.createElement('script');
+    gtScript.type = 'text/javascript';
+    gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(gtScript);
+  }
 </script>
 </body>
 </html>
