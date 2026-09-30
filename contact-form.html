@@ -1140,7 +1140,8 @@ var fiduciaLanguages = [
   { code: 'vi', shortCode: 'VI', name: 'Vietnamese', flag: 'https://flagcdn.com/w40/vn.png' }
 ];
 function clearTranslateCookies() {
-  document.cookie = "googtrans=; path=/; max-age=0";
+  document.cookie = "googtrans=; path=/; max-age=0; Secure; SameSite=Lax";
+  document.cookie = "googtrans=; path=/; Domain=fiduciaai.com; max-age=0; Secure; SameSite=Lax";
 }
 function setTranslateCookie(langCode, isManualSelection) {
   clearTranslateCookies();
@@ -1153,7 +1154,7 @@ function setTranslateCookie(langCode, isManualSelection) {
   }
   if (langCode !== 'en') {
     var cookieVal = "/en/" + langCode;
-    document.cookie = "googtrans=" + cookieVal + "; path=/";
+    document.cookie = "googtrans=" + cookieVal + "; path=/; Secure; SameSite=Lax";
   }
 }
 function getTranslateCookie() {
