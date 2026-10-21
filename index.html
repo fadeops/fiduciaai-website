@@ -140,179 +140,543 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Fiducia AI — ExperienceX</title>
         <style>
-    :root{--ink:#070707;--blue:#2935d9;--cyan:#1acdd4;--glass:rgba(255,255,255,.87)} body{margin:0} img{color:transparent;font-size:0}
-    #fidux-hero,#fidux-hero *{box-sizing:border-box} #fidux-hero{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;color:var(--ink);height:100svh;min-height:0;overflow:hidden;position:relative;background:#c7daf9;isolation:isolate}
-    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-3;user-select:none;pointer-events:none}
-    .globe,.phone{position:absolute;z-index:0;object-fit:contain;user-select:none;pointer-events:none;filter:drop-shadow(0 18px 20px rgba(12,44,129,.13))}.globe{width:min(50vw,760px);height:auto;max-height:80vh;left:27%;bottom:3%}.phone{height:min(46vh,440px);width:auto;left:7%;bottom:4%}
-    #fidux-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(215,229,255,.27),transparent 45%,rgba(215,229,255,.12));z-index:-1;pointer-events:none}
-    #fidux-hero header{display:none}
-    #fidux-hero .brand{display:flex;align-items:center;gap:9px;white-space:nowrap;color:#142a92}#fidux-hero .seal{width:57px;height:57px;border:2px solid #1f55d8;border-radius:50%;display:grid;place-items:center;font-size:27px;box-shadow:inset 0 0 0 4px #d6e6ff}#fidux-hero .brand strong{font-size:23px;letter-spacing:1px}#fidux-hero .brand small{display:block;font-size:7px;letter-spacing:.45px;font-weight:800;text-align:center;margin-top:1px}
-    #fidux-hero nav{display:flex;align-items:center;gap:clamp(28px,4.2vw,76px);font-size:17px;font-weight:600}#fidux-hero .active{color:#1934d5}#fidux-hero .chev{font-size:17px;margin-left:5px}#fidux-hero .badges{margin-left:auto;display:flex;align-items:center;gap:25px;color:#102050;font-size:9px;font-weight:800}#fidux-hero .badge{border:1px solid #d9dce4;padding:8px 6px;min-width:76px;text-align:center}#fidux-hero .badge:last-child{background:#ffd9d0;border:0}#fidux-hero .badge b{display:block;font-size:12px}
-    /* Intro Hero Section Text Sizing & Margins Fix */
-    .intro{position:absolute;top:3.5vh;left:clamp(32px,2.7vw,48px);width:min(420px,28vw);z-index:2}
-    .intro h1{font-size:clamp(22px,2.1vw,36px);line-height:1.08;letter-spacing:-1.2px;margin:0;font-weight:850;word-break:break-word;overflow-wrap:anywhere}
-    .intro h1 span{color:#3031df;display:block}
-    .rules{display:flex;gap:16px;margin:14px 0 16px}.rules i{width:35px;height:4px;border-radius:99px;background:#2b31d7}.rules i+ i{width:27px;background:#20cdd0}
-    .watch{display:inline-flex;align-items:center;gap:15px;padding:14px 18px;background:#fff;border-radius:11px;border:1px solid #cad0db;color:#1828ca;font-weight:800;font-size:15px;box-shadow:0 10px 24px rgba(53,88,160,.1);transition:.25s}.watch:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(33,55,177,.24)}.play{width:22px;height:22px;border:2px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:10px;padding-left:1px}
-    /* Auto-Scale text when document translates to longer scripts */
-    :lang(ta) .intro h1, :lang(ml) .intro h1, :lang(te) .intro h1, :lang(hi) .intro h1, :lang(bn) .intro h1, :lang(ar) .intro h1 {
-      font-size: clamp(17px, 1.6vw, 26px) !important;
-      line-height: 1.15 !important;
-      letter-spacing: normal !important;
+    :root {
+      --ink: #070707;
+      --blue: #2935d9;
+      --cyan: #1acdd4;
+      --glass: rgba(255, 255, 255, 0.92);
     }
-    .connectors{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}.connectors path{fill:none;stroke-width:3;stroke-linecap:round}.connectors circle{fill:#d7e7ff;stroke-width:3}.p1{stroke:#382ee6}.p2{stroke:#3933eb}.p3{stroke:#259138}.p4{stroke:#3454f1}.p5{stroke:#fa1e24}.data-link{fill:none;stroke:#b9eaff;stroke-width:1.35;stroke-linecap:round;stroke-dasharray:2 5;opacity:.92;animation:dataFlow 2.8s linear infinite}.data-link:nth-child(2n){stroke:#5db9ff;stroke-width:1.1;animation-duration:3.5s}@keyframes dataFlow{to{stroke-dashoffset:-42}}
-    /* Stack Container & Equal Card Sizing */
-    #fidux-hero .fidux-card-stack{position:absolute!important;right:clamp(16px,2vw,30px)!important;top:50%!important;transform:translateY(-50%)!important;width:min(360px,24vw)!important;display:flex!important;flex-direction:column!important;gap:9px!important;z-index:2!important}
-    #fidux-hero .fidux-card{flex:1 1 auto!important;min-height:78px!important;height:auto!important;padding:10px 12px!important;display:flex!important;align-items:center!important;gap:11px!important;border-radius:15px!important;background:rgba(255,255,255,.87)!important;box-shadow:0 14px 30px rgba(41,81,156,.12)!important;overflow:visible!important;will-change:transform,box-shadow,background-color;transition:transform .42s cubic-bezier(.22,1,.36,1),box-shadow .42s cubic-bezier(.22,1,.36,1),background-color .42s ease!important}
-    .card-content{display:flex;flex-direction:column;justify-content:center;min-width:0;flex:1}
-    @media (hover:hover) and (pointer:fine){#fidux-hero .fidux-card:hover{transform:translateX(-8px) scale(1.018)!important;background:rgba(255,255,255,.97)!important;box-shadow:0 22px 40px rgba(32,67,148,.24)!important}#fidux-hero .fidux-card:hover .fidux-card-icon{transform:scale(1.06)}#fidux-hero .fidux-card-icon{transition:transform .42s cubic-bezier(.22,1,.36,1)}}
-    #fidux-hero .fidux-card-icon{flex:0 0 46px!important;width:46px!important;height:46px!important;display:block!important}#fidux-hero .fidux-card-icon img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
-    #fidux-hero .fidux-card h2{display:block!important;margin:0 0 2px!important;font:700 16px/1.2 Inter,Arial,sans-serif!important;color:#1d2ad0!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}#fidux-hero .fidux-card.green h2{color:#178637!important}#fidux-hero .fidux-card.red h2{color:#e51522!important}#fidux-hero .fidux-card b{display:block!important;color:#1724be!important;font:700 10px/1.2 Inter,Arial,sans-serif!important;margin:0 0 2px!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}#fidux-hero .fidux-card p{display:block!important;margin:0!important;color:#070707!important;font:400 10.5px/1.25 Inter,Arial,sans-serif!important;white-space:normal!important;word-break:break-word!important;overflow-wrap:anywhere!important}
-    @media (max-width:1050px){.intro{width:32vw}.globe{width:54vw;left:22%;bottom:4%}.phone{height:42vh;left:5%;bottom:5%}#fidux-hero .fidux-card-stack{width:32vw!important;right:16px!important}#fidux-hero .fidux-card{min-height:74px!important;padding:9px!important;gap:8px!important}#fidux-hero .fidux-card-icon{flex-basis:40px!important;width:40px!important;height:40px!important}#fidux-hero .fidux-card h2{font-size:15px!important}#fidux-hero .fidux-card b{font-size:9px!important}#fidux-hero .fidux-card p{font-size:9px!important}}
-    @media (max-width:760px){#fidux-hero{min-height:720px;height:auto;min-height:100svh;padding-bottom:25px;overflow:visible}.hero-bg{object-position:center;opacity:.88}#fidux-hero:after{background:linear-gradient(180deg,rgba(226,237,255,.84),rgba(215,229,255,.42))}.globe{width:92vw;left:4%;top:28%;bottom:auto;opacity:.92;z-index:1;max-height:50vh}.phone{height:34vh;left:auto;right:-4%;bottom:1%;opacity:.35}#fidux-hero header{height:65px;padding:0 18px;gap:0}#fidux-hero .seal{width:42px;height:42px;font-size:20px}#fidux-hero .brand strong{font-size:17px}#fidux-hero .brand small{font-size:5px}#fidux-hero nav{margin-left:auto;gap:17px;font-size:13px}#fidux-hero nav span:last-child{display:none}.intro{position:relative;top:auto;left:auto;padding:52px 24px 0;width:min(480px,100%);z-index:3}.intro h1{font-size:32px!important}.rules{margin:14px 0 16px}.watch{padding:14px 16px;font-size:15px}#fidux-hero .fidux-card-stack{position:relative!important;top:auto!important;right:auto!important;transform:none!important;width:auto!important;margin:30px 18px 0!important;gap:10px!important}#fidux-hero .fidux-card{min-height:80px!important;border-radius:14px!important}#fidux-hero .fidux-card-icon{flex-basis:46px!important;width:46px!important;height:46px!important}}
-    .video-modal[hidden]{display:none}.video-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:rgba(8,17,45,.72);backdrop-filter:blur(5px)}.video-modal__dialog{position:relative;width:min(100%,1050px);aspect-ratio:16/9;background:#111;border-radius:16px;overflow:visible;box-shadow:0 24px 65px rgba(0,0,0,.45)}.video-modal__frame{display:block;width:100%;height:100%;border:0;border-radius:16px;background:#111}.video-modal__close{position:absolute;z-index:1;top:12px;right:12px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(0,0,0,.78);color:#fff;font:700 30px/1 Arial,sans-serif;cursor:pointer;transition:transform .2s,background .2s}.video-modal__close:hover,.video-modal__close:focus-visible{transform:scale(1.08);background:#1828ca;outline:3px solid #fff;outline-offset:2px}@media (max-width:600px){.video-modal{padding:16px}.video-modal__dialog{width:100%;border-radius:12px}.video-modal__frame{border-radius:12px}.video-modal__close{top:8px;right:8px;width:38px;height:38px;font-size:27px}}
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; background: #ffffff; color: var(--ink); }
+    img { color: transparent; font-size: 0; }
+    #fidux-hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* Background Image */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 85%;
+      z-index: -3;
+      user-select: none;
+      pointer-events: none;
+      content: url("images/HomepageD.jpg");
+    }
+    @media (max-width: 760px) {
+      .hero-bg {
+        object-fit: cover;
+        object-position: center top;
+        content: url("images/HomepageM.jpg");
+      }
+    }
+    /* Top Heading Section */
+    .intro {
+      position: absolute;
+      top: 1.8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+      width: min(95%, 1100px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .intro h1 {
+      font-size: clamp(20px, 2.2vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 8px 0;
+      font-weight: 850;
+      color: #0b1a5e;
+      white-space: nowrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .intro h1 span {
+      color: #213ae0;
+      display: inline;
+    }
+    /* Subtitle Sky Blue Box with Dark Blue Text */
+    .intro p.subtitle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 6px 18px;
+      background: rgba(180, 225, 255, 0.45);
+      border: 1px solid rgba(120, 195, 255, 0.65);
+      border-radius: 99px;
+      font-size: clamp(11.5px, 0.95vw, 14.5px);
+      font-weight: 750;
+      color: #0f2b7a;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 30, 90, 0.08);
+      text-align: center;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    /* Connector SVG Overlay */
+    .connectors {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .connectors path { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .connectors circle { stroke-width: 2; }
+    .p-speedshot { stroke: #2143e3; fill: #2143e3; }
+    .p-knowledge { stroke: #12aa4b; fill: #12aa4b; }
+    .p-fitx { stroke: #e02438; fill: #e02438; }
+    .p-videox { stroke: #8023e3; fill: #8023e3; }
+    /* Floating Cards Layout */
+    .cards-wrapper {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .fidux-card {
+      position: absolute;
+      pointer-events: auto;
+      width: min(300px, 22vw);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 16px;
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 24px rgba(28, 54, 132, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .fidux-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(28, 54, 132, 0.24);
+      background: rgba(255, 255, 255, 0.98);
+    }
+    .card-left-top    { left: 6vw;  top: 22vh; }
+    .card-left-bottom { left: 4vw;  top: 40vh; }
+    .card-right-top   { right: 6vw; top: 22vh; }
+    .card-right-bottom{ right: 4vw; top: 40vh; }
+    .fidux-card-icon {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+    }
+    .fidux-card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      flex: 1;
+    }
+    .fidux-card h2 {
+      margin: 0 0 1px;
+      font: 700 15px/1.2 Inter, Arial, sans-serif;
+      color: #1228a0;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .fidux-card b {
+      display: block;
+      color: #2b3987;
+      font: 600 10px/1.2 Inter, Arial, sans-serif;
+      margin-bottom: 1px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .fidux-card p {
+      margin: 0;
+      color: #3b4256;
+      font: 400 10px/1.2 Inter, Arial, sans-serif;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    /* IntelliX Prime Foundation Section */
+    .foundation-banner {
+      position: absolute;
+      bottom: 17.5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(88%, 700px);
+      text-align: center;
+      z-index: 5;
+    }
+    .foundation-title {
+      font-size: clamp(24px, 2.7vw, 40px);
+      font-weight: 850;
+      color: #ffffff;
+      text-shadow: 0 0 18px rgba(0, 120, 255, 0.95);
+      margin: 0 0 8px 0;
+      line-height: 1.35;
+      letter-spacing: -0.5px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .foundation-title:hover {
+      color: #00f0ff;
+      text-shadow: 0 0 25px rgba(0, 240, 255, 1), 0 0 35px rgba(0, 120, 255, 0.8);
+      transform: scale(1.05);
+      letter-spacing: 0.5px;
+    }
+    .foundation-subtitle {
+      font-size: clamp(12px, 1.15vw, 16px);
+      font-weight: 800;
+      color: #00f0ff;
+      letter-spacing: 0.4px;
+      margin: 8px 0 10px 0;
+      line-height: 1.35;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .foundation-tags {
+      font-size: clamp(10px, 0.9vw, 12px);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 8px 0 16px 0;
+      line-height: 1.35;
+      letter-spacing: 0.2px;
+      text-shadow: 0 1px 4px rgba(0, 10, 50, 0.9);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    /* Deployment Options */
+    .deploy-options {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      transform: translateY(38px);
+    }
+    .deploy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 26px;
+      min-height: 38px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 9px;
+      color: #ffffff;
+      font-size: clamp(11px, 0.95vw, 13px);
+      font-weight: 750;
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.15), 0 4px 16px rgba(0, 20, 80, 0.3);
+      transition: background 0.3s ease, border-color 0.3s ease;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .deploy-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-caption {
+      position: absolute;
+      bottom: 2.2vh;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(10.5px, 0.85vw, 12px);
+      color: #122250;
+      font-weight: 750;
+      margin: 0;
+      white-space: nowrap;
+      z-index: 5;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    /* Mobile Responsive Layout (< 760px) */
+    @media (max-width: 760px) {
+      #fidux-hero {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 60px;
+        overflow-y: auto;
+      }
+      .intro {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding-top: 12px;
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      .intro h1 {
+        white-space: normal;
+        font-size: clamp(16px, 5.2vw, 22px);
+        line-height: 1.25;
+        margin-bottom: 8px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .intro h1 span {
+        display: block;
+        margin-top: 2px;
+      }
+      .intro p.subtitle {
+        padding: 6px 14px;
+        font-size: clamp(10px, 3.2vw, 12px);
+        border-radius: 12px;
+        line-height: 1.3;
+        white-space: normal;
+        width: max-content;
+        max-width: 100%;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .cards-wrapper {
+        position: relative;
+        inset: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 94%;
+        margin: 16px auto 0;
+      }
+      .fidux-card {
+        position: relative;
+        inset: auto !important;
+        width: 100%;
+        height: auto;
+        min-height: 72px;
+        padding: 8px;
+        border-radius: 12px;
+        overflow: visible;
+      }
+      .fidux-card-icon {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+      }
+      .fidux-card h2 { 
+        font-size: clamp(10.5px, 3.2vw, 12.5px); 
+        word-break: break-word; 
+        overflow-wrap: anywhere; 
+      }
+      .fidux-card b, .fidux-card p { 
+        font-size: clamp(8px, 2.5vw, 9.5px); 
+        line-height: 1.25; 
+        word-break: break-word; 
+        overflow-wrap: anywhere; 
+      }
+      .foundation-banner {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 350px;
+        width: 96%;
+        padding: 0 8px;
+      }
+      .foundation-title {
+        font-size: clamp(18px, 5.5vw, 22px);
+        margin-bottom: 4px;
+        line-height: 1.25;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .foundation-title:hover {
+        color: #ffffff;
+        text-shadow: 0 0 18px rgba(0, 120, 255, 0.95);
+        transform: none;
+        letter-spacing: -0.5px;
+      }
+      .foundation-subtitle {
+        font-size: clamp(10px, 3vw, 12px);
+        margin: 4px 0;
+        line-height: 1.25;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .foundation-tags {
+        font-size: clamp(8px, 2.5vw, 10px);
+        margin: 4px 0 10px;
+        word-spacing: 0.5px;
+        line-height: 1.3;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .deploy-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 0;
+        transform: none;
+      }
+      .deploy-btn {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 6px 10px;
+        min-height: 32px;
+        font-size: clamp(8.5px, 2.6vw, 10.5px);
+        border-radius: 8px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+      .footer-caption {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 70px;
+        white-space: normal;
+        text-align: center;
+        color: #0c1c48;
+        font-size: clamp(9.5px, 2.8vw, 11px);
+        padding: 0 16px;
+        line-height: 1.35;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .connectors { display: none; }
+    }
   </style>
       </head>
       <body>
-        <main class="fidux-hero" id="fidux-hero">
-          <img class="hero-bg" src="images/hero-bg-image-4.png" alt="">
-          <img class="phone" src="images/hero-bg-image-3.png" alt="">
-          <img class="globe" src="images/hero-bg-image-2.png" alt="A globe connected by intelligent data streams">
-          <header>
-            <div class="brand">
-              <div class="seal">◈</div>
-              <div><strong>FIDUCIA | AI</strong><small>AI INTELLIGENCE YOU CAN TRUST</small></div>
-            </div>
-            <nav><span class="active">Home</span><span>Platform <b class="chev">⌄</b></span><span>Company</span></nav>
-            <div class="badges"><span class="badge">⬡ <b>ForgeOneX</b></span><span class="badge">IBM <b>Silver Partner</b></span><span class="badge">◒ <b>Standard<br>Solution Partner</b></span></div>
-          </header>
+        <main id="fidux-hero">
+          <!--  Background Image  -->
+          <img class="hero-bg" src="images/HomepageD.jpg" alt="Fiducia AI Background">
+          <!--  Top Heading Section  -->
           <section class="intro">
-            <h1>Enterprise First AI,<span>Ready Today.</span><span>Built for Tomorrow.</span></h1>
-            <div class="rules"><i></i><i></i></div>
-            <button class="watch" onclick="window.open('https://studio.speedshotx.com/ce/fiducia/forward?fwkey=43502810x756x844', 'VideoPreview', 'width=1050,height=600,left='+(screen.width-1050)/2+',top='+(screen.height-600)/2)">Watch Overview <span class="play">▶</span></button>
+            <h1 translate="no" class="notranslate">Accelerate AI Workflows <span>into Production</span></h1>
+            <p class="subtitle">One foundation. Four accelerators. Any environment.</p>
           </section>
+          <!--  Animated Connector Lines  -->
           <svg class="connectors" aria-hidden="true"></svg>
-          <section class="fidux-card-stack" aria-label="AI platform products">
-            <a href="speedshotx.html" class="fidux-card" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/icon-1.png" alt=""></div>
+          <!--  4 Accelerator Floating Cards  -->
+          <div class="cards-wrapper">
+            <a href="speedshotx.html" class="fidux-card card-left-top" id="card-speedshot">
+              <div class="fidux-card-icon">
+                <img src="images/icon-1.png" alt="SpeedShotX">
+              </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">SpeedShotX</h2>
                 <b>AI Multi Model Engagement</b>
                 <p>Visual AI. Short Links. Real-Time Action.</p>
               </div>
             </a>
-            <a href="intellix.html" class="fidux-card" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/intellix..png" alt=""></div>
-              <div class="card-content">
-                <h2 translate="no" class="notranslate">IntelliX Prime</h2>
-                <p>Frontier &amp; Open-Weight Model Suite.</p>
+            <a href="knowledge-x.html" class="fidux-card card-left-bottom" id="card-knowledge">
+              <div class="fidux-card-icon">
+                <img src="images/icon-3.png" alt="KnowledgeX">
               </div>
-            </a>
-            <a href="knowledge-x.html" class="fidux-card green" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/icon-3.png" alt=""></div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">KnowledgeX</h2>
                 <b>AI-Powered Knowledge Intelligence</b>
                 <p>RAG. Govern. Deliver.</p>
               </div>
             </a>
-            <a href="videox.html" class="fidux-card" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/icon-4.png" alt=""></div>
+            <a href="fitx.html" class="fidux-card card-right-top" id="card-fitx">
+              <div class="fidux-card-icon">
+                <img src="images/icon-5.png" alt="FitX">
+              </div>
+              <div class="card-content">
+                <h2 translate="no" class="notranslate">FitX</h2>
+                <b>AI Fit &amp; Sizing</b>
+                <p>Virtual Try-On. Perfect Fit. Every Time.</p>
+              </div>
+            </a>
+            <a href="videox.html" class="fidux-card card-right-bottom" id="card-videox">
+              <div class="fidux-card-icon">
+                <img src="images/icon-4.png" alt="VideoX">
+              </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">VideoX</h2>
                 <b>AI Video Intelligence</b>
                 <p>Index. Search. Translate. Act.</p>
               </div>
             </a>
-            <a href="fitx.html" class="fidux-card red" style="text-decoration:none;">
-              <div class="fidux-card-icon"><img src="images/icon-5.png" alt=""></div>
-              <div class="card-content">
-                <h2 translate="no" class="notranslate">FitX</h2>
-                <b>AI Fit &amp; Sizing</b>
-                <p>Virtual Try-On.Perfect Fit. Every Time.</p>
-              </div>
-            </a>
-          </section>
-        </main>
-        <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Fiducia AI overview video" hidden="">
-          <div class="video-modal__dialog">
-            <button class="video-modal__close" type="button" data-video-close="" aria-label="Close video">&times;</button>
-            <iframe class="video-modal__frame" title="Fiducia AI overview video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin" allowfullscreen=""></iframe>
           </div>
-        </div>
+          <!--  Foundation Stage Podium Content  -->
+          <section class="foundation-banner">
+            <a href="intellix.html" class="foundation-title" translate="no">IntelliX Prime</a>
+            <div class="foundation-subtitle" translate="no">Enterprise AI Workflow Foundation</div>
+            <div class="foundation-tags" translate="no">Orchestration &bull; Models &bull; Enterprise Data &bull; APIs &bull; Governance</div>
+            <div class="deploy-options">
+              <div class="deploy-btn" translate="no"><span>☁</span> Any Cloud</div>
+              <div class="deploy-btn" translate="no"><span>🖥</span> On-Premises</div>
+              <div class="deploy-btn" translate="no"><span>🌐</span> Hybrid</div>
+            </div>
+          </section>
+          <p class="footer-caption">Deploy AI workflows in days—where your enterprise data resides.</p>
+        </main>
         <script>
-    const hero=document.querySelector('#fidux-hero'), globe=document.querySelector('.globe'), phone=document.querySelector('.phone'), svg=document.querySelector('.connectors');
-    const NS='http://www.w3.org/2000/svg', colours=['p1','p2','p3','p4','p5'];
-    const globeAnchors=[[.76,.34],[.78,.44],[.77,.55],[.73,.65],[.70,.68]];
-    function drawConnectors(){
-      if(innerWidth<=760)return;
-      const box=hero.getBoundingClientRect(), globeBox=globe.getBoundingClientRect();
-      svg.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`); svg.replaceChildren();
-      const phoneBox=phone.getBoundingClientRect();
-      const streams=[[.88,.37,.205,.45],[.89,.40,.195,.48],[.90,.43,.185,.51],[.91,.46,.22,.54],[.92,.49,.215,.57],[.93,.52,.21,.60],[.94,.55,.205,.63]];
-      streams.forEach(([phoneX,phoneY,globeX,globeY])=>{
-        const sx=phoneBox.left-box.left+phoneBox.width*phoneX, sy=phoneBox.top-box.top+phoneBox.height*phoneY;
-        const ex=globeBox.left-box.left+globeBox.width*globeX, ey=globeBox.top-box.top+globeBox.height*globeY;
-        const curve=Math.max(45,(ex-sx)*.38), flow=document.createElementNS(NS,'path');
-        flow.setAttribute('class','data-link'); flow.setAttribute('d',`M ${sx} ${sy} C ${sx+curve} ${sy}, ${ex-curve} ${ey}, ${ex} ${ey}`); svg.append(flow);
+    const hero = document.querySelector('#fidux-hero');
+    const svg = document.querySelector('.connectors');
+    const NS = 'http://www.w3.org/2000/svg';
+    function drawConnectors() {
+      if (window.innerWidth <= 760) return;
+      const box = hero.getBoundingClientRect();
+      svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+      svg.replaceChildren();
+      const globeCenterX = box.width * 0.5;
+      const globeCenterY = box.height * 0.44;
+      const cardConfigs = [
+        { id: 'card-speedshot', class: 'p-speedshot', anchorX: 1, anchorY: 0.5, globeOffsetX: -110, globeOffsetY: -35 },
+        { id: 'card-knowledge', class: 'p-knowledge', anchorX: 1, anchorY: 0.5, globeOffsetX: -140, globeOffsetY: 18 },
+        { id: 'card-fitx', class: 'p-fitx', anchorX: 0, anchorY: 0.5, globeOffsetX: 110, globeOffsetY: -35 },
+        { id: 'card-videox', class: 'p-videox', anchorX: 0, anchorY: 0.5, globeOffsetX: 140, globeOffsetY: 18 }
+      ];
+      cardConfigs.forEach(cfg => {
+        const card = document.getElementById(cfg.id);
+        if (!card) return;
+        const r = card.getBoundingClientRect();
+        const startX = (r.left - box.left) + (r.width * cfg.anchorX);
+        const startY = (r.top - box.top) + (r.height * cfg.anchorY);
+        const endX = globeCenterX + cfg.globeOffsetX;
+        const endY = globeCenterY + cfg.globeOffsetY;
+        const curve = (endX - startX) * 0.5;
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('class', cfg.class);
+        path.setAttribute('d', `M ${startX} ${startY} C ${startX + curve} ${startY}, ${endX - curve} ${endY}, ${endX} ${endY}`);
+        svg.append(path);
+        [[startX, startY], [endX, endY]].forEach(([x, y]) => {
+          const dot = document.createElementNS(NS, 'circle');
+          dot.setAttribute('class', cfg.class);
+          dot.setAttribute('cx', x);
+          dot.setAttribute('cy', y);
+          dot.setAttribute('r', '3.5');
+          svg.append(dot);
+        });
       });
-      document.querySelectorAll('.fidux-card').forEach((card,i)=>{
-        const r=card.getBoundingClientRect(), endX=r.left-box.left, endY=r.top-box.top+r.height/2;
-        const [ax,ay]=globeAnchors[i], startX=globeBox.left-box.left+ax*globeBox.width, startY=globeBox.top-box.top+ay*globeBox.height;
-        const bend=Math.max(32,(endX-startX)*.5), path=document.createElementNS(NS,'path');
-        path.setAttribute('class',colours[i]); path.setAttribute('d',`M ${startX} ${startY} C ${startX+bend} ${startY}, ${endX-bend} ${endY}, ${endX} ${endY}`); svg.append(path);
-        [[startX,startY],[endX,endY]].forEach(([x,y])=>{const dot=document.createElementNS(NS,'circle');dot.setAttribute('class',colours[i]);dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.setAttribute('r','4');svg.append(dot)});
-      });
     }
-    addEventListener('resize',drawConnectors); addEventListener('load',drawConnectors); drawConnectors();
-    new ResizeObserver(drawConnectors).observe(hero);
-    document.querySelectorAll('.fidux-card').forEach(card=>card.addEventListener('transitionend',drawConnectors));
-    let connectorAnimation;
-    function animateConnectors(){
-      cancelAnimationFrame(connectorAnimation);
-      const startedAt=performance.now(), duration=460;
-      function update(now){
-        drawConnectors();
-        if(now-startedAt<duration) connectorAnimation=requestAnimationFrame(update);
-      }
-      connectorAnimation=requestAnimationFrame(update);
-    }
-    document.querySelectorAll('.fidux-card').forEach(card=>{
-      card.addEventListener('mouseenter',animateConnectors);
-      card.addEventListener('mouseleave',animateConnectors);
-    });
-    // Resize & Mutation Observers to automatically adjust line connections when translation text changes
-    const translateObserver = new MutationObserver(() => {
-      drawConnectors();
-    });
-    document.querySelectorAll('.fidux-card').forEach(card => {
-      translateObserver.observe(card, { childList: true, subtree: true, characterData: true });
-      new ResizeObserver(drawConnectors).observe(card);
-    });
-    setTimeout(drawConnectors,900);
-    document.querySelectorAll('img').forEach(img => {
-      if (img.complete && img.naturalHeight === 0) img.style.display = 'none';
-      img.addEventListener('error', () => img.style.display = 'none');
-    });
-    const videoModal=document.querySelector('#video-modal'), videoFrame=videoModal.querySelector('iframe'), videoOpen=document.querySelector('.watch'), videoClose=videoModal.querySelector('[data-video-close]');
-    const videoOrigin=window.location.origin;
-    const videoUrl=`https://www.youtube.com/embed/HQH8ftBNMlQ?autoplay=1&rel=0&enablejsapi=1&origin=${encodeURIComponent(videoOrigin)}`;
-    function closeVideo(){
-      videoModal.hidden=true;
-      videoFrame.removeAttribute('src');
-      document.body.style.overflow='';
-      videoOpen.focus();
-    }
-    videoOpen.onclick=()=>{
-      videoFrame.src=videoUrl;
-      videoModal.hidden=false;
-      document.body.style.overflow='hidden';
-      videoClose.focus();
-    };
-    videoClose.addEventListener('click',closeVideo);
-    videoModal.addEventListener('click',event=>{if(event.target===videoModal)closeVideo()});
-    addEventListener('keydown',event=>{if(event.key==='Escape'&&!videoModal.hidden)closeVideo()});
+    window.addEventListener('resize', drawConnectors);
+    window.addEventListener('load', drawConnectors);
+    drawConnectors();
   </script>
+      </body>
+      </html>
     </div>
   </section><img src="placeholder.svg" loading="lazy" alt="">
   <section>
