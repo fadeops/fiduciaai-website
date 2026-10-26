@@ -265,10 +265,45 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
     }
-    .fidux-card:hover {
+    /* Card Specific Edge Glow Styling based on Line Colors */
+    #card-speedshot {
+      border: 1.5px solid rgba(33, 67, 227, 0.8);
+      box-shadow: 0 0 16px rgba(33, 67, 227, 0.45);
+    }
+    #card-speedshot:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 16px 32px rgba(28, 54, 132, 0.24);
-      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(33, 67, 227, 1);
+      box-shadow: 0 0 24px rgba(33, 67, 227, 0.75), 0 10px 24px rgba(28, 54, 132, 0.2);
+    }
+
+    #card-knowledge {
+      border: 1.5px solid rgba(18, 170, 75, 0.8);
+      box-shadow: 0 0 16px rgba(18, 170, 75, 0.45);
+    }
+    #card-knowledge:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(18, 170, 75, 1);
+      box-shadow: 0 0 24px rgba(18, 170, 75, 0.75), 0 10px 24px rgba(28, 54, 132, 0.2);
+    }
+
+    #card-fitx {
+      border: 1.5px solid rgba(224, 36, 56, 0.8);
+      box-shadow: 0 0 16px rgba(224, 36, 56, 0.45);
+    }
+    #card-fitx:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(224, 36, 56, 1);
+      box-shadow: 0 0 24px rgba(224, 36, 56, 0.75), 0 10px 24px rgba(28, 54, 132, 0.2);
+    }
+
+    #card-videox {
+      border: 1.5px solid rgba(128, 35, 227, 0.8);
+      box-shadow: 0 0 16px rgba(128, 35, 227, 0.45);
+    }
+    #card-videox:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(128, 35, 227, 1);
+      box-shadow: 0 0 24px rgba(128, 35, 227, 0.75), 0 10px 24px rgba(28, 54, 132, 0.2);
     }
     .card-left-top    { left: 6vw;  top: 22vh; }
     .card-left-bottom { left: 4vw;  top: 40vh; }
@@ -570,8 +605,8 @@
           <img class="hero-bg" src="images/HomepageD.jpg" alt="Fiducia AI Background">
           <!--  Top Heading Section  -->
           <section class="intro">
-            <h1 translate="no" class="notranslate">Accelerate AI Workflows <span>into Production</span></h1>
-            <p class="subtitle">One foundation. Four accelerators. Any environment.</p>
+            <h1 translate="no" class="notranslate">Turn Enterprise AI Into <span>Real-World Impact.</span></h1>
+            <p class="subtitle">One intelligent foundation. Four accelerators. Real-world outcomes.</p>
           </section>
           <!--  Animated Connector Lines  -->
           <svg class="connectors" aria-hidden="true"></svg>
@@ -583,8 +618,8 @@
               </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">SpeedShotX</h2>
-                <b>AI Multi Model Engagement</b>
-                <p>Visual AI. Short Links. Real-Time Action.</p>
+                <b>AI-Powered Commerce & Engagement</b>
+                <p>Turn engagement into action. Drive measurable growth.</p>
               </div>
             </a>
             <a href="knowledge-x.html" class="fidux-card card-left-bottom" id="card-knowledge">
@@ -593,8 +628,8 @@
               </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">KnowledgeX</h2>
-                <b>AI-Powered Knowledge Intelligence</b>
-                <p>RAG. Govern. Deliver.</p>
+                <b>Enterprise Knowledge Intelligence</b>
+                <p>Connect knowledge. Accelerate decisions. Activate workflows.</p>
               </div>
             </a>
             <a href="fitx.html" class="fidux-card card-right-top" id="card-fitx">
@@ -603,8 +638,8 @@
               </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">FitX</h2>
-                <b>AI Fit &amp; Sizing</b>
-                <p>Virtual Try-On. Perfect Fit. Every Time.</p>
+                <b>AI Fit, Sizing &amp; Style</b>
+                <p>Help customers find their fit and buy with confidence.</p>
               </div>
             </a>
             <a href="videox.html" class="fidux-card card-right-bottom" id="card-videox">
@@ -613,8 +648,8 @@
               </div>
               <div class="card-content">
                 <h2 translate="no" class="notranslate">VideoX</h2>
-                <b>AI Video Intelligence</b>
-                <p>Index. Search. Translate. Act.</p>
+                <b>AI-Powered Video Intelligence</b>
+                <p>Make every video searchable, useful, and actionable.</p>
               </div>
             </a>
           </div>
@@ -629,7 +664,7 @@
               <div class="deploy-btn" translate="no"><span>🌐</span> Hybrid</div>
             </div>
           </section>
-          <p class="footer-caption">Deploy AI workflows in days—where your enterprise data resides.</p>
+          <p class="footer-caption">Deploy AI workflows where your enterprise data lives.</p>
         </main>
         <script>
     const hero = document.querySelector('#fidux-hero');
