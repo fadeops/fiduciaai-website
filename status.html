@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View the current operational status of Fiducia AI products.">
+  <title>System Status | Fiducia AI</title>
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/s-fiducia-ai.webflow.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    :root { --ink:#0b1735; --muted:#60708e; --blue:#2935d9; --cyan:#1acdd4; --line:#dbe4f3; --green:#087c4b; --green-pale:#eafaf2; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); font-family:Inter,Arial,sans-serif; background:#fff; }
+
+    .custom-header-wrapper { width:100%; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:20; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    .custom-brand-logo { display:flex; align-items:center; text-decoration:none; transition:opacity .2s ease; }
+    .custom-brand-logo:hover { opacity:.85; }
+    .custom-brand-logo img { width:auto; height:52px; object-fit:contain; }
+    .mobile-hamburger-btn { display:none; padding:8px; align-items:center; justify-content:center; cursor:pointer; border:0; background:transparent; }
+    .hamburger-icon { width:18px; height:14px; display:flex; flex-direction:column; justify-content:space-between; }
+    .hamburger-icon span { display:block; width:100%; height:3px; border-radius:2px; background:#000; }
+    .custom-header-right { display:flex; align-items:center; gap:12px; margin-right:180px; }
+    .dropdown-container { position:relative; }
+    .custom-nav-btn,.header-img-item { width:115px; height:48px; padding:4px 8px; display:inline-flex; align-items:center; justify-content:center; gap:6px; flex-shrink:0; cursor:pointer; color:#0f172a; font:700 15px Inter,Arial,sans-serif; text-decoration:none; border:1px solid #e2e8f0; border-radius:12px; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:all .2s ease; }
+    .custom-nav-btn:hover,.header-img-item:hover,.dropdown-container.active>.custom-nav-btn,.dropdown-container.active>.header-img-item { color:#1e3a8a; border-color:#93c5fd; background:#dbeafe; box-shadow:0 4px 12px rgba(37,99,235,.12); }
+    .header-img-item img { width:auto; max-width:100%; max-height:38px; object-fit:contain; }
+    .dropdown-arrow { width:14px; height:14px; fill:currentColor; transition:transform .2s ease; }
+    .dropdown-container.active .dropdown-arrow { transform:rotate(180deg); }
+    .platform-menu,.ibm-menu { position:absolute; top:calc(100% + 10px); width:220px; padding:8px 0; display:none; border:1px solid #f1f5f9; border-radius:12px; background:#fff; box-shadow:0 10px 25px rgba(0,0,0,.1); }
+    .platform-menu { left:0; }
+    .ibm-menu { right:0; width:200px; }
+    .dropdown-container.active .platform-menu,.dropdown-container.active .ibm-menu { display:block; }
+    .platform-item,.ibm-link-item { padding:10px 16px; display:flex; align-items:center; gap:12px; color:#334155; font-size:15px; font-weight:600; text-decoration:none; }
+    .platform-item:hover,.ibm-link-item:hover { color:#2563eb; }
+    .platform-icon { width:32px; height:32px; flex-shrink:0; border-radius:50%; object-fit:contain; }
+    .ibm-item-icon { width:24px; height:24px; object-fit:contain; }
+
+    .status-main { position:relative; min-height:720px; padding:clamp(54px,6vw,78px) 24px clamp(88px,9vw,120px); overflow:hidden; background:linear-gradient(135deg,#f8fbff 0%,#eef5ff 44%,#fff 70%,#eefbfc 100%); }
+    .status-main::before { content:""; position:absolute; top:-270px; right:-170px; width:590px; height:590px; border:1px solid rgba(41,53,217,.08); border-radius:50%; box-shadow:0 0 0 68px rgba(41,53,217,.022),0 0 0 136px rgba(26,205,212,.02); }
+    .status-shell { position:relative; width:min(1120px,100%); margin:0 auto; }
+    .status-hero { min-height:190px; display:grid; grid-template-columns:minmax(0,1fr) 320px; align-items:center; gap:40px; }
+    .status-heading { padding:12px 0 34px; }
+    .status-eyebrow { margin-bottom:13px; display:flex; align-items:center; gap:10px; color:#173b8f; font-size:12px; font-weight:800; letter-spacing:1.45px; text-transform:uppercase; }
+    .status-eyebrow::before { content:""; width:32px; height:3px; border-radius:4px; background:linear-gradient(90deg,var(--blue),var(--cyan)); }
+    .status-heading h1 { margin:0; color:#101d3c; font-size:clamp(44px,5vw,66px); line-height:1.02; letter-spacing:-2px; }
+    .status-heading h1 span { color:#3265f5; }
+    .status-heading p { max-width:620px; margin:15px 0 0; color:#4f6182; font-size:15px; line-height:1.6; }
+    .status-visual { position:relative; height:176px; display:grid; place-items:center; }
+    .status-visual::before,.status-visual::after { content:""; position:absolute; border:1px solid rgba(59,130,246,.18); border-radius:50%; }
+    .status-visual::before { width:240px; height:106px; transform:rotate(-4deg); }
+    .status-visual::after { width:190px; height:78px; transform:rotate(5deg); }
+    .server-stack { position:relative; width:122px; height:90px; margin-top:42px; filter:drop-shadow(0 18px 16px rgba(23,75,182,.24)); }
+    .server-layer { position:absolute; left:0; width:122px; height:35px; border:1px solid rgba(255,255,255,.82); border-radius:9px; background:linear-gradient(180deg,#c7e9ff 0%,#4597f7 42%,#1754c4 100%); box-shadow:inset 0 2px 6px rgba(255,255,255,.7); }
+    .server-layer:nth-child(1) { top:0; }
+    .server-layer:nth-child(2) { top:24px; }
+    .server-layer:nth-child(3) { top:48px; }
+    .server-layer::before { content:""; position:absolute; left:14px; top:14px; width:6px; height:6px; border-radius:50%; background:#8fffee; box-shadow:13px 0 0 #8fffee; }
+    .server-layer::after { content:""; position:absolute; right:14px; top:14px; width:38px; height:5px; border-radius:5px; background:rgba(255,255,255,.68); }
+    .health-cloud { position:absolute; z-index:2; top:7px; left:50%; width:105px; height:62px; transform:translateX(-50%); border-radius:42px; background:linear-gradient(145deg,#53ddff,#1473ee 58%,#1b4dc3); box-shadow:inset 0 3px 8px rgba(255,255,255,.72),0 13px 20px rgba(22,96,211,.25); }
+    .health-cloud::before,.health-cloud::after { content:""; position:absolute; border-radius:50%; background:inherit; }
+    .health-cloud::before { width:52px; height:52px; top:-22px; left:18px; }
+    .health-cloud::after { width:43px; height:43px; top:-10px; right:8px; }
+    .health-check { position:absolute; z-index:3; top:19px; left:50%; width:28px; height:15px; transform:translateX(-50%) rotate(-45deg); border-left:5px solid #fff; border-bottom:5px solid #fff; }
+    .status-panel { overflow:visible; border:1px solid #c8d7f0; border-radius:8px; background:rgba(255,255,255,.96); box-shadow:0 24px 65px rgba(30,61,130,.13); }
+    .status-summary { position:relative; min-height:100px; padding:24px 30px; display:flex; align-items:center; justify-content:space-between; gap:20px; overflow:hidden; color:#fff; border-radius:7px 7px 0 0; background:linear-gradient(105deg,#0d397e 0%,#0754bd 52%,#102d73 100%); }
+    .status-summary::before { content:""; position:absolute; right:-2%; bottom:-55px; width:55%; height:110px; opacity:.5; background:repeating-radial-gradient(ellipse at center,rgba(49,213,255,.65) 0 1px,transparent 1px 9px); transform:rotate(-8deg) skewX(-18deg); }
+    .status-summary::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,transparent 48%,rgba(16,202,236,.08),transparent); }
+    .status-summary-copy { display:flex; align-items:center; gap:14px; }
+    .summary-icon { width:50px; height:50px; display:grid; place-items:center; flex:0 0 auto; color:#fff; border-radius:50%; background:linear-gradient(145deg,#12bd76,#078b57); box-shadow:0 10px 24px rgba(2,27,66,.28); }
+    .summary-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2.6; }
+    .status-summary h2 { position:relative; z-index:1; margin:0 0 4px; color:#fff; font-size:21px; letter-spacing:-.4px; }
+    .status-summary p { position:relative; z-index:1; margin:0; color:#bed4f7; font-size:13px; }
+    .last-updated { position:relative; z-index:1; padding:7px 11px; color:#d5e7ff; font-size:11px; white-space:nowrap; border:1px solid rgba(255,255,255,.2); border-radius:999px; background:rgba(5,22,63,.24); }
+    .status-table { width:100%; border-collapse:collapse; }
+    .status-table th { padding:15px 28px; color:#71809a; font-size:11px; font-weight:800; letter-spacing:1px; text-align:left; text-transform:uppercase; background:#f7f9fd; }
+    .status-table th:last-child,.status-table td:last-child { width:210px; text-align:right; }
+    .status-table tbody tr { position:relative; z-index:1; transform:scale(1); transform-origin:center; transition:transform .22s cubic-bezier(.2,.8,.2,1),filter .22s ease; }
+    .status-table td { height:82px; padding:18px 28px; border-top:1px solid #e8eef7; background:#fff; }
+    .product { display:flex; align-items:center; gap:15px; }
+    .product-mark { width:46px; height:46px; padding:3px; display:block; flex:0 0 auto; border:1px solid #dce5f6; border-radius:50%; background:#fff; object-fit:contain; box-shadow:0 5px 14px rgba(32,74,160,.13); }
+    .product-name { display:block; color:#17233f; font-size:16px; font-weight:700; }
+    .product-note { display:block; margin-top:4px; color:#8090a9; font-size:12px; }
+    .status-badge { min-width:105px; padding:9px 14px; display:inline-flex; align-items:center; justify-content:center; gap:8px; color:var(--green); font-size:13px; font-weight:800; border:1px solid #bcebd2; border-radius:999px; background:var(--green-pale); }
+    .status-dot { width:8px; height:8px; flex:0 0 auto; border-radius:50%; background:#12a867; box-shadow:0 0 0 4px rgba(18,168,103,.12); animation:status-pulse 2.4s ease-in-out infinite; }
+    @keyframes status-pulse { 50% { box-shadow:0 0 0 7px rgba(18,168,103,0); } }
+    .status-table tbody tr:hover { z-index:3; transform:scale(1.018); filter:drop-shadow(0 13px 15px rgba(33,82,168,.19)); }
+    .status-table tbody tr:hover td { border-top-color:#bed3fb; background:#edf4ff; }
+    .status-table tbody tr:hover td:first-child { border-radius:8px 0 0 8px; }
+    .status-table tbody tr:hover td:last-child { border-radius:0 8px 8px 0; }
+    .status-table tbody tr:hover .product-mark { transform:scale(1.09); box-shadow:0 8px 18px rgba(32,74,160,.22); }
+    .status-table tbody tr:hover .status-badge { color:#056c42; border-color:#83d9ad; background:#dcf8e9; }
+
+    .fidux-footer,.fidux-footer * { box-sizing:border-box; }
+    .fidux-footer { position:relative; isolation:isolate; overflow:hidden; color:#f8fafc; border-top:1px solid rgba(255,255,255,.08); background:#060911; }
+    .fidux-footer::before,.fidux-footer::after { content:""; position:absolute; z-index:-1; width:550px; height:550px; pointer-events:none; }
+    .fidux-footer::before { top:-120px; left:10%; background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%); }
+    .fidux-footer::after { right:5%; bottom:-100px; background:radial-gradient(circle,rgba(26,205,212,.08),transparent 70%); }
+    .fidux-footer-container { max-width:1340px; margin:0 auto; padding:clamp(56px,6vw,80px) clamp(24px,5vw,64px) 32px; }
+    .fidux-footer-grid { margin-bottom:clamp(48px,5vw,64px); display:grid; grid-template-columns:1.8fr 1.7fr 1.5fr; gap:clamp(32px,4vw,64px); align-items:start; }
+    .fidux-footer-brand { display:flex; flex-direction:column; align-items:flex-start; }
+    .fidux-footer-logo-link { margin-bottom:20px; display:inline-block; text-decoration:none; transition:opacity .25s ease,transform .25s ease; }
+    .fidux-footer-logo-link:hover { opacity:.92; transform:translateY(-2px); }
+    .fidux-footer-logo-img { width:100%; max-width:340px; height:auto; display:block; }
+    .fidux-footer-desc { max-width:400px; margin:0; color:#94a3b8; font-size:14px; line-height:1.6; }
+    .fidux-footer-col-title { position:relative; margin:0 0 20px; display:inline-block; color:#fff; font-size:17px; font-weight:800; }
+    .fidux-footer-col-title::after { content:""; position:absolute; bottom:-6px; left:0; width:24px; height:2px; border-radius:2px; background:#3b82f6; }
+    .fidux-footer-subscribe-box { padding:25px; border:1px solid rgba(255,255,255,.08); border-radius:16px; background:rgba(15,23,42,.65); box-shadow:0 10px 30px rgba(0,0,0,.25); backdrop-filter:blur(12px); }
+    .fidux-footer-subscribe-box p { margin:0 0 19px; color:#94a3b8; font-size:14px; line-height:1.5; }
+    .fidux-subscribe-form { display:flex; flex-direction:column; gap:10px; }
+    .fidux-input-group { display:flex; overflow:hidden; border:1px solid rgba(255,255,255,.15); border-radius:10px; background:#0f172a; }
+    .fidux-email-input { min-width:0; padding:12px 14px; flex:1; color:#fff; font:400 14px Inter,Arial,sans-serif; outline:0; border:0; background:transparent; }
+    .fidux-email-input::placeholder { color:#64748b; }
+    .fidux-submit-btn { padding:0 20px; display:inline-flex; align-items:center; justify-content:center; gap:6px; cursor:pointer; color:#fff; font:700 14px Inter,Arial,sans-serif; white-space:nowrap; border:0; background:#2563eb; }
+    .fidux-submit-btn svg { fill:none; }
+    .fidux-form-feedback { display:none; color:#10b981; font-size:13px; font-weight:600; }
+    .fidux-contact-list { margin:0 0 24px; padding:0; display:flex; flex-direction:column; gap:14px; list-style:none; }
+    .fidux-contact-item { display:flex; align-items:center; gap:10px; color:#cbd5e1; font-size:14px; }
+    .fidux-contact-icon { width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#60a5fa; border:1px solid rgba(59,130,246,.2); border-radius:8px; background:rgba(37,99,235,.12); }
+    .fidux-contact-icon svg { width:16px; height:16px; fill:currentColor; }
+    .fidux-contact-item a { color:#cbd5e1; text-decoration:none; }
+    .fidux-social-row { display:flex; align-items:center; gap:10px; }
+    .fidux-social-btn { width:40px; height:40px; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,.12); border-radius:10px; background:#0f172a; box-shadow:0 4px 12px rgba(0,0,0,.2); transition:all .25s ease; }
+    .fidux-social-btn svg { width:18px; height:18px; fill:currentColor; }
+    .fidux-social-btn:hover { transform:translateY(-4px); border-color:#3b82f6; background:#2563eb; }
+    .fidux-footer-divider { width:100%; height:1px; margin-bottom:28px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.15) 20%,rgba(255,255,255,.15) 80%,transparent); }
+    .fidux-footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; color:#64748b; font-size:14px; }
+    .fidux-privacy-link { color:#94a3b8; font-weight:600; text-decoration:none; }
+
+    .w-webflow-badge,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.VIpgJd-yD05df-IAcaJu { display:none!important; visibility:hidden!important; }
+    html,body { top:0!important; margin-top:0!important; }
+    #fiducia-ai-agent { position:fixed!important; top:90px!important; right:24px!important; z-index:999990!important; width:64px!important; height:64px!important; padding:0!important; display:flex!important; overflow:hidden!important; cursor:pointer!important; touch-action:none!important; border:0!important; border-radius:50%!important; background:#fff!important; box-shadow:0 8px 25px rgba(0,0,0,.25)!important; animation:agent-float 2.6s ease-in-out infinite; }
+    #fiducia-ai-agent.fiducia-ai-dragging { animation:none; }
+    #fiducia-ai-agent img { width:100%!important; height:100%!important; display:block!important; pointer-events:none!important; border-radius:50%!important; object-fit:cover!important; }
+    @keyframes agent-float { 50% { transform:translateY(-14px); } }
+    #fiducia-ai-overlay { position:fixed!important; inset:0!important; z-index:999995!important; padding:24px!important; display:none!important; align-items:center!important; justify-content:flex-end!important; background:rgba(0,0,0,.35)!important; }
+    #fiducia-ai-overlay.fiducia-ai-open { display:flex!important; }
+    #fiducia-ai-frame { position:relative!important; width:min(360px,42vh)!important; max-width:360px!important; height:calc(100vh - 120px)!important; overflow:hidden!important; border-radius:18px!important; background:#fff!important; box-shadow:0 20px 60px rgba(0,0,0,.35)!important; }
+    #fiducia-ai-iframe { position:absolute!important; inset:0!important; width:100%!important; height:100%!important; border:0!important; }
+    #fiducia-ai-close { position:absolute!important; top:4px!important; right:10px!important; z-index:2!important; width:42px!important; height:42px!important; cursor:pointer!important; color:#000!important; font-size:34px!important; border:0!important; background:transparent!important; }
+    html.fiducia-ai-lock-scroll,body.fiducia-ai-lock-scroll { overflow:hidden!important; }
+    .fiducia-lang-container { position:absolute!important; top:18px!important; right:24px!important; z-index:999980!important; font-family:Arial,sans-serif!important; }
+    .fiducia-lang-trigger { padding:4px!important; display:flex!important; align-items:center!important; gap:6px!important; cursor:pointer!important; border:0!important; background:transparent!important; }
+    .fiducia-flag-img { width:26px!important; height:26px!important; border-radius:50%!important; object-fit:cover!important; box-shadow:0 2px 4px rgba(0,0,0,.15)!important; }
+    .fiducia-trigger-code { color:#0f172a!important; font-size:14px!important; font-weight:700!important; }
+    .fiducia-chevron { color:#2563eb!important; font-size:10px!important; }
+    .fiducia-lang-modal { position:absolute!important; top:42px!important; right:-6px!important; width:280px!important; padding:18px 16px!important; display:none; border:1px solid #e2e8f0!important; border-radius:20px!important; background:#fff!important; box-shadow:0 12px 40px rgba(0,0,0,.12)!important; }
+    .fiducia-lang-container.open .fiducia-lang-modal { display:block!important; }
+    .fiducia-modal-header { margin-bottom:12px!important; display:flex!important; align-items:center!important; justify-content:space-between!important; }
+    .fiducia-modal-title { margin:0!important; color:#1e293b!important; font-size:17px!important; }
+    .fiducia-modal-close { cursor:pointer!important; color:#64748b!important; border:0!important; background:transparent!important; }
+    .fiducia-lang-grid { max-height:360px!important; display:flex!important; flex-direction:column!important; gap:4px!important; overflow-y:auto!important; }
+    .fiducia-lang-item { padding:8px 12px!important; display:flex!important; align-items:center!important; gap:12px!important; cursor:pointer!important; border-radius:14px!important; }
+    .fiducia-lang-item:hover,.fiducia-lang-item.active { background:#eff6ff!important; }
+    .fiducia-lang-item img { width:24px!important; height:24px!important; border-radius:50%!important; object-fit:cover!important; }
+    .fiducia-lang-name { flex:1!important; color:#334155!important; font-size:14px!important; }
+    .fiducia-lang-code-text { color:#94a3b8!important; font-size:12px!important; font-weight:600!important; }
+    .fiducia-check-icon { color:#2563eb!important; font-weight:700!important; }
+
+    @media (max-width:991px) {
+      .custom-header-wrapper { padding:12px 16px; justify-content:flex-start; }
+      .mobile-hamburger-btn { display:flex; order:1; }
+      .custom-brand-logo { position:absolute; left:50%; order:2; transform:translateX(-50%); }
+      .custom-brand-logo img { height:42px; }
+      .custom-header-right { position:absolute; top:100%; left:0; width:100%; margin:0; padding:20px 24px; display:none; flex-direction:column; align-items:flex-start; gap:16px; background:#fff; box-shadow:0 10px 20px rgba(0,0,0,.08); }
+      .custom-header-right.mobile-open { display:flex; }
+      .dropdown-container,.custom-nav-btn,.header-img-item { width:100%; justify-content:space-between; }
+      .platform-menu,.ibm-menu { position:relative; top:0; left:0; right:auto; width:100%; margin-top:8px; box-shadow:none; }
+      .fidux-footer-grid { grid-template-columns:1fr 1fr; gap:40px; }
+      .fidux-footer-brand { grid-column:span 2; }
+    }
+    @media (max-width:720px) {
+      .status-main { padding:64px 18px 78px; }
+      .status-hero { min-height:0; grid-template-columns:1fr; gap:0; }
+      .status-heading { padding:0 0 28px; }
+      .status-heading h1 { font-size:40px; letter-spacing:-1.5px; }
+      .status-visual { display:none; }
+      .status-summary { min-height:94px; padding:20px; align-items:flex-start; }
+      .status-summary::before { right:-30%; width:90%; }
+      .summary-icon { width:44px; height:44px; }
+      .status-summary h2 { font-size:18px; }
+      .last-updated { display:none; }
+      .status-table th { padding:13px 20px; }
+      .status-table th:last-child,.status-table td:last-child { width:auto; }
+      .status-table td { height:78px; padding:16px 20px; }
+      .product-mark { width:38px; height:38px; padding:2px; }
+      .product-note { display:none; }
+      .status-badge { min-width:90px; padding:8px 11px; }
+      .fidux-footer-container { padding:40px 20px 24px; }
+      .fidux-footer-grid { grid-template-columns:1fr; gap:32px; }
+      .fidux-footer-brand { grid-column:span 1; }
+      .fidux-footer-logo-img { max-width:180px; }
+      .fidux-input-group { flex-direction:column; gap:8px; overflow:visible; border:0; background:transparent; }
+      .fidux-email-input { border:1px solid rgba(255,255,255,.15); border-radius:10px; background:#0f172a; }
+      .fidux-submit-btn { width:100%; padding:12px; border-radius:10px; }
+      .fidux-footer-bottom { flex-direction:column; text-align:center; }
+      #fiducia-ai-agent { top:75px!important; right:16px!important; width:56px!important; height:56px!important; }
+      #fiducia-ai-overlay { padding:8px!important; justify-content:center!important; }
+      #fiducia-ai-frame { width:100%!important; max-width:none!important; height:100%!important; }
+      .fiducia-lang-container { top:16px!important; right:12px!important; }
+      .fiducia-lang-modal { right:-4px!important; width:260px!important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="custom-header-wrapper">
+    <button class="mobile-hamburger-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-controls="mobileNavMenu"><span class="hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="index.html" class="custom-brand-logo" aria-label="Fiducia AI home"><img src="images/Fiduciaai-Logo.png" alt="Fiducia AI"></a>
+    <nav class="custom-header-right" id="mobileNavMenu" aria-label="Main navigation">
+      <div class="dropdown-container" id="platformDropdown">
+        <button class="custom-nav-btn" type="button" onclick="toggleDropdown(event,'platformDropdown')">Platform <svg class="dropdown-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg></button>
+        <div class="platform-menu">
+          <a href="speedshotx.html" class="platform-item"><img class="platform-icon" src="images/icon-1.png" alt="">SpeedShotX</a>
+          <a href="intellix.html" class="platform-item"><img class="platform-icon" src="images/intellix..png" alt="">IntelliX</a>
+          <a href="knowledge-x.html" class="platform-item"><img class="platform-icon" src="images/icon-3.png" alt="">KnowledgeX</a>
+          <a href="videox.html" class="platform-item"><img class="platform-icon" src="images/icon-4.png" alt="">VideoX</a>
+          <a href="fitx.html" class="platform-item"><img class="platform-icon" src="images/icon-5.png" alt="">FitX</a>
+        </div>
+      </div>
+      <a href="company.html" class="custom-nav-btn">Company</a>
+      <a href="forgeonex.html" class="header-img-item"><img src="images/ForgeOneX.png" alt="ForgeOneX"></a>
+      <div class="dropdown-container" id="ibmDropdown">
+        <button class="header-img-item" type="button" onclick="toggleDropdown(event,'ibmDropdown')" aria-label="IBM solutions"><img src="images/ibm-silver-partner.png" alt="IBM Silver Partner"></button>
+        <div class="ibm-menu">
+          <a href="ibm.html" class="ibm-link-item"><img class="ibm-item-icon" src="images/IBM..png" alt="">IBM</a>
+          <a href="ibm-cloud.html" class="ibm-link-item"><img class="ibm-item-icon" src="images/ibm_cloud.png" alt="">IBM Cloud</a>
+          <a href="ibm-power.html" class="ibm-link-item"><img class="ibm-item-icon" src="images/power.png" alt="">IBM Power</a>
+        </div>
+      </div>
+      <a href="gs1.html" class="header-img-item"><img src="images/GS1-1.png" alt="GS1 Standard Solution Partner"></a>
+    </nav>
+  </header>
+
+  <main class="status-main">
+    <div class="status-shell">
+      <div class="status-hero">
+        <div class="status-heading">
+          <div class="status-eyebrow">Fiducia AI Status</div>
+          <h1>System <span>Status</span></h1>
+          <p>Real-time status and availability of Fiducia AI platforms and services.</p>
+        </div>
+        <div class="status-visual" aria-hidden="true">
+          <div class="health-cloud"><span class="health-check"></span></div>
+          <div class="server-stack"><span class="server-layer"></span><span class="server-layer"></span><span class="server-layer"></span></div>
+        </div>
+      </div>
+      <section class="status-panel" aria-labelledby="status-summary-title">
+        <div class="status-summary">
+          <div class="status-summary-copy">
+            <span class="summary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg></span>
+            <div><h2 id="status-summary-title">All systems operational</h2><p>Every listed service is active and available.</p></div>
+          </div>
+          <span class="last-updated">Current service status</span>
+        </div>
+        <table class="status-table">
+          <thead><tr><th scope="col">Product</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><td><div class="product"><img class="product-mark" src="images/intellix..png" alt="IntelliX Prime"><span><span class="product-name notranslate" translate="no">IntelliX Prime</span><span class="product-note">Enterprise AI Workflow Foundation</span></span></div></td><td><span class="status-badge"><span class="status-dot"></span>Active</span></td></tr>
+            <tr><td><div class="product"><img class="product-mark" src="images/icon-3.png" alt="KnowledgeX"><span><span class="product-name notranslate" translate="no">KnowledgeX</span><span class="product-note">Enterprise Knowledge Intelligence</span></span></div></td><td><span class="status-badge"><span class="status-dot"></span>Active</span></td></tr>
+            <tr><td><div class="product"><img class="product-mark" src="images/icon-1.png" alt="SpeedShotX"><span><span class="product-name notranslate" translate="no">SpeedShotX</span><span class="product-note">AI-Powered Commerce &amp; Engagement</span></span></div></td><td><span class="status-badge"><span class="status-dot"></span>Active</span></td></tr>
+            <tr><td><div class="product"><img class="product-mark" src="images/icon-5.png" alt="FitX"><span><span class="product-name notranslate" translate="no">FitX</span><span class="product-note">AI Fit, Sizing &amp; Style</span></span></div></td><td><span class="status-badge"><span class="status-dot"></span>Active</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="fidux-footer" aria-label="Site footer">
+    <div class="fidux-footer-container">
+      <div class="fidux-footer-grid">
+        <div class="fidux-footer-brand">
+          <a href="index.html" class="fidux-footer-logo-link" aria-label="Fiducia AI home"><img src="images/Footer-Logo.png" alt="Fiducia AI" class="fidux-footer-logo-img"></a>
+          <p class="fidux-footer-desc">Enterprise First AI, Ready Today. Built for Tomorrow. Connecting frontier multimodal intelligence with real-time enterprise workflows.</p>
+        </div>
+        <div>
+          <h3 class="fidux-footer-col-title">Subscribe</h3>
+          <div class="fidux-footer-subscribe-box">
+            <p>Get product updates, AI keynotes, and enterprise platform announcements directly to your inbox.</p>
+            <form class="fidux-subscribe-form" id="fiduxFooterForm">
+              <div class="fidux-input-group"><input type="email" class="fidux-email-input" id="fiduxEmailInput" placeholder="Get product updates" required aria-label="Email address for product updates"><button type="submit" class="fidux-submit-btn" id="fiduxSubmitBtn">Submit <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></button></div>
+              <div class="fidux-form-feedback" id="fiduxFormFeedback">Thanks for subscribing to Fiducia AI updates!</div>
+            </form>
+          </div>
+        </div>
+        <div>
+          <h3 class="fidux-footer-col-title">Connect with Us</h3>
+          <ul class="fidux-contact-list">
+            <li class="fidux-contact-item"><span class="fidux-contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg></span><a href="tel:+19257861947">925-786-1947</a></li>
+            <li class="fidux-contact-item"><span class="fidux-contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"></path></svg></span><a href="mailto:info@fiduciaai.com">info@fiduciaai.com</a></li>
+            <li class="fidux-contact-item"><span class="fidux-contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg></span><span>San Ramon, CA USA 94582</span></li>
+          </ul>
+          <div class="fidux-social-row" aria-label="Social links">
+            <a href="https://www.linkedin.com/company/fiducia-ai/" target="_blank" rel="noopener" class="fidux-social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 1 0 0-3.37 1.69 1.69 0 0 0 0 3.37m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="fidux-social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5c0-2.49 1.49-3.85 3.75-3.85 1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.62.77-1.62 1.56V12h2.77l-.44 3h-2.33v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="fidux-social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="fidux-footer-divider"></div>
+      <div class="fidux-footer-bottom"><span>&copy; 2026 Fiducia AI. All rights reserved.</span><a href="privacy-policy.html" class="fidux-privacy-link">Privacy Policy &nearr;</a></div>
+    </div>
+  </footer>
+
+  <button id="fiducia-ai-agent" type="button" aria-label="Open AI Agent"><img src="images/gagent.png" alt="AI Agent"></button>
+  <div id="fiducia-ai-overlay" aria-hidden="true"><div id="fiducia-ai-frame"><iframe id="fiducia-ai-iframe" src="about:blank" title="Fiducia AI Agent" allow="microphone; camera; autoplay; clipboard-read; clipboard-write; fullscreen" allowfullscreen></iframe><button id="fiducia-ai-close" type="button" aria-label="Minimize AI Agent">&minus;</button></div></div>
+  <div id="google_translate_element" style="display:none!important"></div>
+  <div class="fiducia-lang-container notranslate" translate="no">
+    <button id="fiducia-lang-trigger" type="button" class="fiducia-lang-trigger" aria-label="Change language"><img id="fiducia-active-flag" class="fiducia-flag-img" src="https://flagcdn.com/w40/us.png" alt="Selected language"><span id="fiducia-active-code" class="fiducia-trigger-code">EN</span><span class="fiducia-chevron">&#9660;</span></button>
+    <div class="fiducia-lang-modal"><div class="fiducia-modal-header"><h4 class="fiducia-modal-title">Select your language</h4><button id="fiducia-lang-modal-close" type="button" class="fiducia-modal-close" aria-label="Close">&#10005;</button></div><div class="fiducia-lang-grid" id="fiducia-lang-grid"></div></div>
+  </div>
+
+  <script>
+    function toggleMobileMenu(){document.getElementById('mobileNavMenu').classList.toggle('mobile-open')}
+    function toggleDropdown(event,id){event.stopPropagation();var target=document.getElementById(id);document.querySelectorAll('.dropdown-container').forEach(function(item){if(item!==target)item.classList.remove('active')});target.classList.toggle('active')}
+    document.addEventListener('click',function(event){var header=document.querySelector('.custom-header-wrapper');if(header&&!header.contains(event.target)){document.querySelectorAll('.dropdown-container').forEach(function(item){item.classList.remove('active')});document.getElementById('mobileNavMenu').classList.remove('mobile-open')}});
+
+    document.getElementById('fiduxFooterForm').addEventListener('submit',function(event){event.preventDefault();var button=document.getElementById('fiduxSubmitBtn');button.textContent='Submitting...';button.disabled=true;setTimeout(function(){button.textContent='Subscribed';button.style.background='#10b981';document.getElementById('fiduxFormFeedback').style.display='block';document.getElementById('fiduxEmailInput').value=''},600)});
+
+    var languages=[['en','EN','English','us'],['ar','AR','Arabic','sa'],['bn','BN','Bengali','bd'],['zh-CN','ZH','Chinese','cn'],['nl','NL','Dutch','nl'],['fr','FR','French','fr'],['de','DE','German','de'],['hi','HI','Hindi','in'],['it','IT','Italian','it'],['ja','JA','Japanese','jp'],['ko','KO','Korean','kr'],['ml','ML','Malayalam','in'],['pt','PT','Portuguese','pt'],['es','ES','Spanish','es'],['ta','TA','Tamil','in'],['te','TE','Telugu','in'],['tr','TR','Turkish','tr'],['vi','VI','Vietnamese','vn']];
+    function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:languages.map(function(item){return item[0]}).join(','),autoDisplay:false},'google_translate_element')}
+    function selectLanguage(code){document.cookie='googtrans=; path=/; max-age=0';if(code==='en'){sessionStorage.removeItem('fiducia_active_lang')}else{sessionStorage.setItem('fiducia_active_lang',code);document.cookie='googtrans=/en/'+code+'; path=/; SameSite=Lax'}window.location.reload()}
+    (function(){
+      var container=document.querySelector('.fiducia-lang-container'),grid=document.getElementById('fiducia-lang-grid'),active=sessionStorage.getItem('fiducia_active_lang')||'en',current=languages.find(function(item){return item[0]===active})||languages[0];
+      document.getElementById('fiducia-active-code').textContent=current[1];document.getElementById('fiducia-active-flag').src='https://flagcdn.com/w40/'+current[3]+'.png';
+      languages.forEach(function(language){var item=document.createElement('div');item.className='fiducia-lang-item'+(language[0]===current[0]?' active':'');item.innerHTML='<img src="https://flagcdn.com/w40/'+language[3]+'.png" alt=""><span class="fiducia-lang-name">'+language[2]+'</span><span class="fiducia-lang-code-text">'+language[1]+'</span>'+(language[0]===current[0]?'<span class="fiducia-check-icon">&#10003;</span>':'');item.addEventListener('click',function(){selectLanguage(language[0])});grid.appendChild(item)});
+      document.getElementById('fiducia-lang-trigger').addEventListener('click',function(event){event.stopPropagation();container.classList.toggle('open')});document.getElementById('fiducia-lang-modal-close').addEventListener('click',function(){container.classList.remove('open')});document.addEventListener('click',function(event){if(!container.contains(event.target))container.classList.remove('open')});
+      var agent=document.getElementById('fiducia-ai-agent'),overlay=document.getElementById('fiducia-ai-overlay'),frame=document.getElementById('fiducia-ai-iframe');
+      function openAgent(){frame.src='https://engage.speedshotx.com/ar/multiexp?exp=43502810x608x855x760';overlay.classList.add('fiducia-ai-open');agent.style.setProperty('display','none','important');document.documentElement.classList.add('fiducia-ai-lock-scroll')}
+      function closeAgent(){frame.src='about:blank';overlay.classList.remove('fiducia-ai-open');agent.style.setProperty('display','flex','important');document.documentElement.classList.remove('fiducia-ai-lock-scroll')}
+      var dragging=false,moved=false,startX=0,startY=0,buttonX=0,buttonY=0;
+      agent.addEventListener('pointerdown',function(event){var rect=agent.getBoundingClientRect();dragging=true;moved=false;startX=event.clientX;startY=event.clientY;buttonX=rect.left;buttonY=rect.top;agent.setPointerCapture(event.pointerId);agent.classList.add('fiducia-ai-dragging')});
+      agent.addEventListener('pointermove',function(event){if(!dragging)return;var dx=event.clientX-startX,dy=event.clientY-startY;if(Math.abs(dx)>4||Math.abs(dy)>4)moved=true;if(!moved)return;agent.style.setProperty('left',Math.max(0,Math.min(buttonX+dx,window.innerWidth-agent.offsetWidth))+'px','important');agent.style.setProperty('top',Math.max(0,Math.min(buttonY+dy,window.innerHeight-agent.offsetHeight))+'px','important');agent.style.setProperty('right','auto','important')});
+      agent.addEventListener('pointerup',function(){dragging=false;agent.classList.remove('fiducia-ai-dragging');if(!moved)openAgent()});document.getElementById('fiducia-ai-close').addEventListener('click',closeAgent);document.addEventListener('keydown',function(event){if(event.key==='Escape'){container.classList.remove('open');closeAgent()}});
+      if(!window.location.hostname.includes('canvas.webflow.com')){var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.body.appendChild(script)}
+    })();
+  </script>
+</body>
+</html>
